@@ -1,0 +1,18 @@
+.sidenav{
+    width: 200px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    padding: 8px;
+    display: flex;
+    align-items: stretch;
+}
+
+.sidenav .tree-view{
+    overflow-y: scroll;
+    width: 100%;
+}
+
+body{
+    background-color: #C0C0C0;
+}

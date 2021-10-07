@@ -8,3 +8,4 @@
 ## 8. make the website look good on mobile 
 ## 9. cmd emulator?
 ## https://int10h.org/oldschool-pc-fonts/readme/#fonts_px
+## 10. make 404 page look like a windows error popup

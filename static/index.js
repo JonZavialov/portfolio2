@@ -7,14 +7,12 @@ async function boot(){
 
 async function loadNav(){
     navBarHTML = `
-    <div class=\"sidenav\">
         <ul class=\"tree-view\">
             <li><a href=\"/home\">Home</a></li>
             <li><a href=\"https://github.com/JonZavialov/portfolio2\" target=\"_blank\">Repository</a></li>
         </ul>
-    </div>
     `
 
-    navBar = await document.getElementById("nav")
+    navBar = await document.getElementById("sidenav")
     navBar.innerHTML += navBarHTML
 }

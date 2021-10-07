@@ -8,4 +8,8 @@ app = Flask(__name__)
 def home():
     return render_template("index.html")
 
+@app.route("/boot")
+def boot():
+    return render_template("boot.html")
+
 app.run(host='0.0.0.0',port=80)

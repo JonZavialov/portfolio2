@@ -15,4 +15,11 @@
 
 body{
     background-color: #C0C0C0;
+    height:100%;
+    width:100%
+}
+
+#bootScreen{
+    height: 100vh;
+    background-color: black;
 }

@@ -1,4 +1,4 @@
-.sidenav{
+#sidenav{
     width: 200px;
     position: fixed;
     top: 0;
@@ -8,7 +8,7 @@
     align-items: stretch;
 }
 
-.sidenav .tree-view{
+#sidenav .tree-view{
     overflow-y: scroll;
     width: 100%;
 }

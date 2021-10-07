@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/styles.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <script src="{{url_for('static', filename='index.js')}}"></script>
+    <link rel="stylesheet" href="https://unpkg.com/98.css">
+    <title>Jonathan Zavialov</title>
+</head>
+<body>
+    <script>
+        window.onload=function(){
+	  loadNav()
+        }
+    </script>
+    <div id="nav"></div>
+    <div id="404"><h4>You're lost!</h4><br><a href="/home">Click here to return to home.</a></div> 
+</body>
+</html>

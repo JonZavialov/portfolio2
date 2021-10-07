@@ -1,3 +1,5 @@
+//Jonathan Zavialov
+
 async function replaceBootScreen(){
     window.location.replace("/boot")
 }

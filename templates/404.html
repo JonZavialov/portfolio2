@@ -13,10 +13,32 @@
 <body>
     <script>
         window.onload=function(){
-	  loadNav()
+	        loadNav()
         }
     </script>
     <div id="sidenav"></div>
-    <div id="404"><h4>You're lost!</h4><br><a href="/home">Click here to return to home.</a></div> 
+    <div id="main">
+        <div id="error">
+            <div class="window" style="margin: 32px; width: 250px">
+                <div class="title-bar">
+                  <div class="title-bar-text">
+                    Jonathan Zavialov
+                  </div>
+          
+                  <div class="title-bar-controls">
+                    <button aria-label="Minimize"></button>
+                    <button aria-label="Maximize"></button>
+                    <button aria-label="Close"></button>
+                  </div>
+                </div>
+                <div class="window-body">
+                  <p>You're Lost!<br>Click home to return home.</p>
+                  <section class="field-row" style="justify-content: flex-end">
+                    <button onclick="window.location.href ='/home'">Home</button>
+                  </section>
+                </div>
+              </div>
+        </div>
+    </div>
 </body>
 </html>

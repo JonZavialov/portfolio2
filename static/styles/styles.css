@@ -11,6 +11,7 @@
 #sidenav .tree-view{
     overflow-y: scroll;
     width: 100%;
+    font-size:15px
 }
 
 body{

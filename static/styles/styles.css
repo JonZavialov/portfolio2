@@ -33,7 +33,24 @@ a{
     position:fixed;
     width: 100%;
     height: 100%;
-    transform: translate(200px)
+    transform: translate(200px);
+    padding-left: 35px;
+}
+
+#main h2{
+    margin-top: 10px;
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+#main hr{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    width: 600px;
+    margin-left: 0;
+    background-color: #A4A4A4;
+    height:2px;
+    border-width:0;
 }
 
 #error{

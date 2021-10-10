@@ -81,6 +81,10 @@ async function loadNav(){
     navBar.innerHTML += navBarHTML
 }
 
+async function closeWindow(windowID){
+    document.getElementById(windowID).remove()
+}
+
 async function sleep(ms){
     return new Promise((resolve,reject)=>{
         setTimeout(async function() {

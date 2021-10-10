@@ -10,10 +10,10 @@
     <link rel="stylesheet" href="https://unpkg.com/98.css">
     <title>Jonathan Zavialov</title>
 </head>
-<body>
+<body id="body">
     <script>
         window.onload=function(){
-	        loadNav()
+	        load()
         }
     </script>
     <div id="sidenav"></div>
@@ -50,6 +50,66 @@
               </section>
             </div>
         </div>
+
+        <div id="aboutme" class="window" style="margin: 32px; width: 500px">
+          <div class="title-bar">
+            <div class="title-bar-text">
+              Welcome to my website!
+            </div>
+    
+            <div class="title-bar-controls">
+              <button aria-label="Minimize"></button>
+              <button aria-label="Maximize"></button>
+              <button aria-label="Close"></button>
+            </div>
+          </div>
+          <div class="window-body">
+              <p style="font-size: 14px;">
+                  I am a Full Stack Developer with a passion for Computer Science. 
+                  I began learning how to code at a young age, when I was in 9th grade.
+                  Since then I've learned a vast variety of skills within anything that
+                  interests me including Python, Javascript, Java, TypeScript, ReactJS,
+                  Flask, and more recently creating websites such as this one. I code almost
+                  every day, jumping from project to project so I can learn something new 
+                  every day. In my free time I enjoy playing games such as Valorant with 
+                  my friends. My interests also include cryptography, cryptocurrency,
+                  calculus, and personal finance. 
+              </p>
+            <section class="field-row" style="justify-content: flex-end">
+              <button onclick="closeWindow('aboutme')">OK</button>
+            </section>
+          </div>
+      </div>
+
+      <div id="aboutme" class="window" style="margin: 32px; width: 500px">
+        <div class="title-bar">
+          <div class="title-bar-text">
+            Welcome to my website!
+          </div>
+  
+          <div class="title-bar-controls">
+            <button aria-label="Minimize"></button>
+            <button aria-label="Maximize"></button>
+            <button aria-label="Close"></button>
+          </div>
+        </div>
+        <div class="window-body">
+            <p style="font-size: 14px;">
+                I am a Full Stack Developer with a passion for Computer Science. 
+                I began learning how to code at a young age, when I was in 9th grade.
+                Since then I've learned a vast variety of skills within anything that
+                interests me including Python, Javascript, Java, TypeScript, ReactJS,
+                Flask, and more recently creating websites such as this one. I code almost
+                every day, jumping from project to project so I can learn something new 
+                every day. In my free time I enjoy playing games such as Valorant with 
+                my friends. My interests also include cryptography, cryptocurrency,
+                calculus, and personal finance. 
+            </p>
+          <section class="field-row" style="justify-content: flex-end">
+            <button onclick="closeWindow('aboutme')">OK</button>
+          </section>
+        </div>
+    </div>
 
     </div>
 </body>

@@ -1,7 +1,7 @@
 //Jonathan Zavialov
 
 async function boot(){
-    bootList = [
+    let bootList = [
         "Checking existing disk format.<br>",
         "QuickFormatting 10,75.03M<br>",
         "Recording current bad clusters<br>",
@@ -23,7 +23,7 @@ async function boot(){
         "Volume Serial Number is 215C-1B16"
     ]
     
-    bootScreen = await document.getElementById("bootScreen")
+    let bootScreen = await document.getElementById("bootScreen")
     await sleep(10)
     bootScreen.innerHTML += `
     <div id="indented">
@@ -69,30 +69,48 @@ async function boot(){
     myLoop()
 }
 
-async function loadNav(){
-    navBarDesktop = `
-        <ul class=\"tree-view\">
-            <li><a href=\"/home\">Home</a></li>
-            <li><a href=\"https://github.com/JonZavialov/portfolio2\" target=\"_blank\">Repository</a></li>
-        </ul>
-    ` 
-    navBar = await document.getElementById("sidenav")
-
+async function load(){
     if(!detectMob()){
-        navBar.innerHTML += navBarDesktop
+        loadDesktopNav()
     }else{
         transformToMobile()
     }
 }
 
+async function loadDesktopNav(){
+    let navBarDesktop = `
+        <ul class=\"tree-view\">
+            <li><a href=\"/home\">Home</a></li>
+            <li><a href=\"https://github.com/JonZavialov/portfolio2\" target=\"_blank\">Repository</a></li>
+        </ul>
+    ` 
+    let navBar = await document.getElementById("sidenav")
+    navBar.innerHTML += navBarDesktop
+}
+
 async function transformToMobile(){
-    navBar = await document.getElementById("sidenav")
-    mainDiv = await document.getElementById("main")
+    let mainDiv = await document.getElementById("main")
+    let body = await document.getElementById("body")
+    let allWindows = await document.getElementsByClassName("window")
+
+
+    for (var i = 0; i < allWindows.length; i++) {
+        allWindows[i].style.margin = "0"
+    }
 
     mainDiv.style.transform = "translate(0px)"
-    navBar.innerHTML += `
-    
-    `
+    mainDiv.style.paddingLeft = "0px"
+    body.innerHTML = `
+        <div id=\"sidenav-button\"><button onclick=\"genMobileNav()\"><img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/nav-icon.png?raw=true"></button></div>
+    ` + body.innerHTML
+}
+
+async function genMobileNav(){
+    let body = await document.getElementById("body")
+    let sidenavButton = await document.getElementById("sidenav-button")
+
+    sidenavButton.remove()
+    loadDesktopNav()
 }
 
 async function closeWindow(windowID){

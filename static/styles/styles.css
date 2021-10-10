@@ -6,10 +6,15 @@
     padding: 8px;
     display: flex;
     align-items: stretch;
+    z-index: 98 !important;
 }
 
 #sidenav-button{
-    position: absolute;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 8px;
+    z-index: 99 !important;
 }
 
 #sidenav .tree-view{
@@ -21,7 +26,8 @@
 body{
     background-color: #C0C0C0;
     height:100%;
-    width:100%
+    width:100%;
+    overflow-y: scroll;
 }
 
 #bootScreen{
@@ -34,11 +40,11 @@ a{
 }
 
 #main{
-    position:fixed;
     width: 100%;
-    height: 100%;
+    height: fit-content;
     transform: translate(200px);
     padding-left: 35px;
+    overflow-y: scroll;
 }
 
 #main h2{

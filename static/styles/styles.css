@@ -8,6 +8,10 @@
     align-items: stretch;
 }
 
+#sidenav-button{
+    position: absolute;
+}
+
 #sidenav .tree-view{
     overflow-y: scroll;
     width: 100%;

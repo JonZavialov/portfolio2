@@ -70,19 +70,49 @@ async function boot(){
 }
 
 async function loadNav(){
-    navBarHTML = `
+    navBarDesktop = `
         <ul class=\"tree-view\">
             <li><a href=\"/home\">Home</a></li>
             <li><a href=\"https://github.com/JonZavialov/portfolio2\" target=\"_blank\">Repository</a></li>
         </ul>
-    `
-
+    ` 
     navBar = await document.getElementById("sidenav")
-    navBar.innerHTML += navBarHTML
+
+    if(!detectMob()){
+        navBar.innerHTML += navBarDesktop
+    }else{
+        transformToMobile()
+    }
+}
+
+async function transformToMobile(){
+    navBar = await document.getElementById("sidenav")
+    mainDiv = await document.getElementById("main")
+
+    mainDiv.style.transform = "translate(0px)"
+    navBar.innerHTML += `
+    
+    `
 }
 
 async function closeWindow(windowID){
     document.getElementById(windowID).remove()
+}
+
+function detectMob() {
+    const toMatch = [
+        /Android/i,
+        /webOS/i,
+        /iPhone/i,
+        /iPad/i,
+        /iPod/i,
+        /BlackBerry/i,
+        /Windows Phone/i
+    ]
+    
+    return toMatch.some((toMatchItem) => {
+        return navigator.userAgent.match(toMatchItem)
+    })
 }
 
 async function sleep(ms){

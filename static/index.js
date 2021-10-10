@@ -88,6 +88,18 @@ async function loadDesktopNav(){
     navBar.innerHTML += navBarDesktop
 }
 
+async function loadMobileNav(){
+    let navBarMobile = `
+        <ul class=\"tree-view\">
+        <li><button onclick=\"closeMobileNav()\"><img src=\"https://github.com/JonZavialov/portfolio2/blob/main/assets/close-icon.png?raw=true\"></button></li>    
+        <li><a href=\"/home\">Home</a></li>
+            <li><a href=\"https://github.com/JonZavialov/portfolio2\" target=\"_blank\">Repository</a></li>
+        </ul>
+    ` 
+    let navBar = await document.getElementById("sidenav")
+    navBar.innerHTML += navBarMobile
+}
+
 async function transformToMobile(){
     let mainDiv = await document.getElementById("main")
     let body = await document.getElementById("body")
@@ -108,12 +120,22 @@ async function transformToMobile(){
 async function genMobileNav(){
     let body = await document.getElementById("body")
     let sidenavButton = await document.getElementById("sidenav-button")
+    let sidenav = await document.getElementById("sidenav")
 
     sidenavButton.remove()
-    loadDesktopNav()
+    await loadMobileNav()
+}
+
+async function closeMobileNav(){
+    body.innerHTML = `
+        <div id=\"sidenav-button\"><button onclick=\"genMobileNav()\"><img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/nav-icon.png?raw=true"></button></div>
+    ` + body.innerHTML
+    let navBar = await document.getElementById("sidenav")
+    navBar.innerHTML = ""
 }
 
 async function closeWindow(windowID){
+    console.log(`closing ${windowID}`)
     document.getElementById(windowID).remove()
 }
 

@@ -103,6 +103,7 @@ async function loadMobileNav(){
 async function transformToMobile(){
     let mainDiv = await document.getElementById("main")
     let body = await document.getElementById("body")
+    let aboutme = await document.getElementById("aboutme")
     let allWindows = await document.getElementsByClassName("window")
 
 
@@ -110,17 +111,25 @@ async function transformToMobile(){
         allWindows[i].style.margin = "0"
     }
 
-    mainDiv.style.transform = "translate(0px)"
-    mainDiv.style.paddingLeft = "0px"
+    if(mainDiv){
+        mainDiv.style.transform = "translate(0px)"
+        mainDiv.style.paddingLeft = "0px"
+    }
+
+    if(aboutme){
+        aboutme.style.width = "90%"
+        aboutme.style.marginTop = "30px"
+        aboutme.style.marginLeft = "auto"
+        aboutme.style.marginRight = "auto"
+    }
+    
     body.innerHTML = `
         <div id=\"sidenav-button\"><button onclick=\"genMobileNav()\"><img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/nav-icon.png?raw=true"></button></div>
     ` + body.innerHTML
 }
 
 async function genMobileNav(){
-    let body = await document.getElementById("body")
     let sidenavButton = await document.getElementById("sidenav-button")
-    let sidenav = await document.getElementById("sidenav")
 
     sidenavButton.remove()
     await loadMobileNav()

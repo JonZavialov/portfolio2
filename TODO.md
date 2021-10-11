@@ -19,3 +19,5 @@
 ✔️ 10. make 404 page look like a windows error popup
 
 11. deny access for mobile devices
+
+12. 7css right click menu

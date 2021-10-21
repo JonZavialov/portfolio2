@@ -11,6 +11,10 @@
 
 #aboutme{
     position: absolute;
+    top: 45%;
+    left: 40%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
 }
 
 #sidenav-button{

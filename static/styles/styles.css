@@ -82,3 +82,16 @@ a{
     margin-right: -50%;
     transform: translate(-50%, -50%)
 }
+
+#icon{
+    padding-top: 20px;
+    width: fit-content;
+    text-align: center;
+}
+
+#icon p{
+    margin-top: 3px;
+    margin-bottom: 3px;
+    font-family: "Pixelated MS Sans Serif",Arial;
+    color: white
+}

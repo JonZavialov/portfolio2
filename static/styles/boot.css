@@ -4,6 +4,7 @@ body{
     font-family: 'IBM VGA 8x16';
     font-size: 20px;
     line-height: 120%;
+    overflow: hidden;
 }
 
 @font-face {

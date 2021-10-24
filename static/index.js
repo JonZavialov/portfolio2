@@ -85,8 +85,31 @@ async function load(){
 }
 
 async function transformToMobile(){
-    //tranform to mobile
-    loadDesktopNav() //remove this later
+    var doc = document.getElementById("body")
+    doc.style.backgroundColor = "black"
+    doc.innerHTML= `
+    <div id=\"error\">
+        <div id = "errorWindow" class="window" style="margin: 32px; width: 250px">
+        <div class="title-bar">
+        <div class="title-bar-text">
+            Jonathan Zavialov
+        </div>
+
+        <div class="title-bar-controls">
+            <button aria-label="Minimize"></button>
+            <button aria-label="Maximize"></button>
+            <button onclick="closeWindow('errorWindow')" aria-label="Close"></button>
+        </div>
+        </div>
+        <div class="window-body">
+        <p>This website is only available on desktop.</p>
+        <section class="field-row" style="justify-content: flex-end">
+            <button onclick="closeWindow('error')">OK</button>
+        </section>
+        </div>
+        </div>
+    </div>
+    `
 }
 
 async function loadDesktopNav(){

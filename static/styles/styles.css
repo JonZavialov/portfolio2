@@ -32,7 +32,7 @@
 }
 
 body{
-    background-color: #C0C0C0;
+    background-color: #acacac;
     height:100%;
     margin: 0;
     width:100%;
@@ -97,4 +97,11 @@ a{
     margin-bottom: 3px;
     font-family: "Pixelated MS Sans Serif",Arial;
     color: white
+}
+
+#taskbar{
+    width: calc(100% - 7px);
+    transform: translate(-34px);
+    bottom: 0;
+    position: fixed;
 }

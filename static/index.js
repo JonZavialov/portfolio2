@@ -150,6 +150,21 @@ async function removeBorders(){
     }
 }
 
+async function date(){
+    let dateDisplay = document.getElementById("ticker")
+    
+    var i = 1
+    function dateLoop(){
+        setTimeout(function(){
+            let date = new Date().toLocaleTimeString()
+            dateDisplay.innerHTML = date
+            i++
+            dateLoop()
+        }, 1000)
+    }
+    dateLoop()
+}
+
 function detectMob() {
     const toMatch = [
         /Android/i,

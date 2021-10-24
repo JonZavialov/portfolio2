@@ -124,5 +124,20 @@ a{
     box-shadow: inset -1px -1px #ffffff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px #808080;
     position: absolute;
     right: 0;
-    transform: translate(-10px, -30px);
+    transform: translate(-5px, -34px);
+    height: 34px;
+    padding: 0;
+    width: 100px;
+}
+
+#time img{
+    float: left;
+    width: 25px;
+    padding-left: 7px;
+    padding-bottom: 2px;
+}
+
+#ticker{
+    margin: 0;
+    padding-top: 6px;
 }

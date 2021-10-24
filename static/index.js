@@ -74,6 +74,11 @@ async function addIconProperties(){
     for( i=0; i<icons.length; i++ ) {
         icons[i].setAttribute( "onclick", `border(\"${icons[i].className}\")` )
     }
+
+    document.addEventListener("click", function(event) {
+        if (event.target.closest("#icon")) return
+        removeBorders()
+    })
 }
 
 async function load(){
@@ -130,15 +135,18 @@ async function closeWindow(windowID){
 
 async function border(name){
     let icon = document.getElementsByClassName(name)[0]
-    if(icon.style.borderColor == "transparent" || icon.style.borderColor == ""){ 
-        var icons = document.querySelectorAll( '[id^=icon]' )
-        for( i=0; i<icons.length; i++ ) {
-            icons[i].style.borderColor = "transparent"
-        }
-        
+    if(icon.style.borderColor == "transparent" || icon.style.borderColor == ""){
+        removeBorders()
         icon.style.borderColor = "white"
     }else{
         icon.style.borderColor = "transparent"
+    }
+}
+
+async function removeBorders(){
+    var icons = document.querySelectorAll( '[id^=icon]' )
+    for( i=0; i<icons.length; i++ ) {
+        icons[i].style.borderColor = "transparent"
     }
 }
 

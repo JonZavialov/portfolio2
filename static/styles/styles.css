@@ -105,3 +105,24 @@ a{
     bottom: 0;
     position: fixed;
 }
+
+#startButton{
+    width: fit-content;
+    display: flex;
+}
+
+#startButton img{
+    width: 25px;
+    padding: 3px;
+}
+
+#taskbarBody{
+    margin: 2px
+}
+
+#time{
+    box-shadow: inset -1px -1px #ffffff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px #808080;
+    position: absolute;
+    right: 0;
+    transform: translate(-10px, -30px);
+}

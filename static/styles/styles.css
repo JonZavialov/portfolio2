@@ -84,9 +84,12 @@ a{
 }
 
 #icon{
-    padding-top: 20px;
+    margin-top: 20px;
     width: fit-content;
     text-align: center;
+    border-style: dotted;
+    border-color: transparent;
+    padding: 2px;
 }
 
 #icon p{

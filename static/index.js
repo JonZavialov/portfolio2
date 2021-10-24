@@ -69,12 +69,24 @@ async function boot(){
     myLoop()
 }
 
+async function addIconProperties(){
+    var icons = document.querySelectorAll( '[id^=icon]' )
+    for( i=0; i<icons.length; i++ ) {
+        icons[i].setAttribute( "onclick", `border(\"${icons[i].className}\")` )
+    }
+}
+
 async function load(){
     if(!detectMob()){
         loadDesktopNav()
     }else{
         transformToMobile()
     }
+}
+
+async function transformToMobile(){
+    //tranform to mobile
+    loadDesktopNav() //remove this later
 }
 
 async function loadDesktopNav(){
@@ -88,64 +100,23 @@ async function loadDesktopNav(){
     navBar.innerHTML += navBarDesktop
 }
 
-async function loadMobileNav(){
-    let navBarMobile = `
-        <ul class=\"tree-view\">
-        <li><button onclick=\"closeMobileNav()\"><img src=\"https://github.com/JonZavialov/portfolio2/blob/main/assets/close-icon.png?raw=true\"></button></li>    
-        <li><a href=\"/home\">Home</a></li>
-            <li><a href=\"https://github.com/JonZavialov/portfolio2\" target=\"_blank\">Repository</a></li>
-        </ul>
-    ` 
-    let navBar = await document.getElementById("sidenav")
-    navBar.innerHTML += navBarMobile
-}
-
-async function transformToMobile(){
-    let mainDiv = await document.getElementById("main")
-    let body = await document.getElementById("body")
-    let aboutme = await document.getElementById("aboutme")
-    let allWindows = await document.getElementsByClassName("window")
-
-
-    for (var i = 0; i < allWindows.length; i++) {
-        allWindows[i].style.margin = "0"
-    }
-
-    if(mainDiv){
-        mainDiv.style.transform = "translate(0px)"
-        mainDiv.style.paddingLeft = "0px"
-    }
-
-    if(aboutme){
-        aboutme.style.width = "90%"
-        aboutme.style.marginTop = "30px"
-        aboutme.style.marginLeft = "auto"
-        aboutme.style.marginRight = "auto"
-    }
-    
-    body.innerHTML = `
-        <div id=\"sidenav-button\"><button onclick=\"genMobileNav()\"><img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/nav-icon.png?raw=true"></button></div>
-    ` + body.innerHTML
-}
-
-async function genMobileNav(){
-    let sidenavButton = await document.getElementById("sidenav-button")
-
-    sidenavButton.remove()
-    await loadMobileNav()
-}
-
-async function closeMobileNav(){
-    body.innerHTML = `
-        <div id=\"sidenav-button\"><button onclick=\"genMobileNav()\"><img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/nav-icon.png?raw=true"></button></div>
-    ` + body.innerHTML
-    let navBar = await document.getElementById("sidenav")
-    navBar.innerHTML = ""
-}
-
 async function closeWindow(windowID){
     console.log(`closing ${windowID}`)
     document.getElementById(windowID).remove()
+}
+
+async function border(name){
+    let icon = document.getElementsByClassName(name)[0]
+    if(icon.style.borderColor == "transparent" || icon.style.borderColor == ""){ 
+        var icons = document.querySelectorAll( '[id^=icon]' )
+        for( i=0; i<icons.length; i++ ) {
+            icons[i].style.borderColor = "transparent"
+        }
+        
+        icon.style.borderColor = "white"
+    }else{
+        icon.style.borderColor = "transparent"
+    }
 }
 
 function detectMob() {

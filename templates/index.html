@@ -8,6 +8,7 @@
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
     <script src="{{url_for('static', filename='js/pageMethods.js')}}"></script>
     <script src="{{url_for('static', filename='js/load.js')}}"></script>
+    <script src="{{url_for('static', filename='js/drawBox.js')}}"></script>
     <link rel="stylesheet" href="https://unpkg.com/98.css">
     <title>Jonathan Zavialov</title>
 </head>
@@ -17,6 +18,7 @@
 	        load()
           addIconProperties()
           date()
+          initDraw(document.getElementById("main"))
         }
     </script>
     <div id="sidenav"></div>

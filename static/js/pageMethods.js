@@ -42,7 +42,7 @@ async function date(){
         setTimeout(function(){
             if(!document.getElementById("ticker")) return
             let date = new Date().toLocaleTimeString()
-            dateDisplay.innerHTML = date
+            dateDisplay.innerHTML = `<b>${date}</b>`
             i++
             dateLoop()
         }, 1000)

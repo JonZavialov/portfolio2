@@ -110,6 +110,8 @@ a{
 #startButton{
     width: fit-content;
     display: flex;
+    padding: 0;
+    padding-left: 3px;
 }
 
 #startButton img{

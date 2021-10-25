@@ -30,6 +30,7 @@ function initDraw() {
     }
 
     canvas.onmousedown = function (e) {
+        if(e.button != 0) return
         if(e.target.closest("#icon") || e.target.closest("#aboutme") || e.target.closest("#taskbar")) return
         mouse.startX = mouse.x
         mouse.startY = mouse.y

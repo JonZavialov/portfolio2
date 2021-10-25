@@ -88,7 +88,8 @@ a{
     top: 45%;
     left: 50%;
     margin-right: -50%;
-    transform: translate(-50%, -50%)
+    transform: translate(-50%, -50%);
+    z-index: 100;
 }
 
 #icon{
@@ -139,7 +140,7 @@ a{
     transform: translate(-5px, -34px);
     height: 34px;
     padding: 0;
-    width: 100px;
+    width: 110px;
 }
 
 #time img{
@@ -158,4 +159,11 @@ a{
     border: 1px solid #0078D7;
     position: absolute;
     background: rgba(170, 204, 238, .3);
+}
+
+#rightClickMenu{
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    z-index: 101;
 }

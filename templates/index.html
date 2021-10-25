@@ -9,16 +9,18 @@
     <script src="{{url_for('static', filename='js/pageMethods.js')}}"></script>
     <script src="{{url_for('static', filename='js/load.js')}}"></script>
     <script src="{{url_for('static', filename='js/drawBox.js')}}"></script>
+    <script src="{{url_for('static', filename='js/rightClickMenu.js')}}"></script>
     <link rel="stylesheet" href="https://unpkg.com/98.css">
     <title>Jonathan Zavialov</title>
 </head>
 <body id="body">
     <script>
         window.onload=function(){
-	        load()
+	        render()
           addIconProperties()
           date()
           initDraw(document.getElementById("main"))
+          rightClick()
         }
     </script>
     <div id="sidenav"></div>
@@ -39,10 +41,10 @@
               </div>
             </div>
             <div class="window-body">
-                <p style="font-size: 14px;">
+                <p style="font-size: 16px;">
                     I am a Full Stack Developer with a passion for Computer Science. 
                     I began learning how to code at a young age, when I was in 9th grade.
-                    Since then I've learned a vast variety of skills within anything that
+                    Since then I've learned a variety of skills within anything that
                     interests me including Python, Javascript, Java, TypeScript, ReactJS,
                     Flask, and more recently creating websites such as this one. I code almost
                     every day, jumping from project to project so I can learn something new 

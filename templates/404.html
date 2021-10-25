@@ -7,7 +7,9 @@
     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/styles.css') }}">
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
     <script src="{{url_for('static', filename='js/pageMethods.js')}}"></script>
+    <script src="{{url_for('static', filename='js/drawBox.js')}}"></script>
     <script src="{{url_for('static', filename='js/load.js')}}"></script>
+    <script src="{{url_for('static', filename='js/rightClickMenu.js')}}"></script>
     <link rel="stylesheet" href="https://unpkg.com/98.css">
     <title>Jonathan Zavialov</title>
 </head>
@@ -15,7 +17,9 @@
     <script>
         window.onload=function(){
 	        load()
+          initDraw()
           addIconProperties()
+          rightClick()
         }
     </script>
     <div id="sidenav"></div>

@@ -1,4 +1,4 @@
-async function load(){
+async function render(){
     if(!detectMob()){
         loadDesktopNav()
     }else{
@@ -60,3 +60,4 @@ function detectMob() {
         return navigator.userAgent.match(toMatchItem)
     })
 }
+

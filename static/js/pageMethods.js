@@ -24,7 +24,39 @@ async function border(name){
         icon.style.borderColor = "white"
     }else{
         icon.style.borderColor = "transparent"
+        
+        if (icon.className == "jonpng"){
+            jonpng()
+        }
     }
+}
+
+async function jonpng(){
+    let main = document.getElementById('main')
+    let element = document.createElement('div')
+    element.className = "window"
+    element.id = "jonpng"
+    element.style.width = "fit-content"
+    element.innerHTML = `
+    <div class="title-bar">
+        <div class="title-bar-text">
+        Welcome to my website
+        </div>
+
+        <div class="title-bar-controls">
+            <button aria-label="Minimize"></button>
+            <button aria-label="Maximize"></button>
+            <button onclick="closeWindow('jonpng')" aria-label="Close"></button>
+        </div>
+    </div>
+    <div class="window-body">
+        <img style="width: 100px" src="https://www.madd.org/wp-content/uploads/2019/02/blank-profile-picture-973460_640.png">
+        <section class="field-row" style="justify-content: flex-end">
+        <button onclick="closeWindow('jonpng')">OK</button>
+        </section>
+    </div>
+    `
+    main.appendChild(element)
 }
 
 async function removeBorders(){

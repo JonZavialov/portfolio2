@@ -1,24 +1,26 @@
 function initDraw() {
     let canvas = document.getElementById("main")
     let body = document.getElementById("body")
-    
+    if(!canvas) return
+
     var mouse = {
         x: 0,
         y: 0,
         startX: 0,
         startY: 0
-    };
+    }
+
     function setMousePosition(e) {
         var ev = e || window.event; //Moz || IE
         if (ev.pageX) { //Moz
             mouse.x = ev.pageX + window.pageXOffset - 216
             mouse.y = ev.pageY + window.pageYOffset - 10
         }
-    };
+    }
 
-    var element = null;    
+    var element = null
     canvas.onmousemove = function (e) {
-        setMousePosition(e);
+        setMousePosition(e)
         if (element !== null) {
             element.style.width = Math.abs(mouse.x - mouse.startX) + 'px'
             element.style.height = Math.abs(mouse.y - mouse.startY) + 'px'

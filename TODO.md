@@ -24,3 +24,5 @@
 12. 7css right click menu
 
 13. make windows BSOD for mobile access
+
+14. https://www.hongkiat.com/blog/custom-context-menu-justcontext/

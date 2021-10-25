@@ -26,3 +26,5 @@
 13. make windows BSOD for mobile access
 
 14. https://www.hongkiat.com/blog/custom-context-menu-justcontext/
+
+15. add jon.png to desktop that opens picture of jon

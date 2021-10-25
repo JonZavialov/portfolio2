@@ -37,10 +37,11 @@ async function jonpng(){
     element.className = "window"
     element.id = "jonpng"
     element.style.width = "fit-content"
+    element.style.height = "fit-content"
     element.innerHTML = `
     <div class="title-bar">
         <div class="title-bar-text">
-        Welcome to my website
+        jon.png
         </div>
 
         <div class="title-bar-controls">
@@ -52,7 +53,6 @@ async function jonpng(){
     <div class="window-body">
         <img style="width: 100px" src="https://www.madd.org/wp-content/uploads/2019/02/blank-profile-picture-973460_640.png">
         <section class="field-row" style="justify-content: flex-end">
-        <button onclick="closeWindow('jonpng')">OK</button>
         </section>
     </div>
     `

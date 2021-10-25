@@ -162,8 +162,20 @@ a{
 }
 
 #rightClickMenu{
-    height: 100px;
-    width: 100px;
     position: absolute;
     z-index: 101;
+    padding: 2px;
+}
+
+#menuItem{
+    padding-left: 20px;
+    padding-right: 40px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    margin: 0
+}
+
+#menuItem:hover{
+    background-color: #000079;
+    color: white;
 }

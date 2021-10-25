@@ -22,7 +22,17 @@ async function renderRightClick(){
     element.className = "window"
     element.id = "rightClickMenu"
     element.innerHTML = `
-    <div class="window-body" id="taskbarBody">
+    <div class="window-body">
+        <p id="menuItem">Arrange Icons</p>
+        <p id="menuItem">Line up Icons</p>
+        <hr>
+        <p id="menuItem">Paste</p>
+        <p id="menuItem">Paste Shortcut</p>
+        <p id="menuItem">Undo</p>
+        <hr>
+        <p id="menuItem">New</p>
+        <hr>
+        <p id="menuItem">Properties</p>
     </div>
     `
     element.style.left = window.event.pageX + window.pageXOffset + 'px'

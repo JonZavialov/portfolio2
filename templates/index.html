@@ -10,6 +10,7 @@
     <script src="{{url_for('static', filename='js/load.js')}}"></script>
     <script src="{{url_for('static', filename='js/drawBox.js')}}"></script>
     <script src="{{url_for('static', filename='js/rightClickMenu.js')}}"></script>
+    <script src="{{url_for('static', filename='js/startMenu.js')}}"></script>
     <link rel="stylesheet" href="https://unpkg.com/98.css">
     <title>Jonathan Zavialov</title>
 </head>
@@ -73,7 +74,7 @@
 
         <div class="window" id="taskbar">
           <div class="window-body" id="taskbarBody">
-            <button id="startButton"><img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/windows_logo.png?raw=true"><p><b>Start</b></p></button>
+            <button id="startButton" onclick="startMenu()"><img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/windows_logo.png?raw=true"><p><b>Start</b></p></button>
             <button id="time"><img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/clock.png?raw=true"><p id="ticker"></p></button>
           </div>
         </div>

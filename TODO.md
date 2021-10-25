@@ -8,7 +8,7 @@
 
  5. make personal picture have retro style
  
- 6. desktop styled homepage?
+✔️ 6. desktop styled homepage?
  
 ✔️ 7. use php to generate nav bar
 
@@ -19,9 +19,9 @@
  
 ✔️ 10. make 404 page look like a windows error popup
 
-11. deny access for mobile devices
+✔️ 11. deny access for mobile devices
 
-12. 7css right click menu
+✔️ 12. 7css right click menu
 
 13. make windows BSOD for mobile access
 

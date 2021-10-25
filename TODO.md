@@ -22,3 +22,5 @@
 11. deny access for mobile devices
 
 12. 7css right click menu
+
+13. make windows BSOD for mobile access

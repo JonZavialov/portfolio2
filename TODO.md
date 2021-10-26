@@ -33,5 +33,10 @@
 
 ✔️ 17. make windows movable
 
-19. make 404 page window movable
 ✔️ 18. make mobile BSOD bigger
+
+19. make 404 page window movable
+
+20. make start menu
+
+21. add icons to taskbar

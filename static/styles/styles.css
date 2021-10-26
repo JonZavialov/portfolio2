@@ -191,4 +191,5 @@ a{
 
 #jonpng{
     position: absolute;
+    z-index: 99;
 }

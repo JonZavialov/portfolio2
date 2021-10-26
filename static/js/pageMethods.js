@@ -52,7 +52,7 @@ async function jonpng(){
         </div>
     </div>
     <div class="window-body">
-        <img style="width: 100px" src="https://www.madd.org/wp-content/uploads/2019/02/blank-profile-picture-973460_640.png">
+        <img style="width: 200px" src="https://github.com/JonZavialov/portfolio2/blob/main/assets/jon.png?raw=true">
         <section class="field-row" style="justify-content: flex-end">
         </section>
     </div>

@@ -27,6 +27,8 @@
 
 14. https://www.hongkiat.com/blog/custom-context-menu-justcontext/
 
-15. add jon.png to desktop that opens picture of jon
+✔️ 15. add jon.png to desktop that opens picture of jon
 
-16. make right click context menu text not selectable
+✔️ 16. make right click context menu text not selectable
+
+17. make windows movable

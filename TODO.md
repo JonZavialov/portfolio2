@@ -12,7 +12,7 @@
  
 ✔️ 7. use php to generate nav bar
 
- 8. make the website look good on mobile 
+✔️ 8. make the website look good on mobile 
  
  9. cmd emulator
        https://js-dos.com/v7/build/docs/iframe
@@ -23,7 +23,7 @@
 
 ✔️ 12. 7css right click menu
 
-13. make windows BSOD for mobile access
+✔️ 13. make windows BSOD for mobile access
 
 14. https://www.hongkiat.com/blog/custom-context-menu-justcontext/
 
@@ -33,4 +33,4 @@
 
 ✔️ 17. make windows movable
 
-18. make mobile BSOD bigger
+✔️ 18. make mobile BSOD bigger

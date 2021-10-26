@@ -8,30 +8,39 @@ async function render(){
 
 async function transformToMobile(){
     var doc = document.getElementById("body")
-    doc.style.backgroundColor = "black"
+    doc.id = "bsodBody"
     doc.innerHTML= `
-    <div id=\"error\">
-        <div id = "errorWindow" class="window" style="margin: 32px; width: 250px">
-        <div class="title-bar">
-        <div class="title-bar-text">
-            Jonathan Zavialov
-        </div>
-
-        <div class="title-bar-controls">
-            <button aria-label="Minimize"></button>
-            <button aria-label="Maximize"></button>
-            <button onclick="closeWindow('errorWindow')" aria-label="Close"></button>
-        </div>
-        </div>
-        <div class="window-body">
-        <p>This website is only available on desktop.</p>
-        <section class="field-row" style="justify-content: flex-end">
-            <button onclick="closeWindow('error')">OK</button>
-        </section>
-        </div>
-        </div>
-    </div>
+    <p id="bsodHeader">
+    System Error
+    </p>
+    <p id="bsodCentered">
+    A fatal exception 0E76534801 has occured at 0027:C87123 
+    in VXD VMM. Operating system has been stopped to prevent
+    damage to your computer.
+    </p>
+    <p id="bsodBottom">
+    * This website is only available on mobile.<br><br>
+    * Sorry!
+    </p>
+    <p id="bsodFooter">
+    Press any key to continue
+    </p>
     `
+    let footer = document.getElementById("bsodFooter")
+    var i = 0
+    function myLoop(){                             
+        setTimeout(async function() {
+            i++
+            if(i%2==0){
+                footer.innerHTML = footer.innerHTML.slice(0, -6) + '_'
+            }else{
+                footer.innerHTML = footer.innerHTML.slice(0, -1) + "&nbsp"
+            }
+            myLoop()
+        }, 300)
+    }
+
+    myLoop()
 }
 
 async function loadDesktopNav(){
@@ -61,3 +70,10 @@ function detectMob() {
     })
 }
 
+async function sleep(ms){
+    return new Promise((resolve,reject)=>{
+        setTimeout(async function() {
+            resolve()
+        },ms)
+    })
+}

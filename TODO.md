@@ -40,3 +40,5 @@
 20. make start menu
 
 21. add icons to taskbar
+
+22. fix bug with opening multiple windows

@@ -57,7 +57,8 @@ a{
     background-color: #008080;
     margin-top: 8px;
     box-sizing: border-box;
-    overflow: auto;
+    overflow-y: hidden;
+    overflow-x: hidden;
 
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -186,4 +187,8 @@ a{
 #menuItem:hover{
     background-color: #000079;
     color: white;
+}
+
+#jonpng{
+    position: absolute;
 }

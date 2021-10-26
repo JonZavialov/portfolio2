@@ -26,7 +26,8 @@ async function border(name){
         icon.style.borderColor = "transparent"
         
         if (icon.className == "jonpng"){
-            jonpng()
+            await jonpng()
+            dragElement(document.getElementById("jonpng"),0)
         }
     }
 }
@@ -39,7 +40,7 @@ async function jonpng(){
     element.style.width = "fit-content"
     element.style.height = "fit-content"
     element.innerHTML = `
-    <div class="title-bar">
+    <div id="jonpngheader" class="title-bar">
         <div class="title-bar-text">
         jon.png
         </div>

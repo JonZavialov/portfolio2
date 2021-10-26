@@ -25,17 +25,17 @@
 }
 
 #bsodCentered {
-    width: 37%;
-    transform: translate(140px, 70px);
+    width: 70%;
+    transform: translate(60px, 70px);
 }
 
 #bsodBottom {
-    width: 37%;
-    transform: translate(140px, 80px);
+    width: 50%;
+    transform: translate(110px, 80px);
 }
 
 #bsodFooter {
     text-align: center;
-    width: 37%;
-    transform: translate(140px, 90px);
+    width: 50%;
+    transform: translate(90px, 90px);
 }

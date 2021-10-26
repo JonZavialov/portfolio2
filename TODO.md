@@ -32,3 +32,5 @@
 ✔️ 16. make right click context menu text not selectable
 
 ✔️ 17. make windows movable
+
+18. make mobile BSOD bigger

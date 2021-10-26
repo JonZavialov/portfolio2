@@ -23,6 +23,8 @@ async function renderRightClick(){
     element.id = "rightClickMenu"
     element.innerHTML = `
     <div class="window-body">
+        <p onclick="location.reload()" id="menuItem">Reload</p>
+        <hr>
         <p id="menuItem">Arrange Icons</p>
         <p id="menuItem">Line up Icons</p>
         <hr>

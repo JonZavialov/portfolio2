@@ -116,7 +116,7 @@ a{
     transform: translate(-34px);
     bottom: 0;
     position: fixed;
-    z-index: 99;
+    z-index: 100;
 }
 
 #startButton{

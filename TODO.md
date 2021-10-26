@@ -6,7 +6,7 @@
 
 ✔️ 4. Top nav instead of side
 
- 5. make personal picture have retro style
+✔️ 5. make personal picture have retro style
  
 ✔️ 6. desktop styled homepage?
  
@@ -31,4 +31,4 @@
 
 ✔️ 16. make right click context menu text not selectable
 
-17. make windows movable
+✔️ 17. make windows movable

@@ -7,6 +7,7 @@
 
 #bsodBody{
     font-family: 'IBM VGA 8x16';
+    font-size: 17px;
     color: white;
     background-color: #000FBC;
     overflow-y: hidden;
@@ -18,24 +19,25 @@
     background-color: white;
     color: #000FBC;
     position: absolute;
-    left: 53%;
+    left: 50%;
     margin-right: -50%;
     margin-top: 30px;
     transform: translate(-50%, -50%);
+    font-size: 20px;
 }
 
 #bsodCentered {
-    width: 70%;
-    transform: translate(60px, 70px);
+    width: 80%;
+    transform: translate(45px, 70px);
 }
 
 #bsodBottom {
     width: 50%;
-    transform: translate(110px, 80px);
+    transform: translate(90px, 80px);
 }
 
 #bsodFooter {
     text-align: center;
-    width: 50%;
-    transform: translate(90px, 90px);
+    transform: translate(50px, 90px);
+    margin-right: 100px;
 }

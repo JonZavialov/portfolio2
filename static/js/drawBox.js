@@ -20,6 +20,7 @@ function initDraw() {
 
     var element = null
     canvas.onmousemove = function (e) {
+        checkCollide()
         setMousePosition(e)
         if (element !== null) {
             element.style.width = Math.abs(mouse.x - mouse.startX) + 'px'
@@ -48,6 +49,31 @@ function initDraw() {
         var rectangles = document.getElementsByClassName( 'rectangle' )
         for( i=0; i<rectangles.length; i++ ) {
             rectangles[i].remove()
+        }
+    }
+}
+
+doElsCollide = function(el1, el2) {
+    if(!el1 || !el2) return
+    el1.offsetBottom = el1.offsetTop + el1.offsetHeight
+    el1.offsetRight = el1.offsetLeft + el1.offsetWidth
+    el2.offsetBottom = el2.offsetTop + el2.offsetHeight
+    el2.offsetRight = el2.offsetLeft + el2.offsetWidth
+
+    return !((el1.offsetBottom < el2.offsetTop) ||
+             (el1.offsetTop > el2.offsetBottom) ||
+             (el1.offsetRight < el2.offsetLeft) ||
+             (el1.offsetLeft > el2.offsetRight))
+}
+
+async function checkCollide(){
+    var icons = document.querySelectorAll( '[id^=icon]' )
+    for( i=0; i<icons.length; i++ ) {
+        let collide = doElsCollide(document.getElementsByClassName("rectangle")[0],icons[i])
+        if(collide){
+            if(icons[i].style.borderColor == "transparent" || icons[i].style.borderColor == ""){
+                icons[i].style.borderColor = "white"
+            }
         }
     }
 }

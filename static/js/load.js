@@ -19,7 +19,7 @@ async function transformToMobile(){
     damage to your computer.
     </p>
     <p id="bsodBottom">
-    * This website is only available on mobile.<br><br>
+    * This website is only available on desktop computers.<br><br>
     * Sorry!
     </p>
     <p id="bsodFooter">

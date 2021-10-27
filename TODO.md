@@ -41,8 +41,8 @@
 
 21. add icons to taskbar
 
-22. fix bug with opening multiple windows
+✔️ 22. fix bug with opening multiple windows
 
-23. change mobile to desktop on BSOD
+✔️ 23. change mobile to desktop on BSOD
 
-24. add BSOD css to 404 page
+✔️ 24. add BSOD css to 404 page

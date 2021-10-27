@@ -17,6 +17,12 @@ async function closeWindow(windowID){
     document.getElementById(windowID).remove()
 }
 
+async function closeClassWindow(windowClass){
+    let element = document.getElementsByClassName(windowClass)[0]
+    console.log(`closing ${element.id}`)
+    element.remove()
+}
+
 async function border(name){
     let icon = document.getElementsByClassName(name)[0]
     if(icon.style.borderColor == "transparent" || icon.style.borderColor == ""){
@@ -26,21 +32,22 @@ async function border(name){
         icon.style.borderColor = "transparent"
         
         if (icon.className == "jonpng"){
-            await jonpng()
-            dragElement(document.getElementById("jonpng"),0)
+            jonpng()
         }
     }
 }
 
 async function jonpng(){
+    let numOfPngWindows = document.getElementsByClassName("jonpngWindow").length
+
     let main = document.getElementById('main')
     let element = document.createElement('div')
-    element.className = "window"
+    element.className += `jonpng${numOfPngWindows} window jonpngWindow`
     element.id = "jonpng"
     element.style.width = "fit-content"
     element.style.height = "fit-content"
     element.innerHTML = `
-    <div id="jonpngheader" class="title-bar">
+    <div id="jonpngheader" class="title-bar jonpng${numOfPngWindows}header">
         <div class="title-bar-text">
         jon.png
         </div>
@@ -48,7 +55,7 @@ async function jonpng(){
         <div class="title-bar-controls">
             <button aria-label="Minimize"></button>
             <button aria-label="Maximize"></button>
-            <button onclick="closeWindow('jonpng')" aria-label="Close"></button>
+            <button onclick="closeClassWindow('jonpng${numOfPngWindows}')" aria-label="Close"></button>
         </div>
     </div>
     <div class="window-body">
@@ -57,7 +64,8 @@ async function jonpng(){
         </section>
     </div>
     `
-    main.appendChild(element)
+    await main.appendChild(element)
+    dragElement(document.getElementsByClassName(`jonpng${numOfPngWindows}`)[0],0,true)
 }
 
 async function removeBorders(){

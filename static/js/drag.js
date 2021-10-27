@@ -3,11 +3,12 @@ function dragElement(elmnt,offsetNum,isClass = false) {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
     let indentifier
     if(isClass){
-      indentifier = document.getElementsByClassName(elmnt.className + "header")[0]
+      let jonpngClassName = elmnt.className.replace(/ .*/,'')
+      indentifier = document.getElementsByClassName(jonpngClassName + "header")[0]
     }else{
       indentifier = document.getElementById(elmnt.id + "header")
     }
-  
+    
     if (indentifier) {
       // if present, the header is where you move the DIV from:
       indentifier.onmousedown = dragMouseDown;

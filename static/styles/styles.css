@@ -193,3 +193,15 @@ a{
     position: absolute;
     z-index: 99;
 }
+
+#startMenu{
+    position: absolute;
+    height: 400px;
+    width: 200px;
+    bottom:0 ;
+    left: 0;
+}
+
+#startMenu .title-bar {
+    transform: rotate(-90deg);
+}

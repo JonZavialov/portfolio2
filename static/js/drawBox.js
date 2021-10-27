@@ -31,8 +31,18 @@ function initDraw() {
     }
 
     canvas.onmousedown = function (e) {
+        let noSelect = [
+            "#icon",
+            "#aboutme",
+            "#taskbar",
+            "#jonpng",
+            "#errorWindow",
+            "#startMenu"
+        ]
         if(e.button != 0) return
-        if(e.target.closest("#icon") || e.target.closest("#aboutme") || e.target.closest("#taskbar") || e.target.closest("#jonpng") || e.target.closest("#errorWindow")) return
+        for(let i = 0; i < noSelect.length; i++){
+            if(e.target.closest(noSelect[i])) return
+        }
         mouse.startX = mouse.x
         mouse.startY = mouse.y
         element = document.createElement('div')

@@ -7,6 +7,7 @@
     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/styles.css') }}">
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
     <script src="{{url_for('static', filename='js/pageMethods.js')}}"></script>
+    <script src="{{url_for('static', filename='js/drag.js')}}"></script>
     <script src="{{url_for('static', filename='js/drawBox.js')}}"></script>
     <script src="{{url_for('static', filename='js/load.js')}}"></script>
     <script src="{{url_for('static', filename='js/rightClickMenu.js')}}"></script>
@@ -16,36 +17,35 @@
 <body id="body">
     <script>
         window.onload=function(){
-	  render()
+	        render()
           initDraw()
           addIconProperties()
           rightClick()
+          dragElement(document.getElementById("errorWindow"),32)
         }
     </script>
     <div id="sidenav"></div>
     <div id="main">
-        <div id="error">
-            <div id = "errorWindow" class="window" style="margin: 32px; width: 250px">
-                <div class="title-bar">
-                  <div class="title-bar-text">
-                    Jonathan Zavialov
-                  </div>
-          
-                  <div class="title-bar-controls">
-                    <button aria-label="Minimize"></button>
-                    <button aria-label="Maximize"></button>
-                    <button onclick="closeWindow('errorWindow')" aria-label="Close"></button>
-                  </div>
+          <div id = "errorWindow" class="window" style="margin: 32px; width: 250px">
+              <div class="title-bar">
+                <div class="title-bar-text">
+                  Jonathan Zavialov
                 </div>
-                <div class="window-body">
-                  <p>You're Lost!<br>Click home to return home.</p>
-                  <section class="field-row" style="justify-content: flex-end">
-                    <button onclick="window.location.href ='/home'">Home</button>
-                    <button onclick="closeWindow('error')">OK</button>
-                  </section>
+        
+                <div class="title-bar-controls">
+                  <button aria-label="Minimize"></button>
+                  <button aria-label="Maximize"></button>
+                  <button onclick="closeWindow('errorWindow')" aria-label="Close"></button>
                 </div>
               </div>
-        </div>
-    </div>
+              <div class="window-body">
+                <p>You're Lost!<br>Click home to return home.</p>
+                <section class="field-row" style="justify-content: flex-end">
+                  <button onclick="window.location.href ='/home'">Home</button>
+                  <button onclick="closeWindow('errorWindow')">OK</button>
+                </section>
+              </div>
+            </div>
+      </div>
 </body>
 </html>

@@ -35,7 +35,7 @@
 
 ✔️ 18. make mobile BSOD bigger
 
-19. make 404 page window movable
+✔️ 19. make 404 page window movable
 
 20. make start menu
 

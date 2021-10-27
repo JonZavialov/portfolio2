@@ -85,7 +85,7 @@ a{
     overflow-x: clip;
 }
 
-#error{
+#errorWindow{
     position: absolute;
     top: 45%;
     left: 50%;
@@ -112,8 +112,8 @@ a{
 }
 
 #taskbar{
-    width: calc(100% - 7px);
-    transform: translate(-34px);
+    width: calc(100% - 6px);
+    transform: translate(-35px);
     bottom: 0;
     position: fixed;
     z-index: 100;

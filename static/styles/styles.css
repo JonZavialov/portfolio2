@@ -200,8 +200,15 @@ a{
     width: 200px;
     bottom:0 ;
     left: 0;
+    transform: translate(0px,-44px);
+    z-index: 100;
 }
 
 #startMenu .title-bar {
-    transform: rotate(-90deg);
+    transform: rotate(-90deg) translate(-183px, -199px);
+    width: 394px;
+}
+
+#startMenuBody{
+    margin-left: 12px;
 }

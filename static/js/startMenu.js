@@ -13,7 +13,9 @@ async function startMenu(){
         </div>
     </div>
     <div id="startMenuBody">
-        <p>Souse</p>
+        <div id="startMenuPair">
+            <img src=""
+        </div>
     </div>
     `
     main.appendChild(element)

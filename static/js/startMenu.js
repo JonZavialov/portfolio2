@@ -20,8 +20,8 @@ async function startMenu(){
         </div>
         <hr>
         <div class="hoverHighlight" id="startMenuPair">
-            <img src="src here">
-            <p id=startMenuPairText">Credits</p>
+            <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/credits.png?raw=true">
+            <p id="startMenuPairText">Credits</p>
             <p id="startMenuArrow">&#9654</p>
         </div>
     </div>

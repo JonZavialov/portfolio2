@@ -74,7 +74,7 @@ a{
     margin-bottom: 15px;
 }
 
-#main hr{
+#mainhr{
     margin-top: 0px;
     margin-bottom: 0px;
     width: 600px;
@@ -207,6 +207,10 @@ a{
 #startMenu .title-bar {
     transform: rotate(-90deg) translate(-191px, -190px);
     width: 394px;
+}
+
+#startMenu hr{
+    width: 165px
 }
 
 #startMenuBody{

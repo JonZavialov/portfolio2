@@ -37,7 +37,7 @@
 
 ✔️ 19. make 404 page window movable
 
-20. make start menu
+✔️ 20. make start menu
 
 21. add icons to taskbar
 
@@ -46,3 +46,5 @@
 ✔️ 23. change mobile to desktop on BSOD
 
 ✔️ 24. add BSOD css to 404 page
+
+25. add functions to start menu pairs

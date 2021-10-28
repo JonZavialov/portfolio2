@@ -228,6 +228,7 @@ a{
 
 #startMenuPair img{
     float: left;
+    width: 32px;
 }
 
 #startMenuPairText{

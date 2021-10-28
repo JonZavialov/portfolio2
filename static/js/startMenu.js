@@ -28,6 +28,16 @@ async function startMenu(){
             <p id="startMenuPairText">Instagram</p>
             <p id="startMenuArrow">&#9654</p>
         </div>
+        <div class="hoverHighlight" id="startMenuPair">
+            <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/youtube.png?raw=true">
+            <p id="startMenuPairText">Youtube</p>
+            <p id="startMenuArrow">&#9654</p>
+        </div>
+        <div class="hoverHighlight" id="startMenuPair">
+            <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/documents.png?raw=true">
+            <p id="startMenuPairText">GitHub</p>
+            <p id="startMenuArrow">&#9654</p>
+        </div>
         <hr>
         <div class="hoverHighlight" id="startMenuPair">
             <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/credits.png?raw=true">

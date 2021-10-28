@@ -196,7 +196,7 @@ a{
 
 #startMenu{
     position: absolute;
-    height: 400px;
+    height: 325px;
     width: 200px;
     bottom:0 ;
     left: 0;
@@ -205,8 +205,8 @@ a{
 }
 
 #startMenu .title-bar {
-    transform: rotate(-90deg) translate(-191px, -190px);
-    width: 394px;
+    transform: rotate(-90deg) translate(-153px, -153px);
+    width: 319px;
 }
 
 #startMenu hr{
@@ -223,7 +223,7 @@ a{
     width: fit-content;
     margin-top: 5px;
     display: inline-block;
-    padding-right: 80px;
+    padding-right: 70px;
 }
 
 #startMenuPair img{

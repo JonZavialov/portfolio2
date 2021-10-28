@@ -44,6 +44,12 @@ async function startMenu(){
             <p id="startMenuPairText">Credits</p>
             <p id="startMenuArrow">&#9654</p>
         </div>
+        <hr>
+        <div class="hoverHighlight" id="startMenuPair">
+            <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/shutdown.png?raw=true">
+            <p id="startMenuPairText">Shut Down...</p>
+            <p id="startMenuArrow">&#9654</p>
+        </div>
     </div>
     `
     main.appendChild(element)

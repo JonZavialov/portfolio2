@@ -13,8 +13,16 @@ async function startMenu(){
         </div>
     </div>
     <div id="startMenuBody">
-        <div id="startMenuPair">
-            <img src=""
+        <div class="hoverHighlight" id="startMenuPair">
+            <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/mail.png?raw=true">
+            <p id="startMenuPairText">Email Me</p>
+            <p id="startMenuArrow">&#9654</p>
+        </div>
+        <hr>
+        <div class="hoverHighlight" id="startMenuPair">
+            <img src="src here">
+            <p id=startMenuPairText">Credits</p>
+            <p id="startMenuArrow">&#9654</p>
         </div>
     </div>
     `
@@ -22,14 +30,6 @@ async function startMenu(){
 
     let startButton = document.getElementById("startButton")
     startButton.onclick =function() { closeButton() }
-}
-
-async function startMenuListener(){
-    main.onclick = function (e) {
-        if(e.target.closest("#startMenu") || !document.getElementById("startMenu") || e.target.closest("#startButton")) return
-        console.log('clicked main')
-        closeButton()
-    }
 }
 
 async function closeButton(){

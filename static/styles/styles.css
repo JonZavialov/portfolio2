@@ -184,7 +184,7 @@ a{
     user-select: none;
 }
 
-#menuItem:hover{
+.hoverHighlight:hover{
     background-color: #000079;
     color: white;
 }
@@ -212,4 +212,26 @@ a{
 #startMenuBody{
     margin-left: 25px;
     transform: translate(0px, -20px);
+}
+
+#startMenuPair{
+    height: fit-content;
+    width: fit-content;
+    margin-top: 5px;
+    display: inline-block;
+    padding-right: 80px;
+}
+
+#startMenuPair img{
+    float: left;
+}
+
+#startMenuPairText{
+    float: right;
+    margin-left: 5px;
+}
+
+#startMenuArrow{
+    float: right;
+    transform: translate(120px);
 }

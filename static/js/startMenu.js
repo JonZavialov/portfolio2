@@ -18,6 +18,11 @@ async function startMenu(){
             <p id="startMenuPairText">Email Me</p>
             <p id="startMenuArrow">&#9654</p>
         </div>
+        <div class="hoverHighlight" id="startMenuPair">
+            <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/linkedin.png?raw=true">
+            <p id="startMenuPairText">Linkedin</p>
+            <p id="startMenuArrow">&#9654</p>
+        </div>
         <hr>
         <div class="hoverHighlight" id="startMenuPair">
             <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/credits.png?raw=true">

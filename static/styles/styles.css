@@ -243,3 +243,9 @@ a{
 #credits{
     position: absolute;
 }
+
+#credits p{
+    background-color: white;
+    padding: 5px;
+    margin: 0;
+}

@@ -47,4 +47,6 @@
 
 ✔️ 24. add BSOD css to 404 page
 
-25. add functions to start menu pairs
+✔️ 25. add functions to start menu pairs
+
+26. add credits.txt to desktop

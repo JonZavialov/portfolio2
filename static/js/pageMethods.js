@@ -47,7 +47,8 @@ async function credits(){
     fetch(url)
     .then(res => res.json())
     .then((out) => {
-        let content = encodeURIComponent(atob(out.content))
+        let content = `<p>${atob(out.content)}</p>`
+        content = content.replace(/(?:\r\n|\r|\n)/g, '<br>')
         openWindow(content,"credits","credits.txt",[300,300])
     }) 
 }

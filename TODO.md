@@ -50,3 +50,5 @@
 ✔️ 25. add functions to start menu pairs
 
 ✔️ 26. add credits.txt to desktop
+
+27. add aboutme page

@@ -19,7 +19,7 @@ async function startMenu(){
         </div>
         <div class="hoverHighlight" id="startMenuPair" onclick="startMenuButton('linkedin')">
             <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/linkedin.png?raw=true">
-            <p id="startMenuPairText">Link
+            <p id="startMenuPairText">Linkedin</p>
         </div>
         <div class="hoverHighlight" id="startMenuPair" onclick="startMenuButton('insta')">
             <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/instagram.png?raw=true">

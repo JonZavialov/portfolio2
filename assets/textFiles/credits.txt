@@ -1,15 +1,15 @@
-Welcome to my portfolio website!
-
-https://jonzav.me
-
-98.css by jdan
-    https://jdan.github.io/98.css/
-
-icons by Alex Meub
-    https://win98icons.alexmeub.com/
-
-flask by pallets
-    https://flask.palletsprojects.com/en/2.0.x/
-
-font by int10h
-    https://int10h.org/oldschool-pc-fonts/
+Welcome to my portfolio website!/n
+/n
+https://jonzav.me/n
+/n
+98.css by jdan/n
+    https://jdan.github.io/98.css//n
+/n
+icons by Alex Meub/n
+    https://win98icons.alexmeub.com//n
+/n
+flask by pallets/n
+    https://flask.palletsprojects.com/en/2.0.x//n
+/n
+font by int10h/n
+    https://int10h.org/oldschool-pc-fonts//n

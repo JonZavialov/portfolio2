@@ -38,13 +38,12 @@ async function border(name){
 }
 
 async function jonpng(){
-    let content = "<img style=\"width: 200px\" src=\"https://github.com/JonZavialov/portfolio2/blob/main/assets/jon.png?raw=true\">"
-    openWindow(content,"jonpng","jon.png")
+    let content = "<img style=\"width: 200px\" src=\"https://github.com/JonZavialov/portfolio2/blob/main/assets/images/jon.png?raw=true\">"
+    openWindow(content,"jonpng","jon.png",[100,100])
 }
 
 async function credits(){
-    let content = "insert credits here"
-    openWindow(content,"credits","credits.txt")
+    openTextFile('credits.txt')
 }
 
 async function removeBorders(){
@@ -54,7 +53,7 @@ async function removeBorders(){
     }
 }
 
-async function openWindow(content,name,title){
+async function openWindow(content,name,title,coords){
     //important: name header name+header and 
     let numOfWindows = document.getElementsByClassName(`${name}Window`).length
 
@@ -83,6 +82,8 @@ async function openWindow(content,name,title){
     element.id = name
     element.style.width = "fit-content"
     element.style.height = "fit-content"
+    element.style.left = coords[0] + "px"
+    element.style.top = coords[1] + "px"
     element.innerHTML = html
     await main.appendChild(element)
     dragElement(document.getElementsByClassName(`${name}${numOfWindows}`)[0],0,true)

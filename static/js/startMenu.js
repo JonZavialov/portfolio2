@@ -14,33 +14,33 @@ async function startMenu(){
     </div>
     <div id="startMenuBody">
         <div class="hoverHighlight" id="startMenuPair"  onclick="startMenuButton('email')">
-            <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/mail.png?raw=true">
+            <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/mail.png?raw=true">
             <p id="startMenuPairText">Email Me</p>
         </div>
         <div class="hoverHighlight" id="startMenuPair" onclick="startMenuButton('linkedin')">
-            <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/linkedin.png?raw=true">
+            <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/linkedin.png?raw=true">
             <p id="startMenuPairText">Link
         </div>
         <div class="hoverHighlight" id="startMenuPair" onclick="startMenuButton('insta')">
-            <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/instagram.png?raw=true">
+            <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/instagram.png?raw=true">
             <p id="startMenuPairText">Instagram</p>
         </div>
         <div class="hoverHighlight" id="startMenuPair" onclick="startMenuButton('youtube')">
-            <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/youtube.png?raw=true">
+            <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/youtube.png?raw=true">
             <p id="startMenuPairText">Youtube</p>
         </div>
         <div class="hoverHighlight" id="startMenuPair" onclick="startMenuButton('github')">
-            <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/documents.png?raw=true">
+            <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/documents.png?raw=true">
             <p id="startMenuPairText">GitHub</p>
         </div>
         <hr>
         <div class="hoverHighlight" id="startMenuPair" onclick="startMenuButton('credits')">
-            <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/credits.png?raw=true">
+            <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/credits.png?raw=true">
             <p id="startMenuPairText">Credits</p>
         </div>
         <hr>
         <div class="hoverHighlight" id="startMenuPair" onclick="startMenuButton('restart')">
-            <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/shutdown.png?raw=true">
+            <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/shutdown.png?raw=true">
             <p id="startMenuPairText">Restart...</p>
         </div>
     </div>

@@ -47,7 +47,7 @@ async function credits(){
     fetch(url)
     .then(res => res.json())
     .then((out) => {
-        let content = `<iframe src=\"data:text/html;base64,${encodeURIComponent(out.content)}\" style=\"height:500px;width:400px;\" title=\"credits.txt\"></iframe>`
+        let content = encodeURIComponent(atob(out.content))
         openWindow(content,"credits","credits.txt",[300,300])
     }) 
 }

@@ -31,9 +31,8 @@ async function border(name){
     }else{
         icon.style.borderColor = "transparent"
         
-        if (icon.className == "jonpng"){
-            jonpng()
-        }
+        if (icon.className == "jonpng") jonpng()
+        else if (icon.className == "credits") credits()
     }
 }
 

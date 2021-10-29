@@ -223,7 +223,7 @@ a{
     width: fit-content;
     margin-top: 5px;
     display: inline-block;
-    padding-right: 70px;
+    padding-right: 72px;
 }
 
 #startMenuPair img{
@@ -238,5 +238,5 @@ a{
 
 #startMenuArrow{
     float: right;
-    transform: translate(120px);
+    transform: translate(110px);
 }

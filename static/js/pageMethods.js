@@ -38,34 +38,13 @@ async function border(name){
 }
 
 async function jonpng(){
-    let numOfPngWindows = document.getElementsByClassName("jonpngWindow").length
+    let content = "<img style=\"width: 200px\" src=\"https://github.com/JonZavialov/portfolio2/blob/main/assets/jon.png?raw=true\">"
+    openWindow(content,"jonpng","jon.png")
+}
 
-    let main = document.getElementById('main')
-    let element = document.createElement('div')
-    element.className += `jonpng${numOfPngWindows} window jonpngWindow`
-    element.id = "jonpng"
-    element.style.width = "fit-content"
-    element.style.height = "fit-content"
-    element.innerHTML = `
-    <div id="jonpngheader" class="title-bar jonpng${numOfPngWindows}header">
-        <div class="title-bar-text">
-        jon.png
-        </div>
-
-        <div class="title-bar-controls">
-            <button aria-label="Minimize"></button>
-            <button aria-label="Maximize"></button>
-            <button onclick="closeClassWindow('jonpng${numOfPngWindows}')" aria-label="Close"></button>
-        </div>
-    </div>
-    <div class="window-body">
-        <img style="width: 200px" src="https://github.com/JonZavialov/portfolio2/blob/main/assets/jon.png?raw=true">
-        <section class="field-row" style="justify-content: flex-end">
-        </section>
-    </div>
-    `
-    await main.appendChild(element)
-    dragElement(document.getElementsByClassName(`jonpng${numOfPngWindows}`)[0],0,true)
+async function credits(){
+    let content = "insert credits here"
+    openWindow(content,"credits","credits.txt")
 }
 
 async function removeBorders(){
@@ -73,6 +52,40 @@ async function removeBorders(){
     for( i=0; i<icons.length; i++ ) {
         icons[i].style.borderColor = "transparent"
     }
+}
+
+async function openWindow(content,name,title){
+    //important: name header name+header and 
+    let numOfWindows = document.getElementsByClassName(`${name}Window`).length
+
+    let html = `
+    <div id="${name}header" class="title-bar ${name}${numOfWindows}header">
+        <div class="title-bar-text">
+        ${title}
+        </div>
+
+        <div class="title-bar-controls">
+            <button aria-label="Minimize"></button>
+            <button aria-label="Maximize"></button>
+            <button onclick="closeClassWindow('${name}${numOfWindows}')" aria-label="Close"></button>
+        </div>
+    </div>
+    <div class="window-body">
+    ${content}
+    <section class="field-row" style="justify-content: flex-end">
+    </section>
+    </div>
+    `
+
+    let main = document.getElementById('main')
+    let element = document.createElement('div')
+    element.className += `${name}${numOfWindows} window ${name}Window`
+    element.id = name
+    element.style.width = "fit-content"
+    element.style.height = "fit-content"
+    element.innerHTML = html
+    await main.appendChild(element)
+    dragElement(document.getElementsByClassName(`${name}${numOfWindows}`)[0],0,true)
 }
 
 async function date(){

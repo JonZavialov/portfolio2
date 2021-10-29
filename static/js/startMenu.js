@@ -13,42 +13,35 @@ async function startMenu(){
         </div>
     </div>
     <div id="startMenuBody">
-        <div class="hoverHighlight" id="startMenuPair" onclick="startMenuButton('email')">
+        <div class="hoverHighlight" id="startMenuPair"  onclick="startMenuButton('email')">
             <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/mail.png?raw=true">
             <p id="startMenuPairText">Email Me</p>
-            <p id="startMenuArrow">&#9654</p>
         </div>
         <div class="hoverHighlight" id="startMenuPair" onclick="startMenuButton('linkedin')">
             <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/linkedin.png?raw=true">
-            <p id="startMenuPairText">Linkedin</p>
-            <p id="startMenuArrow">&#9654</p>
+            <p id="startMenuPairText">Link
         </div>
         <div class="hoverHighlight" id="startMenuPair" onclick="startMenuButton('insta')">
             <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/instagram.png?raw=true">
             <p id="startMenuPairText">Instagram</p>
-            <p id="startMenuArrow">&#9654</p>
         </div>
         <div class="hoverHighlight" id="startMenuPair" onclick="startMenuButton('youtube')">
             <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/youtube.png?raw=true">
             <p id="startMenuPairText">Youtube</p>
-            <p id="startMenuArrow">&#9654</p>
         </div>
         <div class="hoverHighlight" id="startMenuPair" onclick="startMenuButton('github')">
             <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/documents.png?raw=true">
             <p id="startMenuPairText">GitHub</p>
-            <p id="startMenuArrow">&#9654</p>
         </div>
         <hr>
         <div class="hoverHighlight" id="startMenuPair" onclick="startMenuButton('credits')">
             <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/credits.png?raw=true">
             <p id="startMenuPairText">Credits</p>
-            <p id="startMenuArrow">&#9654</p>
         </div>
         <hr>
-        <div class="hoverHighlight" id="startMenuPair" onclick="startMenuButton('shutdown')">
+        <div class="hoverHighlight" id="startMenuPair" onclick="startMenuButton('restart')">
             <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/shutdown.png?raw=true">
-            <p id="startMenuPairText">Shut Down...</p>
-            <p id="startMenuArrow">&#9654</p>
+            <p id="startMenuPairText">Restart...</p>
         </div>
     </div>
     `
@@ -67,42 +60,28 @@ async function closeButton(){
 
 async function startMenuButton(button){
     let methods = {
-        "email": emailButton(),
-        "linkedin": linkedin(),
-        "insta": insta(),
-        "youtube": youtube(),
-        "github": github(),
-        "credits": credits(),
-        "shutdown": shutdown()
+        "email": function() {
+            window.location.assign('mailto: jonzavialov@gmail.com">')
+        },
+        "linkedin": function() {
+            window.open('https://www.linkedin.com/in/jonathan-zavialov-6404b61bb/', '_blank').focus()
+        },
+        "insta": function() {
+            window.open('https://www.instagram.com/thesuperiorphotographer', '_blank').focus()
+        },
+        "youtube": function() {
+            window.open('https://www.youtube.com/channel/UCfQ1TVBmS1uE6GX6S4h0q-g', '_blank').focus()
+        },
+        "github": function() {
+            window.open('https://github.com/JonZavialov', '_blank').focus()
+        },
+        "credits": function() {
+            credits()
+        },
+        "restart": function() {
+            window.location.replace('/')
+        }
     }
     let methodNames = Object.keys(methods)
-    if(methodNames.indexOf(button) != -1) methods[button]
-}
-
-async function emailButton(){
-    console.log('email button pressed')
-}
-
-async function linkedin(){
-    console.log('linkedin button pressed')
-}
-
-async function insta(){
-    console.log('insta button pressed')
-}
-
-async function youtube(){
-    console.log('youtube button pressed')
-}
-
-async function github(){
-    console.log('github button pressed')
-}
-
-async function credits(){
-    console.log('credits button pressed')
-}
-
-async function shutdown(){
-    console.log('shutdown button pressed')
+    if(methodNames.indexOf(button) != -1) methods[button]()
 }

@@ -223,7 +223,7 @@ a{
     width: fit-content;
     margin-top: 5px;
     display: inline-block;
-    padding-right: 72px;
+    padding-right: 80px;
 }
 
 #startMenuPair img{
@@ -236,7 +236,10 @@ a{
     margin-left: 5px;
 }
 
-#startMenuArrow{
-    float: right;
-    transform: translate(110px);
+#overlay {
+    position: absolute;
+}
+
+#credits{
+    position: absolute;
 }

@@ -37,7 +37,8 @@ function initDraw() {
             "#taskbar",
             "#jonpng",
             "#errorWindow",
-            "#startMenu"
+            "#startMenu",
+            "#credits"
         ]
         if(e.button != 0) return
         for(let i = 0; i < noSelect.length; i++){

@@ -4,6 +4,7 @@ function rightClick(){
     }, false)
 
     let body = document.getElementById("body")
+    if(!body) return
     body.onmousedown = function(e) {
         if(!(e.target.closest("#startMenu") || !document.getElementById("startMenu") || e.target.closest("#startButton"))){
             closeButton()

@@ -45,7 +45,16 @@ async function border(name){
         else if (icon.className == "recycle") recycleBin()
         else if (icon.className == "computer") myComputer()
         else if (icon.className == "docs") myDocuments()
+        else if (icon.className == "txtEditor") txtEditor()
     }
+}
+
+async function txtEditor(){
+    let content =`
+    <textarea></textarea>
+    `
+    openWindow(content,"txtEditor","<img width=13px src=\"https://github.com/JonZavialov/portfolio2/blob/main/assets/images/txt.png?raw=true\">&nbsp&nbspText Editor",[150,250],true)
+    taskbarUpdate("https://github.com/JonZavialov/portfolio2/blob/main/assets/images/txt.png?raw=true","Text Editor","txtEditor")
 }
 
 async function myDocuments(){

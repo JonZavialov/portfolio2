@@ -41,7 +41,8 @@ function initDraw() {
             "#credits",
             "#recycleBin",
             "#myComputer",
-            "#myDocuments"
+            "#myDocuments",
+            "#txtEditor"
         ]
         if(e.button != 0) return
         for(let i = 0; i < noSelect.length; i++){

@@ -259,3 +259,16 @@ a{
 #taskbarItem p{
     margin-left: 3px;
 }
+
+#appColumn {
+    width: fit-content;
+}
+
+#fileColumn {
+    width: fit-content;
+}
+
+#icons{
+    width: fit-content;
+    display: flex;
+}

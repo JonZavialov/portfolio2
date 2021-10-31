@@ -27,14 +27,48 @@ async function border(name){
     let icon = document.getElementsByClassName(name)[0]
     if(icon.style.borderColor == "transparent" || icon.style.borderColor == ""){
         removeBorders()
-        icon.style.borderColor = "white"
+        let parent = icon.parentElement.parentElement.parentElement.className
+        if(parent.indexOf("window") != -1) icon.style.borderColor = "blue"
+        else icon.style.borderColor = "white"
     }else{
         icon.style.borderColor = "transparent"
         
-        if (icon.className == "jonpng") jonpng()
-        else if (icon.className == "credits") credits()
+        if (icon.className == "jonpng" || icon.className == "jonpngDocs") jonpng()
+        else if (icon.className == "credits" || icon.className == "creditsDocs") credits()
         else if (icon.className == "recycle") recycleBin()
+        else if (icon.className == "computer") myComputer()
+        else if (icon.className == "docs") myDocuments()
     }
+}
+
+async function myDocuments(){
+    let content = `<div id="myDocumentsBody">
+        <div id="icon" class="jonpngDocs">
+            <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/image.png?raw=true" style="width: 47.99px">
+            <p style="color:black">jon.png</p>
+        </div>
+        <div id="icon" class="creditsDocs">
+          <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/txt.png?raw=true">
+          <p style="color:black">credits.txt</p>
+        </div>
+    </div>`
+    openWindow(content,"myDocuments","<img width=13px src=\"https://github.com/JonZavialov/portfolio2/blob/main/assets/images/documents.png?raw=true\">&nbsp&nbspMy Documents",[100,300])
+    addIconProperties()
+}
+
+async function myComputer(){
+    let content = `<div id="myComputerBody">
+        <div id="icon" class="driveC">
+            <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/drive.png?raw=true">
+            <p style="color: black">Storage (C:)</p>
+        </div>
+        <div id="icon" class="driveFloppy">
+            <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/drive.png?raw=true">
+            <p style="color: black">3.5 Floppy (A:)</p>
+        </div>
+    </div>`
+    openWindow(content,"myComputer","<img width=13px src=\"https://github.com/JonZavialov/portfolio2/blob/main/assets/images/computer.png?raw=true\">&nbsp&nbspMy Computer",[100,200])
+    addIconProperties()
 }
 
 async function jonpng(){
@@ -43,7 +77,7 @@ async function jonpng(){
 }
 
 async function recycleBin(){
-    let content = "<p></p>"
+    let content = "<div id=\"recycleBinBody\"></div>"
     openWindow(content,"recycleBin","<img width=13px src=\"https://github.com/JonZavialov/portfolio2/blob/main/assets/images/recycle.png?raw=true\">&nbsp&nbspRecycle Bin",[200,100])
 }
 

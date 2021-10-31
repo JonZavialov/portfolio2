@@ -7,6 +7,13 @@
     display: flex;
     align-items: stretch;
     z-index: 98 !important;
+
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -webkit-touch-callout : none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
 }
 
 #aboutme{
@@ -247,7 +254,7 @@ a{
 
 #credits p{
     font-size: 17px;
-    background-color: white;
+    background-color: #e7e7e7;
     padding: 5px;
     margin: 0;
     box-shadow: inset -1px -1px #ffffff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px #808080;
@@ -258,8 +265,8 @@ a{
     z-index: 99;
 }
 
-#recycleBin p{
-    background-color: white;
+#recycleBinBody{
+    background-color: #e7e7e7;
     padding: 5px;
     margin: 0;
     box-shadow: inset -1px -1px #ffffff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px #808080;
@@ -269,4 +276,56 @@ a{
 
 #recycleBin .title-bar-text{
     display: flex;
+}
+
+#myComputer{
+    position: absolute;
+    z-index: 99; 
+}
+
+#myComputerBody{
+    background-color: #e7e7e7;
+    padding: 5px;
+    margin: 0;
+    box-shadow: inset -1px -1px #ffffff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px #808080;
+    height: 250px;
+    width: 500px;
+}
+
+#myComputer .title-bar-text{
+    display: flex;
+}
+
+#myComputer .driveFloppy{
+    transform: translate(80px, -74px);
+}
+
+#myComputer #icon{
+    margin: 0;
+}
+
+#myDocuments{
+    position: absolute;
+    z-index: 99; 
+}
+
+#myDocumentsBody{
+    background-color: #e7e7e7;
+    padding: 5px;
+    margin: 0;
+    box-shadow: inset -1px -1px #ffffff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px #808080;
+    height: 250px;
+    width: 500px;
+}
+
+#myDocuments .title-bar-text{
+    display: flex;
+}
+
+#myDocuments .creditsDocs{
+    transform: translate(80px, -74px);
+}
+
+#myDocuments #icon{
+    margin: 0;
 }

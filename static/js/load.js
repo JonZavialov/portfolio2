@@ -47,6 +47,9 @@ async function loadDesktopNav(){
     let navBarDesktop = `
         <ul class=\"tree-view\">
             <li><a href=\"/home\">Home</a></li>
+            <ul>
+                <li style="cursor: pointer;" onmouseup="credits()">Credits</li>
+            </ul>
             <li><a href=\"https://github.com/JonZavialov/portfolio2\" target=\"_blank\">Repository</a></li>
         </ul>
     ` 

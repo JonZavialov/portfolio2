@@ -52,3 +52,5 @@
 ✔️ 26. add credits.txt to desktop
 
 27. add aboutme page
+
+28. add symbol to taskbar when windows are opened

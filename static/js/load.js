@@ -67,7 +67,7 @@ function detectMob() {
         /BlackBerry/i,
         /Windows Phone/i
     ]
-    
+    console.log(navigator.userAgent)
     return toMatch.some((toMatchItem) => {
         return navigator.userAgent.match(toMatchItem)
     })

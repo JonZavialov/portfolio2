@@ -140,7 +140,7 @@ async function openWindow(content,name,title,coords,taskbar = false){
     let numOfWindows = document.getElementsByClassName(`${name}Window`).length
     let taskbarName = ""
     if(taskbar) taskbarName = `,'${name}'`
-    console.log(`closeClassWindow('${name}${numOfWindows}'${taskbarName})`)
+
     let html = `
     <div id="${name}header" class="title-bar ${name}${numOfWindows}header">
         <div class="title-bar-text">

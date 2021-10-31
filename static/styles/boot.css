@@ -23,3 +23,8 @@ body{
     display: block;
     padding-top: 20px;
 }
+
+#bootScreen{
+    height: 100vh;
+    background-color: black;
+}

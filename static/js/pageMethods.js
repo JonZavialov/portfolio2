@@ -63,7 +63,7 @@ async function myComputer(){
             <p style="color: black">Storage (C:)</p>
         </div>
         <div id="icon" class="driveFloppy">
-            <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/drive.png?raw=true">
+            <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/driveFloppy.png?raw=true">
             <p style="color: black">3.5 Floppy (A:)</p>
         </div>
     </div>`

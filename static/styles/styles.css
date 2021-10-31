@@ -252,3 +252,21 @@ a{
     margin: 0;
     box-shadow: inset -1px -1px #ffffff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px #808080;
 }
+
+#recycleBin{
+    position: absolute;
+    z-index: 99;
+}
+
+#recycleBin p{
+    background-color: white;
+    padding: 5px;
+    margin: 0;
+    box-shadow: inset -1px -1px #ffffff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px #808080;
+    height: 250px;
+    width: 500px;
+}
+
+#recycleBin .title-bar-text{
+    display: flex;
+}

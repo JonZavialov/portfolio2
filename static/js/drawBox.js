@@ -38,7 +38,8 @@ function initDraw() {
             "#jonpng",
             "#errorWindow",
             "#startMenu",
-            "#credits"
+            "#credits",
+            "#recycleBin"
         ]
         if(e.button != 0) return
         for(let i = 0; i < noSelect.length; i++){

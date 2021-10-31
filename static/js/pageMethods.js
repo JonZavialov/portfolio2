@@ -33,12 +33,18 @@ async function border(name){
         
         if (icon.className == "jonpng") jonpng()
         else if (icon.className == "credits") credits()
+        else if (icon.className == "recycle") recycleBin()
     }
 }
 
 async function jonpng(){
     let content = "<img style=\"width: 200px\" src=\"https://github.com/JonZavialov/portfolio2/blob/main/assets/images/jon.png?raw=true\">"
     openWindow(content,"jonpng","jon.png",[100,100])
+}
+
+async function recycleBin(){
+    let content = "<p></p>"
+    openWindow(content,"recycleBin","<img width=13px src=\"https://github.com/JonZavialov/portfolio2/blob/main/assets/images/recycle.png?raw=true\">&nbsp&nbspRecycle Bin",[200,100])
 }
 
 async function credits(){

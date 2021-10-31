@@ -117,6 +117,7 @@ a{
     display: flex;
     padding: 0;
     padding-left: 3px;
+    margin-right: 13px;
 }
 
 #startButton img{
@@ -125,17 +126,20 @@ a{
 }
 
 #taskbarBody{
-    margin: 2px
+    margin: 2px;
+    width: 100%;
+    display: flex;
 }
 
 #time{
     box-shadow: inset -1px -1px #ffffff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px #808080;
-    position: absolute;
-    right: 0;
-    transform: translate(-5px, -34px);
+    transform: translate(-5px);
     height: 34px;
     padding: 0;
     width: 110px;
+    float: right;
+    position: fixed;
+    right: 0;
 }
 
 #time img{
@@ -231,4 +235,27 @@ a{
 
 #overlay {
     position: absolute;
+}
+
+#taskbarDivider{
+    height: 21px;
+    position: fixed;
+    margin-left: 80px;
+}
+
+#taskbarItem{
+    margin-right: 5px;
+    padding-left: 3px;
+    padding: 0;
+    display: flex;
+    padding-right: 5px;
+}
+
+#taskbarItem img{
+    width: 25px;
+    padding: 3px;
+}
+
+#taskbarItem p{
+    margin-left: 3px;
 }

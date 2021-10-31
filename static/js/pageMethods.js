@@ -12,15 +12,22 @@ async function addIconProperties(){
     })
 }
 
-async function closeWindow(windowID){
+async function closeWindow(windowID,name = false){
     console.log(`closing ${windowID}`)
     document.getElementById(windowID).remove()
+    if(name){
+        taskbarClose(name)
+    }
 }
 
-async function closeClassWindow(windowClass){
+async function closeClassWindow(windowClass, name = false){
+    console.log("running")
     let element = document.getElementsByClassName(windowClass)[0]
     console.log(`closing ${element.id}`)
     element.remove()
+    if(name){
+        taskbarClose(name)
+    }
 }
 
 async function border(name){
@@ -52,8 +59,9 @@ async function myDocuments(){
           <p style="color:black">credits.txt</p>
         </div>
     </div>`
-    openWindow(content,"myDocuments","<img width=13px src=\"https://github.com/JonZavialov/portfolio2/blob/main/assets/images/documents.png?raw=true\">&nbsp&nbspMy Documents",[100,300])
+    openWindow(content,"myDocuments","<img width=13px src=\"https://github.com/JonZavialov/portfolio2/blob/main/assets/images/documents.png?raw=true\">&nbsp&nbspMy Documents",[100,300],true)
     addIconProperties()
+    taskbarUpdate("https://github.com/JonZavialov/portfolio2/blob/main/assets/images/documents.png?raw=true","My Documents","myDocuments")
 }
 
 async function myComputer(){
@@ -67,18 +75,21 @@ async function myComputer(){
             <p style="color: black">3.5 Floppy (A:)</p>
         </div>
     </div>`
-    openWindow(content,"myComputer","<img width=13px src=\"https://github.com/JonZavialov/portfolio2/blob/main/assets/images/computer.png?raw=true\">&nbsp&nbspMy Computer",[100,200])
+    openWindow(content,"myComputer","<img width=13px src=\"https://github.com/JonZavialov/portfolio2/blob/main/assets/images/computer.png?raw=true\">&nbsp&nbspMy Computer",[100,200],true)
     addIconProperties()
+    taskbarUpdate("https://github.com/JonZavialov/portfolio2/blob/main/assets/images/computer.png?raw=true","My Computer","myComputer")
 }
 
 async function jonpng(){
     let content = "<img style=\"width: 200px\" src=\"https://github.com/JonZavialov/portfolio2/blob/main/assets/images/jon.png?raw=true\">"
-    openWindow(content,"jonpng","jon.png",[100,100])
+    openWindow(content,"jonpng","jon.png",[100,100],true)
+    taskbarUpdate("https://github.com/JonZavialov/portfolio2/blob/main/assets/images/image.png?raw=true","Image Viewer","jonpng")
 }
 
 async function recycleBin(){
     let content = "<div id=\"recycleBinBody\"></div>"
-    openWindow(content,"recycleBin","<img width=13px src=\"https://github.com/JonZavialov/portfolio2/blob/main/assets/images/recycle.png?raw=true\">&nbsp&nbspRecycle Bin",[200,100])
+    openWindow(content,"recycleBin","<img width=13px src=\"https://github.com/JonZavialov/portfolio2/blob/main/assets/images/recycle.png?raw=true\">&nbsp&nbspRecycle Bin",[200,100],true)
+    taskbarUpdate("https://github.com/JonZavialov/portfolio2/blob/main/assets/images/recycle.png?raw=true","Recycle Bin","recycleBin")
 }
 
 async function credits(){
@@ -88,7 +99,8 @@ async function credits(){
     .then((out) => {
         let content = `<p>${atob(out.content)}</p>`
         content = content.replace(/(?:\r\n|\r|\n)/g, '<br>')
-        openWindow(content,"credits","credits.txt",[300,300])
+        openWindow(content,"credits","credits.txt",[300,300],true)
+        taskbarUpdate("https://github.com/JonZavialov/portfolio2/blob/main/assets/images/txt.png?raw=true","Text Viewer","credits")
     }) 
 }
 
@@ -99,10 +111,36 @@ async function removeBorders(){
     }
 }
 
-async function openWindow(content,name,title,coords){
+async function taskbarUpdate(img,name,codeName){
+    var taskbarItems = document.getElementsByClassName(`${codeName}taskbarItem`)
+    if(taskbarItems.length != 0) return 
+    
+    let taskbar = document.getElementById("taskbarBody")
+    let element = document.createElement("button")
+    element.id = "taskbarItem"
+    element.className = `${codeName}taskbarItem`
+    element.innerHTML = `
+    <img src="${img}">
+    <p>${name}</p>
+    `
+    taskbar.appendChild(element)
+}
+
+async function taskbarClose(name){
+    var windows = document.querySelectorAll( `[id^=${name}]` )
+    if(windows.length != 0) return
+    var taskbarItems = document.getElementsByClassName(`${name}taskbarItem`)
+    Array.prototype.forEach.call(taskbarItems, function(taskbarItem){
+        taskbarItem.remove()
+    })
+}
+
+async function openWindow(content,name,title,coords,taskbar = false){
     //important: name header name+header and 
     let numOfWindows = document.getElementsByClassName(`${name}Window`).length
-
+    let taskbarName = ""
+    if(taskbar) taskbarName = `,'${name}'`
+    console.log(`closeClassWindow('${name}${numOfWindows}'${taskbarName})`)
     let html = `
     <div id="${name}header" class="title-bar ${name}${numOfWindows}header">
         <div class="title-bar-text">
@@ -112,7 +150,7 @@ async function openWindow(content,name,title,coords){
         <div class="title-bar-controls">
             <button aria-label="Minimize"></button>
             <button aria-label="Maximize"></button>
-            <button onclick="closeClassWindow('${name}${numOfWindows}')" aria-label="Close"></button>
+            <button onclick="closeClassWindow('${name}${numOfWindows}'${taskbarName})" aria-label="Close"></button>
         </div>
     </div>
     <div class="window-body">

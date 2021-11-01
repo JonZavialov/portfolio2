@@ -30,8 +30,32 @@ async function closeClassWindow(windowClass, name = false){
 }
 
 async function closeTxtEditor(){
-    console.log("closing editor")
-    closeWindow("txtEditor","txtEditor")
+    let txtContent = document.getElementsByTagName("textarea")[0].value
+    if(txtContent == "") closeWindow("txtEditor","txtEditor")
+    else{
+        //check if error window is already open
+        var windows = document.querySelectorAll( `[id^=errorWindowTxt]` )
+        if(windows.length == 0) openWindow("You have unsaved changes!","errorWindowTxt","Error",[200,200],false,`<button onclick=\"saveTxt()\">Save</button><button onclick=\"closeWindow('txtEditor','txtEditor');closeWindow('errorWindowTxt')\">OK</button>`)
+    }
+}
+
+async function saveTxt(){
+    closeWindow('errorWindowTxt')
+    let txtContent = document.getElementsByTagName("textarea")[0].value
+
+    var pom = document.createElement('a')
+    pom.setAttribute('href', 'data:text/plain;charset=utf-8,' + 
+    
+    encodeURIComponent(txtContent))
+    pom.setAttribute('download', "myFile")
+    
+    pom.style.display = 'none'
+    document.body.appendChild(pom)
+    
+    pom.click()
+    
+    document.body.removeChild(pom)
+    closeWindow('txtEditor','txtEditor')
 }
 
 async function border(name){

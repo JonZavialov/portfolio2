@@ -42,7 +42,8 @@ function initDraw() {
             "#recycleBin",
             "#myComputer",
             "#myDocuments",
-            "#txtEditor"
+            "#txtEditor",
+            "#errorWindowTxt"
         ]
         if(e.button != 0) return
         for(let i = 0; i < noSelect.length; i++){

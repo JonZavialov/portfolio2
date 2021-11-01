@@ -55,4 +55,4 @@
 
 ✔️ 28. add symbol to taskbar when windows are opened
 
-29. make do you want to save prompt when closing text editor is text is inputted
+✔️ 29. make do you want to save prompt when closing text editor is text is inputted

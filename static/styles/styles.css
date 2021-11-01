@@ -268,3 +268,8 @@ a{
     position: absolute;
     z-index: 100;
 }
+
+#errorWindowTxt{
+    position: absolute;
+    z-index: 100;
+}

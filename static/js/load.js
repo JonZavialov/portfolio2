@@ -1,3 +1,7 @@
+function calculateDaysBetweenDates(begin, end) {
+    
+}
+
 async function render(){
     if(!detectMob()){
         loadDesktopNav()

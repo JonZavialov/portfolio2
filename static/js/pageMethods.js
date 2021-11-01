@@ -21,7 +21,6 @@ async function closeWindow(windowID,name = false){
 }
 
 async function closeClassWindow(windowClass, name = false){
-    console.log("running")
     let element = document.getElementsByClassName(windowClass)[0]
     console.log(`closing ${element.id}`)
     element.remove()
@@ -30,7 +29,13 @@ async function closeClassWindow(windowClass, name = false){
     }
 }
 
+async function closeTxtEditor(){
+    console.log("closing editor")
+    closeWindow("txtEditor","txtEditor")
+}
+
 async function border(name){
+    if(!name) return
     let icon = document.getElementsByClassName(name)[0]
     if(icon.style.borderColor == "transparent" || icon.style.borderColor == ""){
         removeBorders()
@@ -50,10 +55,17 @@ async function border(name){
 }
 
 async function txtEditor(){
+    //check if any text editors are already open
+    var windows = document.querySelectorAll( `[id^=txtEditor` )
+    if(windows.length != 0){ 
+        throwError("You already have a text editor open!") 
+        return
+    }
+
     let content =`
     <textarea></textarea>
     `
-    openWindow(content,"txtEditor","<img width=13px src=\"https://github.com/JonZavialov/portfolio2/blob/main/assets/images/txt.png?raw=true\">&nbsp&nbspText Editor",[150,250],true)
+    openWindow(content,"txtEditor","<img width=13px src=\"https://github.com/JonZavialov/portfolio2/blob/main/assets/images/txt.png?raw=true\">&nbsp&nbspText Editor",[150,250],true,"","closeTxtEditor()")
     taskbarUpdate("https://github.com/JonZavialov/portfolio2/blob/main/assets/images/txt.png?raw=true","Text Editor","txtEditor")
 }
 
@@ -144,11 +156,14 @@ async function taskbarClose(name){
     })
 }
 
-async function openWindow(content,name,title,coords,taskbar = false){
+async function openWindow(content,name,title,coords,taskbar = false, footer = "", closeFunc = false){
     //important: name header name+header and 
     let numOfWindows = document.getElementsByClassName(`${name}Window`).length
     let taskbarName = ""
     if(taskbar) taskbarName = `,'${name}'`
+    if(!closeFunc) closeFunc = `closeClassWindow('${name}${numOfWindows}'${taskbarName})`
+    footer = footer.replace("okButton",`<button onclick=\"${closeFunc}\">OK</button>`)
+    if(footer != "") content += "<br><br>"
 
     let html = `
     <div id="${name}header" class="title-bar ${name}${numOfWindows}header">
@@ -159,12 +174,13 @@ async function openWindow(content,name,title,coords,taskbar = false){
         <div class="title-bar-controls">
             <button aria-label="Minimize"></button>
             <button aria-label="Maximize"></button>
-            <button onclick="closeClassWindow('${name}${numOfWindows}'${taskbarName})" aria-label="Close"></button>
+            <button onclick="${closeFunc}" aria-label="Close"></button>
         </div>
     </div>
     <div class="window-body">
     ${content}
     <section class="field-row" style="justify-content: flex-end">
+    ${footer}
     </section>
     </div>
     `
@@ -204,4 +220,8 @@ async function sleep(ms){
             resolve()
         },ms)
     })
+}
+
+async function throwError(content,additionalButtons = ""){
+    openWindow(content,"errorWindow","Error",[200,200],false,`${additionalButtons}okButton`)
 }

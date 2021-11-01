@@ -24,30 +24,10 @@
           addIconProperties()
           rightClick()
           dragElement(document.getElementById("errorWindow"),32)
+          throwError("<p>You're Lost!<br>Click home to return home.</p>","<a href=\"/home\"><button>Home</button></a>")
         }
     </script>
     <div id="sidenav"></div>
-    <div id="main">
-          <div id = "errorWindow" class="window" style="margin: 32px; width: 250px">
-              <div class="title-bar">
-                <div class="title-bar-text">
-                  Jonathan Zavialov
-                </div>
-        
-                <div class="title-bar-controls">
-                  <button aria-label="Minimize"></button>
-                  <button aria-label="Maximize"></button>
-                  <button onclick="closeWindow('errorWindow')" aria-label="Close"></button>
-                </div>
-              </div>
-              <div class="window-body">
-                <p>You're Lost!<br>Click home to return home.</p>
-                <section class="field-row" style="justify-content: flex-end">
-                  <button onclick="window.location.href ='/home'">Home</button>
-                  <button onclick="closeWindow('errorWindow')">OK</button>
-                </section>
-              </div>
-            </div>
-      </div>
+    <div id="main"></div>
 </body>
 </html>

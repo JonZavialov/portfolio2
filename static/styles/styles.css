@@ -78,15 +78,6 @@ a{
     overflow-x: clip;
 }
 
-#errorWindow{
-    position: absolute;
-    top: 45%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
-    z-index: 100;
-}
-
 #icon{
     margin-top: 20px;
     width: fit-content;
@@ -271,4 +262,9 @@ a{
 #icons{
     width: fit-content;
     display: flex;
+}
+
+#errorWindow{
+    position: absolute;
+    z-index: 100;
 }

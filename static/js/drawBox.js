@@ -86,7 +86,8 @@ async function checkCollide(){
     for( i=0; i<icons.length; i++ ) {
         let collide = doElsCollide(document.getElementsByClassName("rectangle")[0],icons[i])
         if(collide){
-            if(icons[i].style.borderColor == "transparent" || icons[i].style.borderColor == ""){
+            let parent = icons[i].parentElement.parentElement.parentElement.className
+            if((icons[i].style.borderColor == "transparent" || icons[i].style.borderColor == "") && parent.indexOf("window") == -1){
                 icons[i].style.borderColor = "white"
             }
         }

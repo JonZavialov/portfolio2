@@ -104,3 +104,8 @@
     height: 200px;
     width: 200px;
 }
+
+#calculator{
+    position: absolute;
+    z-index: 99;
+}

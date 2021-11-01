@@ -75,6 +75,7 @@ async function border(name){
         else if (icon.className == "computer") myComputer()
         else if (icon.className == "docs") myDocuments()
         else if (icon.className == "txtEditor") txtEditor()
+        else if (icon.className == "calculator") openCalculator()
     }
 }
 
@@ -147,6 +148,14 @@ async function credits(){
         openWindow(content,"credits","credits.txt",[300,300],true)
         taskbarUpdate("https://github.com/JonZavialov/portfolio2/blob/main/assets/images/txt.png?raw=true","Text Viewer","credits")
     }) 
+}
+
+async function openCalculator() {
+    let content = `
+        <p>calculator here</p>
+    `
+    openWindow(content,"calculator","Calculator",[100,100],true)
+    taskbarUpdate("https://github.com/JonZavialov/portfolio2/blob/main/assets/images/calculator.png?raw=true","Calculator","calculator")
 }
 
 async function removeBorders(){

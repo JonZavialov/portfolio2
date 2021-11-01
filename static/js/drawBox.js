@@ -43,7 +43,8 @@ function initDraw() {
             "#myComputer",
             "#myDocuments",
             "#txtEditor",
-            "#errorWindowTxt"
+            "#errorWindowTxt",
+            "#calculator"
         ]
         if(e.button != 0) return
         for(let i = 0; i < noSelect.length; i++){

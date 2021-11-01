@@ -58,3 +58,5 @@
 ✔️ 29. make do you want to save prompt when closing text editor is text is inputted
 
 30. add calculator
+
+31. make are you sure you want to leave page alert when text editor is open

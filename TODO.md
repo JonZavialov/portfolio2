@@ -60,3 +60,5 @@
 30. add calculator
 
 31. make are you sure you want to leave page alert when text editor is open
+
+32. icons in mycomputer and docs border is bugged

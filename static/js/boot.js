@@ -1,3 +1,5 @@
+//methods for the initial boot function of the website
+
 async function boot(){
     let bootList = [
         "Checking existing disk format.<br>",
@@ -65,12 +67,4 @@ async function boot(){
     }
 
     myLoop()
-}
-
-async function sleep(ms){
-    return new Promise((resolve,reject)=>{
-        setTimeout(async function() {
-            resolve()
-        },ms)
-    })
 }

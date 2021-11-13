@@ -76,7 +76,7 @@ async function border(name){
         else if (icon.className == "docs") myDocuments()
         else if (icon.className == "txtEditor") txtEditor()
         else if (icon.className == "calculator") openCalculator()
-        else if (icon.className == "resume") resume()
+        else if (icon.className == "resume" || icon.className == "resumeDocs") resume()
     }
 }
 
@@ -105,6 +105,10 @@ async function myDocuments(){
           <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/txt.png?raw=true">
           <p style="color:black">credits.txt</p>
         </div>
+        <div id="icon" class="resumeDocs" style='transform: translate(163px, -147px);'>
+          <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/credits.png?raw=true">
+          <p style="color:black">resume.pdf</p>
+        </div>
     </div>`
     openWindow(content,"myDocuments","<img width=13px src=\"https://github.com/JonZavialov/portfolio2/blob/main/assets/images/documents.png?raw=true\">&nbsp&nbspMy Documents",[100,300],true)
     addIconProperties()
@@ -115,7 +119,7 @@ async function resume(){
     let content = `
         <iframe id="iframepdf" src="https://nbviewer.org/github/JonZavialov/portfolio2/blob/main/assets/textFiles/jonzav.pdf#toolbar=0"></iframe>    
     `
-    openWindow(content,"resume","resume.pdf",[250,150],true)
+    openWindow(content,"resume","<img width=13px src=\"https://github.com/JonZavialov/portfolio2/blob/main/assets/images/credits.png?raw=true\">&nbsp&nbspresume.pdf",[250,150],true)
     addIconProperties()
     taskbarUpdate("https://github.com/JonZavialov/portfolio2/blob/main/assets/images/credits.png?raw=true","Document Viewer","resume")
 }

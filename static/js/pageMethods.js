@@ -119,7 +119,7 @@ async function resume(){
     let content = `
         <iframe id="iframepdf" src="https://nbviewer.org/github/JonZavialov/portfolio2/blob/main/assets/textFiles/jonzav.pdf#toolbar=0"></iframe>    
     `
-    openWindow(content,"resume","<img width=13px src=\"https://github.com/JonZavialov/portfolio2/blob/main/assets/images/credits.png?raw=true\">&nbsp&nbspresume.pdf",[250,150],true)
+    openWindow(content,"resume","<img width=13px src=\"https://github.com/JonZavialov/portfolio2/blob/main/assets/images/credits.png?raw=true\">&nbsp&nbspresume.pdf",[250,10],true)
     addIconProperties()
     taskbarUpdate("https://github.com/JonZavialov/portfolio2/blob/main/assets/images/credits.png?raw=true","Document Viewer","resume")
 }
@@ -165,10 +165,46 @@ async function credits(){
 }
 
 async function openCalculator() {
-    let content = `
-        <p>calculator here</p>
+    //check if any calculators are already open
+    var windows = document.querySelectorAll( `[id^=calculator` )
+    if(windows.length != 0){ 
+        throwError("You already have a calculator open!") 
+        return
+    }
+    
+    let content =`
+        <div id="calculatorDisplay">0</div>
+        <div id="calculatorButtons">
+            <div id="calcButtonRowTop">
+                <p id="calcBlankButton"></p>
+                <button id="clearButton" onclick='pressButton(\`clear\`)'>C</button>
+            </div>
+            <div id="calcButtonRow" style='margin-top:10px'>
+                <button style='margin-left: 0' onclick='pressButton(\`num\`,7)'>7</button>
+                <button onclick='pressButton(\`num\`,8)'>8</button>
+                <button onclick='pressButton(\`num\`,9)'>9</button>
+                <button style='color:red' onclick='pressButton(\`operator\`,\`div\`)'>/</button>
+            </div>
+            <div id="calcButtonRow">
+                <button style='margin-left: 0' onclick='pressButton(\`num\`,4)'>4</button>
+                <button onclick='pressButton(\`num\`,5)'>5</button>
+                <button onclick='pressButton(\`num\`,6)'>6</button>
+                <button style='color:red' onclick='pressButton(\`operator\`,\`mult\`)'>*</button>
+            </div>
+            <div id="calcButtonRow">
+                <button style='margin-left: 0' onclick='pressButton(\`num\`,1)'>1</button>
+                <button onclick='pressButton(\`num\`,2)'>2</button>
+                <button onclick='pressButton(\`num\`,3)'>3</button>
+                <button style='color:red' onclick='pressButton(\`operator\`,\`sub\`)'>–</button>
+            </div>
+            <div id="calcButtonRow">
+                <button style='margin-left: 0' onclick='pressButton(\`num\`,0)'>0</button>
+                <button style='color:red; transform:translate(104px)' onclick='pressButton(\`operator\`,\`add\`)'>+</button>
+            </div>
+            <button id="equalsButton" style='color:red; margin-top:5px; margin-bottom:3px' onclick='pressButton(\`eval\`)'>=</button>
+        </div>
     `
-    openWindow(content,"calculator","Calculator",[100,100],true)
+    openWindow(content,"calculator","<img width=13px src=\"https://github.com/JonZavialov/portfolio2/blob/main/assets/images/calculator.png?raw=true\">&nbsp&nbspCalculator",[100,100],true)
     taskbarUpdate("https://github.com/JonZavialov/portfolio2/blob/main/assets/images/calculator.png?raw=true","Calculator","calculator")
 }
 

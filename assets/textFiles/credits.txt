@@ -13,3 +13,6 @@ flask by pallets
 
 font by int10h
     https://int10h.org/oldschool-pc-fonts/
+
+pdf viewer by Project Jupyter
+    https://nbviewer.org

@@ -113,7 +113,7 @@ async function myDocuments(){
 
 async function resume(){
     let content = `
-        <iframe id="iframepdf" src="https://nbviewer.org/github/JonZavialov/portfolio2/blob/main/assets/textFiles/jonzav.pdf"></iframe>
+        <iframe id="iframepdf" src="https://nbviewer.org/github/JonZavialov/portfolio2/blob/main/assets/textFiles/jonzav.pdf#toolbar=0"></iframe>    
     `
     openWindow(content,"resume","resume.pdf",[250,150],true)
     addIconProperties()

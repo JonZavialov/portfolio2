@@ -76,6 +76,7 @@ async function border(name){
         else if (icon.className == "docs") myDocuments()
         else if (icon.className == "txtEditor") txtEditor()
         else if (icon.className == "calculator") openCalculator()
+        else if (icon.className == "resume") resume()
     }
 }
 
@@ -108,6 +109,15 @@ async function myDocuments(){
     openWindow(content,"myDocuments","<img width=13px src=\"https://github.com/JonZavialov/portfolio2/blob/main/assets/images/documents.png?raw=true\">&nbsp&nbspMy Documents",[100,300],true)
     addIconProperties()
     taskbarUpdate("https://github.com/JonZavialov/portfolio2/blob/main/assets/images/documents.png?raw=true","My Documents","myDocuments")
+}
+
+async function resume(){
+    let content = `
+        <p>resume here</p>
+    `
+    openWindow(content,"resume","resume.pdf",[250,150],true)
+    addIconProperties()
+    taskbarUpdate("https://github.com/JonZavialov/portfolio2/blob/main/assets/images/credits.png?raw=true","Document Viewer","resume")
 }
 
 async function myComputer(){

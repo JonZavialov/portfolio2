@@ -1,19 +1,9 @@
-#credits{
-    position: absolute;
-    z-index: 99;
-}
-
 #credits p{
     font-size: 14px;
     background-color: #e7e7e7;
     padding: 5px;
     margin: 0;
     box-shadow: inset -1px -1px #ffffff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px #808080;
-}
-
-#recycleBin{
-    position: absolute;
-    z-index: 99;
 }
 
 #recycleBinBody{
@@ -27,11 +17,6 @@
 
 #recycleBin .title-bar-text{
     display: flex;
-}
-
-#myComputer{
-    position: absolute;
-    z-index: 99; 
 }
 
 #myComputerBody{
@@ -53,11 +38,6 @@
 
 #myComputer #icon{
     margin: 0;
-}
-
-#myDocuments{
-    position: absolute;
-    z-index: 99; 
 }
 
 #myDocumentsBody{
@@ -90,11 +70,6 @@
     z-index: 99;
 }
 
-#txtEditor{
-    position: absolute;
-    z-index: 99;
-}
-
 #txtEditor textarea{
     font-size: 14px;
     background-color: #e7e7e7;
@@ -105,7 +80,7 @@
     width: 200px;
 }
 
-#calculator{
+#calculator,#credits,#resume,#myComputer,#txtEditor,#myDocuments,#recycleBin{
     position: absolute;
     z-index: 99;
 }

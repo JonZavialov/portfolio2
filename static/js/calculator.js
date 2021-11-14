@@ -4,7 +4,7 @@ async function calculate(num1,num2,operator) {
         case '+':
             result = num1 + num2;
             break;
-        case '-':
+        case '–':
             result = num1 - num2;
             break;
         case '*':
@@ -13,8 +13,6 @@ async function calculate(num1,num2,operator) {
         case '/':
             result = num1 / num2;
             break;
-        default:
-            result = 'Invalid operator';
     }
     return result;
 }
@@ -23,11 +21,13 @@ async function pressButton(button, value = null) {
     let display = document.getElementById('calculatorDisplay')
     if(button == "clear"){
         display.innerHTML = "0"
+        display.className = ""
     }
     else if(button == "num"){
         if(display.innerHTML.length > 20) return
-        else if(display.innerHTML == "0"){
+        else if(display.innerHTML == "0" || display.className == "answered"){
             display.innerHTML = value
+            display.className = ""
             return
         }
 
@@ -40,8 +40,20 @@ async function pressButton(button, value = null) {
         else if(value == "mult") display.innerHTML += " * "
         else if(value == "sub") display.innerHTML += " – "
         else if(value == "add") display.innerHTML += " + "
+        display.className = ""
     }
     else if(button == "eval"){
-        console.log("evaluating")
+        let hasOperator = display.innerHTML.indexOf("/") != -1 || display.innerHTML.indexOf("*") != -1 || display.innerHTML.indexOf("–") != -1 || display.innerHTML.indexOf("+") != -1
+        let hasTwoNumbers = display.innerHTML.indexOf(" ") != -1 && display.innerHTML.substr(-1) != " "
+        if(hasOperator && hasTwoNumbers){
+            console.log('evaluating ' + display.innerHTML)
+            let numbers = display.innerHTML.split(" ")
+            let num1 = parseFloat(numbers[0])
+            let num2 = parseFloat(numbers[2])
+            let operator = numbers[1]
+            let result = await calculate(num1,num2,operator)
+            display.innerHTML = result
+            display.className = "answered"
+        }
     }
 }

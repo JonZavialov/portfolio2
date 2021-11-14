@@ -25,7 +25,7 @@
 
 ✔️ 13. make windows BSOD for mobile access
 
-14. https://www.hongkiat.com/blog/custom-context-menu-justcontext/
+✔️ 14. https://www.hongkiat.com/blog/custom-context-menu-justcontext/
 
 ✔️ 15. add jon.png to desktop that opens picture of jon
 
@@ -39,7 +39,7 @@
 
 ✔️ 20. make start menu
 
-21. add icons to taskbar
+✔️ 21. add icons to taskbar
 
 ✔️ 22. fix bug with opening multiple windows
 
@@ -57,7 +57,7 @@
 
 ✔️ 29. make do you want to save prompt when closing text editor is text is inputted
 
-30. add calculator
+✔️ 30. add calculator
 
 31. make are you sure you want to leave page alert when text editor is open
 

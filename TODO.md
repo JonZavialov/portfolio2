@@ -65,6 +65,6 @@
 
 ✔️ 33. add resume to my documents
 
-34. add apps folder
+✔️ 34. add apps folder
 
 35. add nft viewer

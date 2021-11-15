@@ -71,11 +71,12 @@ async function border(name){
         
         if (icon.className == "jonpng" || icon.className == "jonpngDocs") jonpng()
         else if (icon.className == "credits" || icon.className == "creditsDocs") credits()
+        else if (icon.className == "apps") apps()
         else if (icon.className == "recycle") recycleBin()
         else if (icon.className == "computer") myComputer()
         else if (icon.className == "docs") myDocuments()
-        else if (icon.className == "txtEditor") txtEditor()
-        else if (icon.className == "calculator") openCalculator()
+        else if (icon.className == "txtEditor" || icon.className == "txtEditorApps") txtEditor()
+        else if (icon.className == "calculator" || icon.className == "calculatorApps") openCalculator()
         else if (icon.className == "resume" || icon.className == "resumeDocs") resume()
     }
 }
@@ -93,6 +94,22 @@ async function txtEditor(){
     `
     openWindow(content,"txtEditor","<img width=13px src=\"https://github.com/JonZavialov/portfolio2/blob/main/assets/images/txt.png?raw=true\">&nbsp&nbspText Editor",[150,250],true,"","closeTxtEditor()")
     taskbarUpdate("https://github.com/JonZavialov/portfolio2/blob/main/assets/images/txt.png?raw=true","Text Editor","txtEditor")
+}
+
+async function apps(){
+    let content = `<div id="myAppsBody">
+        <div id="icon" class="calculatorApps" style="margin-left: 8px;">
+            <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/calculator.png?raw=true">
+            <p style="color:black">Calculator</p>
+        </div>
+        <div id="icon" class="txtEditorApps" style="margin-left: 8px;">
+              <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/txt.png?raw=true">
+              <p style="color:black">Text Editor</p>
+        </div>
+    </div>`
+    openWindow(content,"myApps","<img width=13px src=\"https://github.com/JonZavialov/portfolio2/blob/main/assets/images/appsdir.png?raw=true\">&nbsp&nbspMy Apps",[100,400],true)
+    addIconProperties()
+    taskbarUpdate("https://github.com/JonZavialov/portfolio2/blob/main/assets/images/appsdir.png?raw=true","My Apps","myApps")
 }
 
 async function myDocuments(){

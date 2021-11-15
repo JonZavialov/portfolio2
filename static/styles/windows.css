@@ -6,51 +6,25 @@
     box-shadow: inset -1px -1px #ffffff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px #808080;
 }
 
-#recycleBinBody{
-    background-color: #e7e7e7;
-    padding: 5px;
-    margin: 0;
-    box-shadow: inset -1px -1px #ffffff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px #808080;
-    height: 250px;
-    width: 500px;
-}
-
-#recycleBin .title-bar-text{
+#myComputer .title-bar-text, #recycleBin .title-bar-text, #myApps .title-bar-text, #myDocuments .title-bar-text{
     display: flex;
 }
 
-#myComputerBody{
-    background-color: #e7e7e7;
-    padding: 5px;
-    margin: 0;
-    box-shadow: inset -1px -1px #ffffff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px #808080;
-    height: 250px;
-    width: 500px;
-}
-
-#myComputer .title-bar-text{
-    display: flex;
-}
-
-#myComputer .driveFloppy{
+#myComputer .driveFloppy, #myApps .txtEditorApps{
     transform: translate(80px, -74px);
 }
 
-#myComputer #icon{
+#myComputer #icon, #myApps #icon{
     margin: 0;
 }
 
-#myDocumentsBody{
+#myDocumentsBody, #myAppsBody, #myComputerBody, #recycleBinBody{
     background-color: #e7e7e7;
     padding: 5px;
     margin: 0;
     box-shadow: inset -1px -1px #ffffff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px #808080;
     height: 250px;
     width: 500px;
-}
-
-#myDocuments .title-bar-text{
-    display: flex;
 }
 
 #myDocuments .creditsDocs{
@@ -80,7 +54,7 @@
     width: 200px;
 }
 
-#calculator,#credits,#resume,#myComputer,#txtEditor,#myDocuments,#recycleBin{
+#calculator,#credits,#resume,#myComputer,#txtEditor,#myDocuments,#recycleBin,#myApps{
     position: absolute;
     z-index: 99;
 }

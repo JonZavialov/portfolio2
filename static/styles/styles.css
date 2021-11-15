@@ -255,11 +255,7 @@ a{
     margin-left: 3px;
 }
 
-#appColumn {
-    width: fit-content;
-}
-
-#fileColumn {
+#appColumn, #fileColumn,  #appColumn2{
     width: fit-content;
 }
 

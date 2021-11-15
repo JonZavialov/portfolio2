@@ -63,6 +63,8 @@
 
 32. icons in mycomputer and docs border is bugged
 
-33. add resume to my documents
+✔️ 33. add resume to my documents
 
 34. add apps folder
+
+35. add nft viewer

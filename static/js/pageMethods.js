@@ -260,7 +260,6 @@ async function taskbarClose(name){
 }
 
 async function openWindow(content,name,title,coords,taskbar = false, footer = "", closeFunc = false){
-    //important: name header name+header and 
     let numOfWindows = document.getElementsByClassName(`${name}Window`).length
     let taskbarName = ""
     if(taskbar) taskbarName = `,'${name}'`

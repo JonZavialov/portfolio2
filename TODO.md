@@ -70,3 +70,5 @@
 35. add nft viewer
 
 36. taskbar overflows when too many apps are opened
+
+37. make text viewer and editor the same thing

@@ -46,7 +46,8 @@ function initDraw() {
             "#errorWindowTxt",
             "#calculator",
             "#resume",
-            "#myApps"
+            "#myApps",
+            "#nfts"
         ]
         if(e.button != 0) return
         for(let i = 0; i < noSelect.length; i++){

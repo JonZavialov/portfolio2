@@ -71,14 +71,25 @@ async function border(name){
         
         if (icon.className == "jonpng" || icon.className.indexOf("jonpngDocs") != -1) jonpng()
         else if (icon.className == "credits" || icon.className.indexOf("creditsDocs") != -1) credits()
+        else if (icon.className == "txtEditor" || icon.className.indexOf("txtEditorApps") != -1) txtEditor()
+        else if (icon.className == "calculator" || icon.className.indexOf("calculatorApps") != -1) openCalculator()
+        else if (icon.className == "resume" || icon.className.indexOf("resumeDocs") != -1) resume()
         else if (icon.className == "apps") apps()
         else if (icon.className == "recycle") recycleBin()
         else if (icon.className == "computer") myComputer()
         else if (icon.className == "docs") myDocuments()
-        else if (icon.className == "txtEditor" || icon.className.indexOf("txtEditorApps") != -1) txtEditor()
-        else if (icon.className == "calculator" || icon.className.indexOf("calculatorApps") != -1) openCalculator()
-        else if (icon.className == "resume" || icon.className.indexOf("resumeDocs") != -1) resume()
+        else if (icon.className == "nft") nft()
     }
+}
+
+async function nft(){
+    let content = `
+    <div id = 'nftsbody'>
+        ${await getNftsFornatted()}
+    </div>
+    `
+    openWindow(content,"nfts","<img width=13px src=\"https://github.com/JonZavialov/portfolio2/blob/main/assets/images/nftview.png?raw=true\">&nbsp&nbspMy NFTs",[200,200],true)
+    taskbarUpdate("https://github.com/JonZavialov/portfolio2/blob/main/assets/images/nftview.png?raw=true","My NFTs","nfts")
 }
 
 async function txtEditor(){

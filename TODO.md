@@ -72,3 +72,5 @@
 36. taskbar overflows when too many apps are opened
 
 37. make text viewer and editor the same thing
+
+38. add loading to nft viewer when its loading data

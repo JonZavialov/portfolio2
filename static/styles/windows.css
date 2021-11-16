@@ -54,7 +54,7 @@
     width: 200px;
 }
 
-#calculator,#credits,#resume,#myComputer,#txtEditor,#myDocuments,#recycleBin,#myApps{
+#calculator,#credits,#resume,#myComputer,#txtEditor,#myDocuments,#recycleBin,#myApps,#nfts{
     position: absolute;
     z-index: 99;
 }

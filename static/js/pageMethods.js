@@ -69,15 +69,15 @@ async function border(name){
     }else{
         icon.style.borderColor = "transparent"
         
-        if (icon.className == "jonpng" || icon.className == "jonpngDocs") jonpng()
-        else if (icon.className == "credits" || icon.className == "creditsDocs") credits()
+        if (icon.className == "jonpng" || icon.className.indexOf("jonpngDocs") != -1) jonpng()
+        else if (icon.className == "credits" || icon.className.indexOf("creditsDocs") != -1) credits()
         else if (icon.className == "apps") apps()
         else if (icon.className == "recycle") recycleBin()
         else if (icon.className == "computer") myComputer()
         else if (icon.className == "docs") myDocuments()
-        else if (icon.className == "txtEditor" || icon.className == "txtEditorApps") txtEditor()
-        else if (icon.className == "calculator" || icon.className == "calculatorApps") openCalculator()
-        else if (icon.className == "resume" || icon.className == "resumeDocs") resume()
+        else if (icon.className == "txtEditor" || icon.className.indexOf("txtEditorApps") != -1) txtEditor()
+        else if (icon.className == "calculator" || icon.className.indexOf("calculatorApps") != -1) openCalculator()
+        else if (icon.className == "resume" || icon.className.indexOf("resumeDocs") != -1) resume()
     }
 }
 
@@ -97,12 +97,13 @@ async function txtEditor(){
 }
 
 async function apps(){
+    let numApps = await getNumberOfIcons("calculatorApps")
     let content = `<div id="myAppsBody">
-        <div id="icon" class="calculatorApps" style="margin-left: 8px;">
+        <div id="icon" class="calculatorApps ${numApps}" style="margin-left: 8px;">
             <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/calculator.png?raw=true">
             <p style="color:black">Calculator</p>
         </div>
-        <div id="icon" class="txtEditorApps" style="margin-left: 8px;">
+        <div id="icon" class="txtEditorApps ${numApps}" style="margin-left: 8px;">
               <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/txt.png?raw=true">
               <p style="color:black">Text Editor</p>
         </div>
@@ -113,16 +114,17 @@ async function apps(){
 }
 
 async function myDocuments(){
+    let numApps = await getNumberOfIcons("jonpngDocs")
     let content = `<div id="myDocumentsBody">
-        <div id="icon" class="jonpngDocs">
+        <div id="icon" class="jonpngDocs ${numApps}">
             <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/image.png?raw=true" style="width: 47.99px">
             <p style="color:black">jon.png</p>
         </div>
-        <div id="icon" class="creditsDocs">
+        <div id="icon" class="creditsDocs ${numApps}">
           <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/txt.png?raw=true">
           <p style="color:black">credits.txt</p>
         </div>
-        <div id="icon" class="resumeDocs" style='transform: translate(163px, -147px);'>
+        <div id="icon" class="resumeDocs ${numApps}" style='transform: translate(163px, -147px);'>
           <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/credits.png?raw=true">
           <p style="color:black">resume.pdf</p>
         </div>
@@ -142,12 +144,13 @@ async function resume(){
 }
 
 async function myComputer(){
+    let numApps = await getNumberOfIcons("driveFloppy")
     let content = `<div id="myComputerBody">
-        <div id="icon" class="driveC">
+        <div id="icon" class="driveC ${numApps}">
             <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/drive.png?raw=true">
             <p style="color: black">Storage (C:)</p>
         </div>
-        <div id="icon" class="driveFloppy">
+        <div id="icon" class="driveFloppy ${numApps}">
             <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/driveFloppy.png?raw=true">
             <p style="color: black">3.5 Floppy (A:)</p>
         </div>
@@ -324,4 +327,9 @@ async function sleep(ms){
 
 async function throwError(content,additionalButtons = ""){
     openWindow(content,"errorWindow","Error",[200,200],false,`${additionalButtons}okButton`)
+}
+
+async function getNumberOfIcons(name){
+    let icons = document.getElementsByClassName(name)
+    return icons.length
 }

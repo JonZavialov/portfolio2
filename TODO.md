@@ -14,7 +14,7 @@
 
 ✔️ 8. make the website look good on mobile 
  
- 9. cmd emulator
+9. cmd emulator
        https://js-dos.com/v7/build/docs/iframe
  
 ✔️ 10. make 404 page look like a windows error popup
@@ -59,12 +59,14 @@
 
 ✔️ 30. add calculator
 
-31. make are you sure you want to leave page alert when text editor is open
+✔️ 31. make are you sure you want to leave page alert when text editor is open
 
-32. icons in mycomputer and docs border is bugged
+✔️ 32. icons in mycomputer and docs border is bugged
 
 ✔️ 33. add resume to my documents
 
 ✔️ 34. add apps folder
 
 35. add nft viewer
+
+36. taskbar overflows when too many apps are opened

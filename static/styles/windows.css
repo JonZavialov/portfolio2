@@ -112,3 +112,48 @@
     margin-left: 5px;
     float: right;
 }
+
+#nftItem img{
+    width: 200px;
+    margin: 3px;
+}
+
+#nftItem h3, #nftItem h5{
+    margin: 5px;
+}
+
+#nftItem h5{
+    font-size: 15px;
+}
+
+#nftItem p{
+    margin-left: 3px;
+    font-size: 12px;
+}
+
+#nfts .window-body{
+    margin: 1px;
+}
+
+#nftItem{
+    box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px grey, inset 2px 2px #fff;
+    padding: 3px;
+}
+
+#nftsbody{
+    overflow-y: scroll;
+    height: 600px;
+}
+
+#nfts p{
+    margin-left: 5px;
+    font-size: 13px;
+}
+
+#ethAddress:hover, #ethDomain:hover{
+    color: lightblue
+}
+
+#wallet{
+    display: flex;
+}

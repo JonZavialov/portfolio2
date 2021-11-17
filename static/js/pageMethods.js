@@ -85,7 +85,7 @@ async function border(name){
 async function nft(){
     let content = `
     <div id = 'nftsbody'>
-        ${await getNftsFornatted()}
+        ${await getNftsFormatted()}
     </div>
     `
     openWindow(content,"nfts","<img width=13px src=\"https://github.com/JonZavialov/portfolio2/blob/main/assets/images/nftview.png?raw=true\">&nbsp&nbspMy NFTs",[200,200],true)
@@ -291,10 +291,10 @@ async function openWindow(content,name,title,coords,taskbar = false, footer = ""
         </div>
     </div>
     <div class="window-body">
-    ${content}
-    <section class="field-row" style="justify-content: flex-end">
-    ${footer}
-    </section>
+        ${content}
+        <section class="field-row" style="justify-content: flex-end">
+        ${footer}
+        </section>
     </div>
     `
 

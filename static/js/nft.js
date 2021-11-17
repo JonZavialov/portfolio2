@@ -17,7 +17,7 @@ async function getNftsFormatted(windowClassName){
 
 async function makeGetRequest(url){    
     var xmlHttp = new XMLHttpRequest()
-    xmlHttp.open( "GET", url, false ) // false for synchronous request
+    xmlHttp.open( "GET", url , false)
     xmlHttp.send()
     return JSON.parse(xmlHttp.response)
 }

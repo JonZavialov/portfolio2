@@ -84,3 +84,5 @@
 42. make icons draggable
 
 43. make it so you can recycle the icons
+
+44. add copy and paste to  right click

@@ -88,7 +88,7 @@ async function nft(){
         ${await getNftsFormatted()}
     </div>
     `
-    openWindow(content,"nfts","<img width=13px src=\"https://github.com/JonZavialov/portfolio2/blob/main/assets/images/nftview.png?raw=true\">&nbsp&nbspMy NFTs",[200,200],true)
+    openWindow(content,"nfts","<img width=13px src=\"https://github.com/JonZavialov/portfolio2/blob/main/assets/images/nftview.png?raw=true\">&nbsp&nbspMy NFTs",[200,10],true)
     taskbarUpdate("https://github.com/JonZavialov/portfolio2/blob/main/assets/images/nftview.png?raw=true","My NFTs","nfts")
 }
 

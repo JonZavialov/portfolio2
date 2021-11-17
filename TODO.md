@@ -77,4 +77,4 @@
 
 39. make windows not drag when pressing close button
 
-40. add refresh data button to NFT viewer
+✔️ 40. add refresh data button to NFT viewer

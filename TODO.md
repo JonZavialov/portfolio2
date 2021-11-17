@@ -67,7 +67,7 @@
 
 ✔️ 34. add apps folder
 
-35. add nft viewer
+✔️ 35. add nft viewer
 
 36. taskbar overflows when too many apps are opened
 

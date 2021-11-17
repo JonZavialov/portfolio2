@@ -1,11 +1,14 @@
 async function getNftsFormatted(){
-    let nftData = await getNftData()
+    let numOfWindows = document.getElementsByClassName(`nftsWindow`).length
+    let className = `nfts${numOfWindows}`
+    nftData = await getNftData()
     let formattedNfts = await formatData(nftData)
     let bodyContent = `
     <div id='wallet'>
         <p>Wallet:</p>
         <p id='ethDomain' onclick='copyToClipboard("sonytv.eth"); alert("Address Copied!")'>sonytv.eth</p>
         <p id='ethAddress' onclick='copyToClipboard("0x5df54525f8f34b49622a15a9d65e4e0c9ed6a5c9"); alert("Address Copied!")'>0x5df5...a5c9</p>
+        <button></button>
     </div>
     `
     for (let i = 0; i < formattedNfts.length; i++){

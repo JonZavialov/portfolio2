@@ -1,6 +1,4 @@
-async function getNftsFormatted(){
-    let numOfWindows = document.getElementsByClassName(`nftsWindow`).length
-    let className = `nfts${numOfWindows}`
+async function getNftsFormatted(windowClassName){
     nftData = await getNftData()
     let formattedNfts = await formatData(nftData)
     let bodyContent = `
@@ -8,7 +6,7 @@ async function getNftsFormatted(){
         <p>Wallet:</p>
         <p id='ethDomain' onclick='copyToClipboard("sonytv.eth"); alert("Address Copied!")'>sonytv.eth</p>
         <p id='ethAddress' onclick='copyToClipboard("0x5df54525f8f34b49622a15a9d65e4e0c9ed6a5c9"); alert("Address Copied!")'>0x5df5...a5c9</p>
-        <button></button>
+        <button id="refreshButton" onclick="refreshData('${windowClassName}')"><img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/refresh.png?raw=true"/><p>Refresh</p></button>
     </div>
     `
     for (let i = 0; i < formattedNfts.length; i++){
@@ -80,4 +78,13 @@ async function formatData(data){
         nftList.push(nftContent)
     }
     return nftList
+}
+
+async function refreshData(className){
+    console.log(`refreshing nfts${className}`)
+    let nftBody = document.getElementsByClassName(`nfts${className}`)[0]
+    let nftBodyHTMLBegin = nftBody.innerHTML.substring(0,nftBody.innerHTML.indexOf('<div class="window-body">')+26)
+    let nftBodyHTMLEnd = nftBody.innerHTML.substring(nftBody.innerHTML.indexOf('<section class="field-row" style="justify-content: flex-end">'))
+
+    nftBody.innerHTML = `${nftBodyHTMLBegin}<div id = 'nftsbody'>${await getNftsFormatted(className)}</div>${nftBodyHTMLEnd}`
 }

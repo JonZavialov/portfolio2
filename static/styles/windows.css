@@ -157,3 +157,15 @@
 #wallet{
     display: flex;
 }
+
+#refreshButton{
+    position: absolute;
+    padding: 0;
+    display: flex;
+    transform: translate(230px);
+}
+
+#refreshButton img{
+    width: 20px;
+    margin-top: 8px
+}

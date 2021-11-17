@@ -85,7 +85,7 @@ async function border(name){
 async function nft(){
     let content = `
     <div id = 'nftsbody'>
-        ${await getNftsFormatted()}
+        ${await getNftsFormatted(document.getElementsByClassName(`nftsWindow`).length)}
     </div>
     `
     openWindow(content,"nfts","<img width=13px src=\"https://github.com/JonZavialov/portfolio2/blob/main/assets/images/nftview.png?raw=true\">&nbsp&nbspMy NFTs",[200,10],true)

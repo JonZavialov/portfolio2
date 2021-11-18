@@ -90,3 +90,5 @@
 45. change nft loading to asynchronous
 
 46. make icons show border onmousedown
+
+47. accidentally deleted padding on some icons

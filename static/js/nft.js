@@ -87,4 +87,5 @@ async function refreshData(className){
     let nftBodyHTMLEnd = nftBody.innerHTML.substring(nftBody.innerHTML.indexOf('<section class="field-row" style="justify-content: flex-end">'))
 
     nftBody.innerHTML = `${nftBodyHTMLBegin}<div id = 'nftsbody'>${await getNftsFormatted(className)}</div>${nftBodyHTMLEnd}`
+    dragElement(document.getElementsByClassName(`nfts${className}`)[0],0,true)
 }

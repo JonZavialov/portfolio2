@@ -79,7 +79,7 @@
 
 ✔️ 40. add refresh data button to NFT viewer
 
-41. nft viewer is not draggable after refreshing
+✔️ 41. nft viewer is not draggable after refreshing
 
 42. make icons draggable
 

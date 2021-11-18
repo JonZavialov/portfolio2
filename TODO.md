@@ -86,3 +86,5 @@
 43. make it so you can recycle the icons
 
 44. add copy and paste to  right click
+
+45. change nft loading to asynchronous

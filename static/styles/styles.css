@@ -79,13 +79,13 @@ a{
 }
 
 #icon{
-    margin-top: 20px;
     width: fit-content;
     text-align: center;
     border-style: dotted;
     border-color: transparent;
     padding: 2px;
     border-width: 1px;
+    position: absolute;
 }
 
 #icon p{
@@ -179,11 +179,6 @@ a{
 .hoverHighlight:hover{
     background-color: #000079;
     color: white;
-}
-
-#jonpng{
-    position: absolute;
-    z-index: 99;
 }
 
 #startMenu{

@@ -16,6 +16,7 @@
     <script src="{{url_for('static', filename='js/startMenu.js')}}"></script>
     <script src="{{url_for('static', filename='js/calculator.js')}}"></script>
     <script src="{{url_for('static', filename='js/nft.js')}}"></script>
+    <script src="{{url_for('static', filename='js/icons.js')}}"></script>
     <link rel="stylesheet" href="https://unpkg.com/98.css">
     <title>Jonathan Zavialov</title>
 </head>
@@ -28,6 +29,7 @@
           initDraw(document.getElementById("main"))
           rightClick()
           dragElement(document.getElementById("aboutme"),32)
+          arangeIcons()
         }
     </script>
     <div id="sidenav"></div>
@@ -66,51 +68,46 @@
         </div>
         
         <div id="icons">
-          <div id="appColumn">
-            <div id="icon" class="recycle">
-              <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/recycle.png?raw=true">
-              <p>Recycle Bin</p>
-            </div>
-            <div id="icon" class="computer">
-              <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/computer.png?raw=true">
-              <p>My Computer</p>
-            </div>
-            <div id="icon" class="docs">
-              <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/documents.png?raw=true">
-              <p>My Documents</p>
-            </div>
-            <div id="icon" class="apps" style="margin-left: 10px;">
-              <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/appsdir.png?raw=true">
-              <p>My Apps</p>
-            </div>
-            <div id="icon" class="calculator" style="margin-left: 8px;">
-              <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/calculator.png?raw=true">
-              <p>Calculator</p>
-            </div>
+          <div id="icon" class="recycle">
+            <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/recycle.png?raw=true">
+            <p>Recycle Bin</p>
           </div>
-
-          <div id="fileColumn">
-            <div id="icon" class="nft" style="margin-left: 10px;">
-              <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/nftview.png?raw=true">
-              <p>My NFTs</p>
-            </div>
-            <div id="icon" class="txtEditor" style="margin-left: 8px;">
-              <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/txt.png?raw=true">
-              <p>Text Editor</p>
-            </div>
-            <div id="icon" class="jonpng" style="margin-left: 10px">
-              <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/image.png?raw=true" style="width: 48px">
-              <p>jon.png</p>
-            </div>
-            <div id="icon" class="credits" style="padding-right: 10px;margin-left: 8px">
-              <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/txt.png?raw=true">
-              <p style="transform: translate(7px);">credits.txt</p>
-            </div>
-            <div id="icon" class="resume" style="margin-left: 12px;">
-              <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/credits.png?raw=true">
-              <p>resume.pdf</p>
-            </div>
-          </div>      
+          <div id="icon" class="computer">
+            <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/computer.png?raw=true">
+            <p>My Computer</p>
+          </div>
+          <div id="icon" class="docs">
+            <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/documents.png?raw=true">
+            <p>My Documents</p>
+          </div>
+          <div id="icon" class="apps">
+            <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/appsdir.png?raw=true">
+            <p>My Apps</p>
+          </div>
+          <div id="icon" class="calculator">
+            <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/calculator.png?raw=true">
+            <p>Calculator</p>
+          </div>
+          <div id="icon" class="nft">
+            <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/nftview.png?raw=true">
+            <p>My NFTs</p>
+          </div>
+          <div id="icon" class="txtEditor">
+            <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/txt.png?raw=true">
+            <p>Text Editor</p>
+          </div>
+          <div id="icon" class="jonpng">
+            <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/image.png?raw=true" style="width: 48px">
+            <p>jon.png</p>
+          </div>
+          <div id="icon" class="credits">
+            <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/txt.png?raw=true">
+            <p style="transform: translate(7px);">credits.txt</p>
+          </div>
+          <div id="icon" class="resume">
+            <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/credits.png?raw=true">
+            <p>resume.pdf</p>
+          </div>     
         </div>
 
         <div class="window" id="taskbar">

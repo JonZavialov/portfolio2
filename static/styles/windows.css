@@ -10,14 +10,6 @@
     display: flex;
 }
 
-#myComputer .driveFloppy, #myApps .txtEditorApps{
-    transform: translate(80px, -74px);
-}
-
-#myComputer #icon, #myApps #icon{
-    margin: 0;
-}
-
 #myDocumentsBody, #myAppsBody, #myComputerBody, #recycleBinBody{
     background-color: #e7e7e7;
     padding: 5px;
@@ -25,14 +17,6 @@
     box-shadow: inset -1px -1px #ffffff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px #808080;
     height: 250px;
     width: 500px;
-}
-
-#myDocuments .creditsDocs{
-    transform: translate(80px, -74px);
-}
-
-#myDocuments #icon{
-    margin: 0;
 }
 
 #aboutme{
@@ -54,7 +38,7 @@
     width: 200px;
 }
 
-#calculator,#credits,#resume,#myComputer,#txtEditor,#myDocuments,#recycleBin,#myApps,#nfts{
+#calculator,#credits,#resume,#myComputer,#txtEditor,#myDocuments,#recycleBin,#myApps,#nfts,#jonpng{
     position: absolute;
     z-index: 99;
 }

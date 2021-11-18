@@ -122,6 +122,7 @@ async function apps(){
     openWindow(content,"myApps","<img width=13px src=\"https://github.com/JonZavialov/portfolio2/blob/main/assets/images/appsdir.png?raw=true\">&nbsp&nbspMy Apps",[100,400],true)
     addIconProperties()
     taskbarUpdate("https://github.com/JonZavialov/portfolio2/blob/main/assets/images/appsdir.png?raw=true","My Apps","myApps")
+    arangeIcons()
 }
 
 async function myDocuments(){
@@ -135,7 +136,7 @@ async function myDocuments(){
           <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/txt.png?raw=true">
           <p style="color:black">credits.txt</p>
         </div>
-        <div id="icon" class="resumeDocs ${numApps}" style='transform: translate(163px, -147px);'>
+        <div id="icon" class="resumeDocs ${numApps}">
           <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/credits.png?raw=true">
           <p style="color:black">resume.pdf</p>
         </div>
@@ -143,6 +144,7 @@ async function myDocuments(){
     openWindow(content,"myDocuments","<img width=13px src=\"https://github.com/JonZavialov/portfolio2/blob/main/assets/images/documents.png?raw=true\">&nbsp&nbspMy Documents",[100,300],true)
     addIconProperties()
     taskbarUpdate("https://github.com/JonZavialov/portfolio2/blob/main/assets/images/documents.png?raw=true","My Documents","myDocuments")
+    arangeIcons()
 }
 
 async function resume(){
@@ -169,6 +171,7 @@ async function myComputer(){
     openWindow(content,"myComputer","<img width=13px src=\"https://github.com/JonZavialov/portfolio2/blob/main/assets/images/computer.png?raw=true\">&nbsp&nbspMy Computer",[100,200],true)
     addIconProperties()
     taskbarUpdate("https://github.com/JonZavialov/portfolio2/blob/main/assets/images/computer.png?raw=true","My Computer","myComputer")
+    arangeIcons()
 }
 
 async function jonpng(){

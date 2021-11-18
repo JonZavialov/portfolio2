@@ -88,3 +88,5 @@
 44. add copy and paste to  right click
 
 45. change nft loading to asynchronous
+
+46. make icons show border onmousedown

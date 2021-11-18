@@ -1,17 +1,5 @@
 //Jonathan Zavialov
 
-async function addIconProperties(){
-    var icons = document.querySelectorAll( '[id^=icon]' )
-    for( i=0; i<icons.length; i++ ) {
-        icons[i].setAttribute( "onclick", `border(\"${icons[i].className}\")` )
-    }
-
-    document.addEventListener("click", function(event) {
-        if (event.target.closest("#icon")) return
-        removeBorders()
-    })
-}
-
 async function closeWindow(windowID,name = false){
     console.log(`closing ${windowID}`)
     document.getElementById(windowID).remove()

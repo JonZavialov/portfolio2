@@ -92,3 +92,5 @@
 46. make icons show border onmousedown
 
 ✔️ 47. accidentally deleted padding on some icons
+
+48. adding border to icons with drawn box is broken

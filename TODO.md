@@ -81,7 +81,7 @@
 
 ✔️ 41. nft viewer is not draggable after refreshing
 
-42. make icons draggable
+✔️ 42. make icons draggable
 
 43. make it so you can recycle the icons
 
@@ -91,4 +91,4 @@
 
 46. make icons show border onmousedown
 
-47. accidentally deleted padding on some icons
+✔️ 47. accidentally deleted padding on some icons

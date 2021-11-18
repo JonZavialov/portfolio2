@@ -268,3 +268,7 @@ a{
     position: absolute;
     z-index: 100;
 }
+
+.credits {
+    padding-right: 10px !important;
+}

@@ -169,8 +169,11 @@ async function jonpng(){
 }
 
 async function recycleBin(){
-    let content = "<div id=\"recycleBinBody\"></div>"
+    let content = `<div id=\"recycleBinBody\">
+        ${await getRecycleBinFormatted()}
+    </div>`
     openWindow(content,"recycleBin","<img width=13px src=\"https://github.com/JonZavialov/portfolio2/blob/main/assets/images/recycle.png?raw=true\">&nbsp&nbspRecycle Bin",[200,100],true)
+    addIconProperties()
     taskbarUpdate("https://github.com/JonZavialov/portfolio2/blob/main/assets/images/recycle.png?raw=true","Recycle Bin","recycleBin")
 }
 
@@ -228,13 +231,6 @@ async function openCalculator() {
     `
     openWindow(content,"calculator","<img width=13px src=\"https://github.com/JonZavialov/portfolio2/blob/main/assets/images/calculator.png?raw=true\">&nbsp&nbspCalculator",[100,100],true)
     taskbarUpdate("https://github.com/JonZavialov/portfolio2/blob/main/assets/images/calculator.png?raw=true","Calculator","calculator")
-}
-
-async function removeBorders(){
-    var icons = document.querySelectorAll( '[id^=icon]' )
-    for( i=0; i<icons.length; i++ ) {
-        icons[i].style.borderColor = "transparent"
-    }
 }
 
 async function taskbarUpdate(img,name,codeName){
@@ -328,11 +324,6 @@ async function sleep(ms){
 
 async function throwError(content,additionalButtons = ""){
     openWindow(content,"errorWindow","Error",[200,200],false,`${additionalButtons}okButton`)
-}
-
-async function getNumberOfIcons(name){
-    let icons = document.getElementsByClassName(name)
-    return icons.length
 }
 
 function copyToClipboard(textToCopy) {

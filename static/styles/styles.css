@@ -78,13 +78,16 @@ a{
     overflow-x: clip;
 }
 
-#icon{
+#icon,#recycledIcon{
     width: fit-content;
     text-align: center;
     border-style: dotted;
     border-color: transparent;
     padding: 2px;
     border-width: 1px;
+}
+
+#icon{
     position: absolute;
 }
 

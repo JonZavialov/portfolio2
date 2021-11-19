@@ -161,3 +161,16 @@
     margin-bottom: 0;
     transform: translate(0px, 8px);
 }
+
+#recycledIcon p{
+    color: black
+}
+
+#recycledIcon{
+    margin-right: 20px;
+    height: fit-content;
+}
+
+#recycleBinBody{
+    display: flex;
+}

@@ -48,13 +48,91 @@ async function arangeIcons(){
 }
 
 async function addIconProperties(){
-    var icons = document.querySelectorAll( '[id^=icon]' )
+    var icons = document.querySelectorAll( '#icon, #recycledIcon' )    
     for( i=0; i<icons.length; i++ ) {
         icons[i].setAttribute( "onclick", `border(\"${icons[i].className}\")` )
     }
 
     document.addEventListener("click", function(event) {
-        if (event.target.closest("#icon")) return
+        if (event.target.closest("#icon") || event.target.closest("#recycledIcon")) return
         removeBorders()
     })
+}
+
+async function recycleHover(icon){
+    if(icon.style.opacity == 0.5) return
+    objectsThatAreColliding.push(icon)
+    console.log('recycling')
+    icon.style.opacity = 0.5
+    icon.setAttribute("onmouseup", `iconReleased('${icon.className}')`)
+}
+
+async function iconReleased(iconName){
+    let icon = document.getElementsByClassName(iconName)[0]
+    let collide = doElsCollide(masterIconsList[1],icon)
+    if(collide){
+        recycle(icon)
+    }
+}
+
+async function recycle(icon){
+    icon.remove()
+    masterIconsList = await document.querySelectorAll( '[id^=icon]' )
+    recycledIcons.push(icon)
+}
+
+async function checkIfIconsAreStillColliding(){
+    for( i=0; i<objectsThatAreColliding.length; i++ ) {
+        let collide = doElsCollide(masterIconsList[1],objectsThatAreColliding[i])
+        if(!collide){
+            objectsThatAreColliding[i].style.opacity = 1
+            objectsThatAreColliding.splice(i,1)
+        }
+    }
+}
+
+async function checkIfIconIsOnRecycler(){
+    for( i=0; i<masterIconsList.length; i++ ) {
+        if(masterIconsList[i].className != "recycle"){
+            let collide = doElsCollide(masterIconsList[1],masterIconsList[i])
+            if(collide) recycleHover(masterIconsList[i])
+        }
+    }
+}
+
+async function initIcons(){
+    masterIconsList = await document.querySelectorAll( '[id^=icon]' )
+    objectsThatAreColliding = []
+    recycledIcons = []
+    function myLoop(){                             
+        setTimeout(async function() {
+            checkIfIconIsOnRecycler()
+            checkIfIconsAreStillColliding()
+            myLoop()
+        }, 62)
+    }
+    myLoop()
+}
+
+async function getRecycleBinFormatted(){
+    let html = ``
+    for( i=0; i<recycledIcons.length; i++ ) {
+        let numApps = await getNumberOfIcons(recycledIcons[i].className)
+        html += `<div id="recycledIcon" class="${recycledIcons[i].className}Recycled ${numApps}">
+            ${recycledIcons[i].innerHTML}
+        </div>`
+    }
+    return html
+}
+
+async function getNumberOfIcons(name){
+    let icons = document.getElementsByClassName(name)
+    return icons.length
+}
+
+async function removeBorders(){
+    var icons = document.querySelectorAll( '#icon, #recycledIcon' )
+    for( i=0; i<icons.length; i++ ) {
+        icons[i].style.borderColor = "transparent"
+    }
 }

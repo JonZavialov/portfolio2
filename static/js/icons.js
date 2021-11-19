@@ -115,12 +115,20 @@ async function initIcons(){
 }
 
 async function getRecycleBinFormatted(){
-    let html = ``
+    let html = `<div id="recycleRow">`
+    let lineBreak, endDiv
     for( i=0; i<recycledIcons.length; i++ ) {
+        lineBreak = ""
+        endDiv = ""
+        if(i % 5 == 0 && i != 0){
+            lineBreak = `<div id="recycleRow">`
+        }else if(i % 4 == 0 && i != 0){
+            endDiv = `</div>`
+        }
         let numApps = await getNumberOfIcons(recycledIcons[i].className)
-        html += `<div id="recycledIcon" class="${recycledIcons[i].className}Recycled ${numApps}">
+        html += `${lineBreak}<div id="recycledIcon" class="${recycledIcons[i].className}Recycled ${numApps}">
             ${recycledIcons[i].innerHTML}
-        </div>`
+        </div>${endDiv}`
     }
     return html
 }

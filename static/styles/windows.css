@@ -171,6 +171,6 @@
     height: fit-content;
 }
 
-#recycleBinBody{
+#recycleRow{
     display: flex;
 }

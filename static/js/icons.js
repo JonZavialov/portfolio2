@@ -1,4 +1,4 @@
-async function arangeIcons(draggable = false){
+async function arangeIcons(){
     let arrangement = {
         "desktop": {
             "recycle" : [10,20],
@@ -33,8 +33,15 @@ async function arangeIcons(draggable = false){
         for(let j = 0; j < icons.length; j++){
             let icon = document.getElementsByClassName(icons[j])
             for(let k = 0; k < icon.length; k++){
-                icon[k].style.transform = `translate(${arrangement[containers[i]][icons[j]][0]}px, ${arrangement[containers[i]][icons[j]][1]}px)`
-                if(draggable) dragElement(icon[k],0,true)
+                let offsetLeft = 28
+                let offsetTop = 43
+                if(containers[i] == "desktop"){
+                    dragElement(icon[k],0,true)
+                    offsetLeft = 40
+                    offsetTop = 100
+                }
+                icon[k].style.left = arrangement[containers[i]][icons[j]][0] + offsetLeft + 'px'
+                icon[k].style.top = arrangement[containers[i]][icons[j]][1] + offsetTop + 'px'
             }
         }
     }

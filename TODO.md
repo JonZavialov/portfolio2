@@ -93,4 +93,4 @@
 
 ✔️ 47. accidentally deleted padding on some icons
 
-48. adding border to icons with drawn box is broken
+✔️ 48. adding border to icons with drawn box is broken

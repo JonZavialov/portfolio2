@@ -64,6 +64,7 @@ async function recycleHover(icon){
     objectsThatAreColliding.push(icon)
     console.log('recycling')
     icon.style.opacity = 0.5
+    border('recycle')
     icon.setAttribute("onmouseup", `iconReleased('${icon.className}')`)
 }
 
@@ -79,6 +80,7 @@ async function recycle(icon){
     icon.remove()
     masterIconsList = await document.querySelectorAll( '[id^=icon]' )
     recycledIcons.push(icon)
+    refreshRecycleBin()
 }
 
 async function checkIfIconsAreStillColliding(){
@@ -86,6 +88,7 @@ async function checkIfIconsAreStillColliding(){
         let collide = doElsCollide(masterIconsList[1],objectsThatAreColliding[i])
         if(!collide){
             objectsThatAreColliding[i].style.opacity = 1
+            document.getElementsByClassName('recycle')[0].style.borderColor = "transparent"
             objectsThatAreColliding.splice(i,1)
         }
     }
@@ -114,19 +117,18 @@ async function initIcons(){
     myLoop()
 }
 
-async function getRecycleBinFormatted(){
+async function getRecycleBinFormatted(numApps = null){
     let html = `<div id="recycleRow">`
     let lineBreak, endDiv
     for( i=0; i<recycledIcons.length; i++ ) {
         lineBreak = ""
         endDiv = ""
-        if(i % 5 == 0 && i != 0){
-            lineBreak = `<div id="recycleRow">`
-        }else if(i % 4 == 0 && i != 0){
-            endDiv = `</div>`
+        if(i % 5 == 0 && i != 0)lineBreak = `<div id="recycleRow">`
+        else if(i % 4 == 0 && i != 0)endDiv = `</div>`
+        if(numApps == null){
+            numApps = await getNumberOfIcons(recycledIcons[i].className + "Recycled")
         }
-        let numApps = await getNumberOfIcons(recycledIcons[i].className)
-        html += `${lineBreak}<div id="recycledIcon" class="${recycledIcons[i].className}Recycled ${numApps}">
+        html += `${lineBreak}<div id="recycledIcon" class="${recycledIcons[i].className}Recycled${numApps} ${recycledIcons[i].className}Recycled">
             ${recycledIcons[i].innerHTML}
         </div>${endDiv}`
     }
@@ -140,7 +142,18 @@ async function getNumberOfIcons(name){
 
 async function removeBorders(){
     var icons = document.querySelectorAll( '#icon, #recycledIcon' )
-    for( i=0; i<icons.length; i++ ) {
+    for(let i=0; i<icons.length; i++ ) {
         icons[i].style.borderColor = "transparent"
     }
+}
+
+async function refreshRecycleBin(){
+    let recycleBins = document.querySelectorAll(`#recyclebinBody`)
+    let numApps = await getNumberOfIcons(recycledIcons[0].className  + "Recycled")
+    for(let i=0; i<recycleBins.length; i++ ) {
+        recycleBins[i].innerHTML = await getRecycleBinFormatted(numApps)
+        console.log(`refreshing recycle bins`)
+        numApps += 1
+    }
+    addIconProperties()
 }

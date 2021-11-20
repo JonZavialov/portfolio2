@@ -83,7 +83,7 @@
 
 ✔️ 42. make icons draggable
 
-43. make it so you can recycle the icons
+✔️ 43. make it so you can recycle the icons
 
 44. add copy and paste to  right click
 
@@ -95,6 +95,6 @@
 
 ✔️ 48. adding border to icons with drawn box is broken
 
-49. refresh opened recycle bin windows when new item is recycled
+✔️ 49. refresh opened recycle bin windows when new item is recycled
 
-50. make recycle border show on hover
+✔️ 50. make recycle border show on hover

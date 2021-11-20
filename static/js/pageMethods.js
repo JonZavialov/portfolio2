@@ -169,7 +169,7 @@ async function jonpng(){
 }
 
 async function recycleBin(){
-    let content = `<div id=\"recycleBinBody\">
+    let content = `<div id=\"recyclebinBody\">
         ${await getRecycleBinFormatted()}
     </div>`
     openWindow(content,"recycleBin","<img width=13px src=\"https://github.com/JonZavialov/portfolio2/blob/main/assets/images/recycle.png?raw=true\">&nbsp&nbspRecycle Bin",[200,100],true)

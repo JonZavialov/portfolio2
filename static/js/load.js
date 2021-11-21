@@ -52,7 +52,20 @@ async function loadDesktopNav(){
         <ul class=\"tree-view\">
             <li><a href=\"/home\">Home</a></li>
             <ul>
-                <li style="cursor: pointer;" onmouseup="credits()">Credits</li>
+                <li style="cursor: pointer;" onmouseup="recycleBin()">Recycle Bin</li>
+                <li style="cursor: pointer;" onmouseup="myComputer()">My Computer</li>
+                <li style="cursor: pointer;" onmouseup="myDocuments()">My Documents</li>
+                <ul>
+                    <li style="cursor: pointer;" onmouseup="jonpng()">jon.png</li>
+                    <li style="cursor: pointer;" onmouseup="credits()">credits.txt</li>
+                    <li style="cursor: pointer;" onmouseup="resume()">resume.pdf</li>
+                </ul>
+                <li style="cursor: pointer;" onmouseup="apps()">My Apps</li>
+                <ul>
+                    <li style="cursor: pointer;" onmouseup="openCalculator()">Calculator</li>
+                    <li style="cursor: pointer;" onmouseup="txtEditor()">Text Editor</li>
+                </ul>
+                <li style="cursor: pointer;" onmouseup="nft()">My NFTs</li>
             </ul>
             <li><a href=\"https://github.com/JonZavialov/portfolio2\" target=\"_blank\">Repository</a></li>
         </ul>

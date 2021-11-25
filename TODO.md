@@ -100,3 +100,7 @@
 ✔️ 50. make recycle border show on hover
 
 51. add calender
+
+52. make aboutme window work with open window method
+
+✔️ 53. make url params open apps

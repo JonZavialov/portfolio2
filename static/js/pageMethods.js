@@ -70,6 +70,20 @@ async function border(name){
     }
 }
 
+async function openAppOnStart(appName){
+    if(appName == "jonpng") jonpng()
+    else if(appName == "credits") credits()
+    else if(appName == "txtEditor") txtEditor()
+    else if(appName == "calculator") openCalculator()
+    else if(appName == "resume") resume()
+    else if(appName == "apps") apps()
+    else if(appName == "recycle") recycleBin()
+    else if(appName == "computer") myComputer()
+    else if(appName == "docs") myDocuments()
+    else if(appName == "nft") nft()
+    else window.location.replace("/404")
+}
+
 async function nft(){
     let content = `
     <div id = 'nftsbody'>

@@ -1,4 +1,4 @@
-async function arangeIcons(){
+async function arangeIcons(containersOnly = false){
     let arrangement = {
         "desktop": {
             "recycle" : [10,20],
@@ -30,6 +30,7 @@ async function arangeIcons(){
     let containers = Object.keys(arrangement)
     for(let i = 0; i < containers.length; i++){
         let icons = Object.keys(arrangement[containers[i]])
+        if(containers[i] == "desktop" && containersOnly) continue
         for(let j = 0; j < icons.length; j++){
             let icon = document.getElementsByClassName(icons[j])
             for(let k = 0; k < icon.length; k++){

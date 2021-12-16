@@ -124,7 +124,7 @@ async function apps(){
     openWindow(content,"myApps","<img width=13px src=\"https://github.com/JonZavialov/portfolio2/blob/main/assets/images/appsdir.png?raw=true\">&nbsp&nbspMy Apps",[100,400],true)
     addIconProperties()
     taskbarUpdate("https://github.com/JonZavialov/portfolio2/blob/main/assets/images/appsdir.png?raw=true","My Apps","myApps")
-    arangeIcons()
+    arangeIcons(true)
 }
 
 async function myDocuments(){
@@ -146,7 +146,7 @@ async function myDocuments(){
     openWindow(content,"myDocuments","<img width=13px src=\"https://github.com/JonZavialov/portfolio2/blob/main/assets/images/documents.png?raw=true\">&nbsp&nbspMy Documents",[100,300],true)
     addIconProperties()
     taskbarUpdate("https://github.com/JonZavialov/portfolio2/blob/main/assets/images/documents.png?raw=true","My Documents","myDocuments")
-    arangeIcons()
+    arangeIcons(true)
 }
 
 async function resume(){
@@ -173,7 +173,7 @@ async function myComputer(){
     openWindow(content,"myComputer","<img width=13px src=\"https://github.com/JonZavialov/portfolio2/blob/main/assets/images/computer.png?raw=true\">&nbsp&nbspMy Computer",[100,200],true)
     addIconProperties()
     taskbarUpdate("https://github.com/JonZavialov/portfolio2/blob/main/assets/images/computer.png?raw=true","My Computer","myComputer")
-    arangeIcons()
+    arangeIcons(true)
 }
 
 async function jonpng(){

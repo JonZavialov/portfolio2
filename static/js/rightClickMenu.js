@@ -29,7 +29,7 @@ async function renderRightClick(){
     <div class="window-body">
         <p class="hoverHighlight" onclick="location.reload()" id="menuItem">Reload</p>
         <hr>
-        <p class="hoverHighlight" id="menuItem">Arrange Icons</p>
+        <p class="hoverHighlight" onclick="arangeIcons()" id="menuItem">Arrange Icons</p>
         <p class="hoverHighlight" id="menuItem">Line up Icons</p>
         <hr>
         <p class="hoverHighlight" id="menuItem">Paste</p>

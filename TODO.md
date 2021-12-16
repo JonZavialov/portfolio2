@@ -104,3 +104,5 @@
 52. make aboutme window work with open window method
 
 ✔️ 53. make url params open apps
+
+54. add feed for current projects on github

@@ -7,10 +7,11 @@ async function arangeIcons(containersOnly = false){
             "apps" : [10, 320],
             "calculator" : [7, 420],
             "nft" : [94, 20],
-            "txtEditor" : [90, 120],
+            "txtEditor" : [87, 120],
             "jonpng" : [94, 220],
             "credits" : [90, 320],
             "resume" : [95, 420],
+            "calendar" : [170, 20],
         },
         "myComputer" : {
             "driveC" : [0, 0],

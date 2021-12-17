@@ -6,7 +6,7 @@
     box-shadow: inset -1px -1px #ffffff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px #808080;
 }
 
-#myComputer .title-bar-text, #recycleBin .title-bar-text, #myApps .title-bar-text, #myDocuments .title-bar-text{
+#myComputer .title-bar-text, #recycleBin .title-bar-text, #myApps .title-bar-text, #myDocuments .title-bar-text, #calendar .title-bar-text{
     display: flex;
 }
 
@@ -38,7 +38,7 @@
     width: 200px;
 }
 
-#calculator,#credits,#resume,#myComputer,#txtEditor,#myDocuments,#recycleBin,#myApps,#nfts,#jonpng{
+#calculator,#credits,#resume,#myComputer,#txtEditor,#myDocuments,#recycleBin,#myApps,#nfts,#jonpng, #calendar{
     position: absolute;
     z-index: 99;
 }
@@ -173,4 +173,31 @@
 
 #recycleRow{
     display: flex;
+}
+
+#calendarBody{
+    height: fit-content;
+    width: fit-content;
+}
+
+#yearSelector{
+    box-shadow: inset -1px -1px #fff, inset 1px 1px grey, inset -2px -2px #dfdfdf, inset 2px 2px #0a0a0a;
+    background-color: white;
+    text-align: left;
+    height: 24px;
+}
+
+#yearUpButton, #yearDownButton{
+    min-width: 0;
+    min-height: 0;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+#yearUpButton{
+    transform: translate(-19px, -5px)
+}
+
+#yearDownButton{
+    transform: translate(-38.5px, 7px)
 }

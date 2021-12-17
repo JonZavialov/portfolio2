@@ -47,7 +47,8 @@ function initDraw() {
             "#calculator",
             "#resume",
             "#myApps",
-            "#nfts"
+            "#nfts",
+            "#calendar"
         ]
         if(e.button != 0) return
         for(let i = 0; i < noSelect.length; i++){

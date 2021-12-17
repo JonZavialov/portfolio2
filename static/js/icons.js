@@ -24,7 +24,8 @@ async function arangeIcons(containersOnly = false){
         },
         "myApps" : {
             "calculatorApps" : [0, 0],
-            "txtEditorApps" : [80, 0]
+            "txtEditorApps" : [80, 0],
+            "calendarApps" : [160, 0]
         }
     }
 

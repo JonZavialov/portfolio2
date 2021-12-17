@@ -62,6 +62,7 @@ async function border(name){
         else if (icon.className == "txtEditor" || icon.className.indexOf("txtEditorApps") != -1) txtEditor()
         else if (icon.className == "calculator" || icon.className.indexOf("calculatorApps") != -1) openCalculator()
         else if (icon.className == "resume" || icon.className.indexOf("resumeDocs") != -1) resume()
+        else if(icon.className == "calendar" || icon.className.indexOf("calendarApps") != -1) initCalendar()
         else if (icon.className == "apps") apps()
         else if (icon.className == "recycle") recycleBin()
         else if (icon.className == "computer") myComputer()
@@ -81,6 +82,7 @@ async function openAppOnStart(appName){
     else if(appName == "computer") myComputer()
     else if(appName == "docs") myDocuments()
     else if(appName == "nft") nft()
+    else if(appName == "calendar") initCalendar()
     else window.location.replace("/404")
 }
 
@@ -117,8 +119,12 @@ async function apps(){
             <p style="color:black">Calculator</p>
         </div>
         <div id="icon" class="txtEditorApps ${numApps}" style="margin-left: 8px;">
-              <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/txt.png?raw=true">
-              <p style="color:black">Text Editor</p>
+            <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/txt.png?raw=true">
+            <p style="color:black">Text Editor</p>
+        </div>
+        <div id="icon" class="calendarApps ${numApps}" style="margin-left: 8px;">
+            <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/calendar.png?raw=true">
+            <p style="color:black">Calendar</p>
         </div>
     </div>`
     openWindow(content,"myApps","<img width=13px src=\"https://github.com/JonZavialov/portfolio2/blob/main/assets/images/appsdir.png?raw=true\">&nbsp&nbspMy Apps",[100,400],true)

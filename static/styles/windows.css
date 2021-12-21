@@ -239,5 +239,6 @@
     display: inline-block;
     width: 14.2%;
     text-align: center;
-    margin-bottom: 15px;
+    padding-bottom: 8px;
+    padding-top: 7px;
 }

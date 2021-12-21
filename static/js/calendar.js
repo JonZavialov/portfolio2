@@ -22,7 +22,7 @@ async function initCalendar(){
             <button id="yearUpButton" onclick="yearUp(${numApps})">▲</button>
             <button id="yearDownButton" onclick="yearDown(${numApps})">▼</button>
             <div id="calendarDisplay" class="calendarDisplay${numApps}">
-                ${await renderCalendar(monthData[0], monthData[1])}
+                ${await renderCalendar(monthData[0], monthData[1], numApps)}
             </div>
         </div>
     `
@@ -33,13 +33,13 @@ async function initCalendar(){
     addMonthChangeListener(numApps)
 }
 
-async function renderCalendar(firstDay, daysInMonth){
+async function renderCalendar(firstDay, daysInMonth, numApps){
     let dates = ``
     for(let i = 0; i < firstDay; i++){
         dates += `<li>&nbsp</li>`
     }
     for(let i = 0; i < daysInMonth; i++){
-        dates += `<li>${i+1}</li>`
+        dates += `<li onclick="highlightDay(${numApps}, ${i+1})" class="dayTile${numApps}${i+1}">${i+1}</li>`
     }
     
     let content = `
@@ -58,6 +58,12 @@ async function renderCalendar(firstDay, daysInMonth){
     `
 
     return content
+}
+
+async function highlightDay(numApps, day){
+    let dayTile = document.getElementsByClassName(`dayTile${numApps}${day}`)[0]
+    if(dayTile.style.backgroundColor != "rgb(221, 221, 221)") dayTile.style.backgroundColor = "rgb(221, 221, 221)"
+    else dayTile.style.backgroundColor = "white"
 }
 
 async function addMonthChangeListener(numApps){
@@ -81,7 +87,7 @@ async function getMonthDays(year, month){
 async function processCalendarChange(numOfWindow, year, month){
     let monthData = await getMonthDays(year, month)
     let calendarWindow = await document.getElementsByClassName(`calendarDisplay${numOfWindow}`)[0]
-    calendarWindow.innerHTML = await renderCalendar(monthData[0], monthData[1])
+    calendarWindow.innerHTML = await renderCalendar(monthData[0], monthData[1], numOfWindow)
 }
 
 async function yearUp(numOfWindow){

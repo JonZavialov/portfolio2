@@ -11,7 +11,7 @@ async function arangeIcons(containersOnly = false){
             "calendar" : [100, 320],
             "jonpng" : [180, 20],
             "credits" : [180, 120],
-            "resume" : [180, 220]
+            "resume" : [183, 220]
         },
         "myComputer" : {
             "driveC" : [0, 0],

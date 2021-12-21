@@ -1,28 +1,34 @@
 async function initCalendar(){
-    let monthData = await getMonthDays(new Date().getFullYear(), new Date().getMonth())
+    let d = new Date()
+    let currentMonth = d.getMonth()
+    let currentYear = d.getFullYear()
+    let currentDay = d.getDate()
+    let monthData = await getMonthDays(currentYear, currentMonth)
 
     let numApps = await getNumberOfIcons("calendarWindow")
+    
+    let months = ""
+    for(let i = 0; i < 12; i++){
+        let selectedTag = ""
+        if(i == currentMonth) selectedTag = "selected"
+        months += `<option ${selectedTag}>${await convertNumberToMonth(i)}</option>`
+    }
+
     let content = `
         <div id="calendarBody">
             <select id="monthSelector" class="monthSelector${numApps}">
-                <option>January</option>
-                <option>February</option>
-                <option selected>March</option>
-                <option>April</option>
-                <option>May</option>
-                <option>June</option>
-                <option>July</option>
-                <option>August</option>
-                <option>September</option>
-                <option>October</option>
-                <option>November</option>
-                <option>December</option>
+                ${months}
             </select>
             <button id="yearSelector" class="yearSelector${numApps}">2021</button>
             <button id="yearUpButton" onclick="yearUp(${numApps})">▲</button>
             <button id="yearDownButton" onclick="yearDown(${numApps})">▼</button>
-            <div id="calendarDisplay" class="calendarDisplay${numApps}">
-                ${await renderCalendar(monthData[0], monthData[1], numApps)}
+            <div id="calendarMainDisplay">
+                <div id="calendarDisplay" class="calendarDisplay${numApps}">
+                    ${await renderCalendar(monthData[0], monthData[1], numApps, currentDay)}
+                </div>
+                <div id="dayDisplay" class="dayDisplay${numApps}">
+                    ${await renderDay(currentDay, currentMonth, currentYear)}
+                </div>
             </div>
         </div>
     `
@@ -33,13 +39,17 @@ async function initCalendar(){
     addMonthChangeListener(numApps)
 }
 
-async function renderCalendar(firstDay, daysInMonth, numApps){
+async function renderCalendar(firstDay, daysInMonth, numApps, today=-1){
     let dates = ``
     for(let i = 0; i < firstDay; i++){
         dates += `<li>&nbsp</li>`
     }
     for(let i = 0; i < daysInMonth; i++){
-        dates += `<li onclick="highlightDay(${numApps}, ${i+1})" class="dayTile${numApps}${i+1}">${i+1}</li>`
+        if(i+1 == today){
+            backgroundColor = "rgb(221, 221, 221)" 
+        }
+        else backgroundColor = ""
+        dates += `<li style="background-color: ${backgroundColor};" onclick="highlightDay(${numApps}, ${i+1})" class="dayTile${numApps}${i+1} dayTile${numApps}">${i+1}</li>`
     }
     
     let content = `
@@ -60,10 +70,56 @@ async function renderCalendar(firstDay, daysInMonth, numApps){
     return content
 }
 
+async function renderDay(day, month, year){
+    let formattedMonth = await convertNumberToMonth(month)
+    
+    let nationalDays = await makeGetRequest(`https://national-api-day.herokuapp.com/api/date/${month + 1}/${day}`)
+    nationalDays = nationalDays.holidays
+    let formattedNationalDays = ""
+    for(let i = 0; i < nationalDays.length; i++){
+        formattedNationalDays += `<li>${nationalDays[i]}</li>`
+    }
+
+    let content = `
+        <div id="dayHeader">
+            <p>${formattedMonth} ${day}, ${year}</p>
+        </div>
+        <div id="dayBody">
+            ${formattedNationalDays}
+        </div>
+    `
+    
+    return content
+}
+
+async function clearDayDisplay(numApps){
+    let dayDisplay = await document.getElementsByClassName(`dayDisplay${numApps}`)[0]
+    dayDisplay.innerHTML = ""
+}
+
 async function highlightDay(numApps, day){
     let dayTile = document.getElementsByClassName(`dayTile${numApps}${day}`)[0]
-    if(dayTile.style.backgroundColor != "rgb(221, 221, 221)") dayTile.style.backgroundColor = "rgb(221, 221, 221)"
-    else dayTile.style.backgroundColor = "white"
+    if(dayTile.style.backgroundColor != "rgb(221, 221, 221)"){
+        dayTile.style.backgroundColor = "rgb(221, 221, 221)"
+        
+        let dayDisplay = await document.getElementsByClassName(`dayDisplay${numApps}`)[0]
+        let month = document.getElementsByClassName(`monthSelector${numApps}`)[0].value
+        month = await convertMonthToNumber(month)
+        let year = document.getElementsByClassName(`yearSelector${numApps}`)[0].innerHTML
+        year = parseInt(year)
+        dayDisplay.innerHTML = await renderDay(day, month, year)
+        
+        let dayTiles = document.getElementsByClassName(`dayTile${numApps}`)
+        for(let i = 0; i < dayTiles.length; i++){
+            if(dayTiles[i].style.backgroundColor == "rgb(221, 221, 221)" && dayTiles[i].innerHTML != day){
+                dayTiles[i].style.backgroundColor = "white"
+            }
+        }
+    }
+    else{
+        dayTile.style.backgroundColor = "white"
+        clearDayDisplay(numApps)
+    }
 }
 
 async function addMonthChangeListener(numApps){
@@ -88,6 +144,7 @@ async function processCalendarChange(numOfWindow, year, month){
     let monthData = await getMonthDays(year, month)
     let calendarWindow = await document.getElementsByClassName(`calendarDisplay${numOfWindow}`)[0]
     calendarWindow.innerHTML = await renderCalendar(monthData[0], monthData[1], numOfWindow)
+    clearDayDisplay(numOfWindow)
 }
 
 async function yearUp(numOfWindow){
@@ -136,5 +193,34 @@ async function convertMonthToNumber(month){
             return 10
         case "December":
             return 11
+    }
+}
+
+async function convertNumberToMonth(month){
+    switch(month){
+        case 0:
+            return "January"
+        case 1:
+            return "February"
+        case 2:
+            return "March"
+        case 3:
+            return "April"
+        case 4:
+            return "May"
+        case 5:
+            return "June"
+        case 6:
+            return "July"
+        case 7:
+            return "August"
+        case 8:
+            return "September"
+        case 9:
+            return "October"
+        case 10:
+            return "November"
+        case 11:
+            return "December"
     }
 }

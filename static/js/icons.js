@@ -9,7 +9,7 @@ async function arangeIcons(containersOnly = false){
             "nft" : [103, 120],
             "txtEditor" : [92, 221],
             "calendar" : [100, 320],
-            "credits" : [180, 20],
+            "credits" : [173, 20],
             "jonpng" : [180, 120],
             "resume" : [183, 220]
         },

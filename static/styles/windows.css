@@ -21,11 +21,13 @@
 
 #aboutme{
     position: absolute;
-    top: 45%;
-    left: 40%;
-    margin-right: -50%;
+    top: 45% !important;
+    left: 40% !important;
+    margin-right: -50% !important;
     transform: translate(-50%, -50%);
     z-index: 99;
+    margin: 32px; 
+    width: 500px !important;
 }
 
 #txtEditor textarea{

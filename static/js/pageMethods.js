@@ -253,6 +253,23 @@ async function openCalculator() {
     taskbarUpdate("https://github.com/JonZavialov/portfolio2/blob/main/assets/images/calculator.png?raw=true","Calculator","calculator")
 }
 
+async function openIntroWindow(){
+    let content = `
+    <p style="font-size: 16px;">    
+        I am a Full Stack Developer with a passion for Computer Science. 
+        I began learning how to code at a young age, when I was in 9th grade.
+        Since then I've learned a variety of skills within anything that
+        interests me including Python, Javascript, Java, TypeScript, ReactJS,
+        Flask, and more recently creating websites such as this one. I code almost
+        every day, jumping from project to project so I can learn something new 
+        every day. In my free time I enjoy playing games such as Valorant with 
+        my friends. My interests also include cryptography, cryptocurrency,
+        calculus, and personal finance.
+    </p>
+    `
+    openWindow(content,"aboutme","Welcome to my website",[200,200],false,`okButton`)
+}
+
 async function taskbarUpdate(img,name,codeName){
     var taskbarItems = document.getElementsByClassName(`${codeName}taskbarItem`)
     if(taskbarItems.length != 0) return 
@@ -277,13 +294,13 @@ async function taskbarClose(name){
     })
 }
 
-async function openWindow(content,name,title,coords,taskbar = false, footer = "", closeFunc = false){
+async function openWindow(content,name,title,coords,taskbar = false, footer = "", closeFunc = false, error = false){
     let numOfWindows = document.getElementsByClassName(`${name}Window`).length
     let taskbarName = ""
     if(taskbar) taskbarName = `,'${name}'`
     if(!closeFunc) closeFunc = `closeClassWindow('${name}${numOfWindows}'${taskbarName})`
     footer = footer.replace("okButton",`<button onclick=\"${closeFunc}\">OK</button>`)
-    if(footer != "") content += "<br><br>"
+    if(error) content += "<br><br>"
 
     let html = `
     <div id="${name}header" class="title-bar ${name}${numOfWindows}header">
@@ -343,7 +360,7 @@ async function sleep(ms){
 }
 
 async function throwError(content,additionalButtons = ""){
-    openWindow(content,"errorWindow","Error",[200,200],false,`${additionalButtons}okButton`)
+    openWindow(content,"errorWindow","Error",[200,200],false,`${additionalButtons}okButton`,false, true)
 }
 
 function copyToClipboard(textToCopy) {

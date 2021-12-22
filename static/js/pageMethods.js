@@ -1,7 +1,6 @@
 //Jonathan Zavialov
 
 async function closeWindow(windowID,name = false){
-    console.log(`closing ${windowID}`)
     document.getElementById(windowID).remove()
     if(name){
         taskbarClose(name)
@@ -63,6 +62,7 @@ async function border(name){
         else if (icon.className == "calculator" || icon.className.indexOf("calculatorApps") != -1) openCalculator()
         else if (icon.className == "resume" || icon.className.indexOf("resumeDocs") != -1) resume()
         else if(icon.className == "calendar" || icon.className.indexOf("calendarApps") != -1) initCalendar()
+        else if(icon.className == "email" || icon.className.indexOf("emailApps") != -1) initEmail()
         else if (icon.className == "apps") apps()
         else if (icon.className == "recycle") recycleBin()
         else if (icon.className == "computer") myComputer()
@@ -72,6 +72,7 @@ async function border(name){
 }
 
 async function openAppOnStart(appName){
+    closeWindow("aboutme")
     if(appName == "jonpng") jonpng()
     else if(appName == "credits") credits()
     else if(appName == "txtEditor") txtEditor()
@@ -83,6 +84,7 @@ async function openAppOnStart(appName){
     else if(appName == "docs") myDocuments()
     else if(appName == "nft") nft()
     else if(appName == "calendar") initCalendar()
+    else if(appName == "email") initEmail()
     else window.location.replace("/404")
 }
 

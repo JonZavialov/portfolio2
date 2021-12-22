@@ -6,7 +6,7 @@
     box-shadow: inset -1px -1px #ffffff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px #808080;
 }
 
-#myComputer .title-bar-text, #recycleBin .title-bar-text, #myApps .title-bar-text, #myDocuments .title-bar-text, #calendar .title-bar-text{
+#myComputer .title-bar-text, #recycleBin .title-bar-text, #myApps .title-bar-text, #myDocuments .title-bar-text, #calendar .title-bar-text, #email .title-bar-text{
     display: flex;
 }
 
@@ -40,7 +40,7 @@
     width: 200px;
 }
 
-#calculator,#credits,#resume,#myComputer,#txtEditor,#myDocuments,#recycleBin,#myApps,#nfts,#jonpng, #calendar{
+#calculator,#credits,#resume,#myComputer,#txtEditor,#myDocuments,#recycleBin,#myApps,#nfts,#jonpng,#calendar,#email{
     position: absolute;
     z-index: 99;
 }

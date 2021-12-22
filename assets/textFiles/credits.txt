@@ -16,3 +16,6 @@ font by int10h
 
 pdf viewer by Project Jupyter
     https://nbviewer.org
+
+holidays API by Nate Dimick
+    https://national-api-day.herokuapp.com/

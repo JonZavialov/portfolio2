@@ -128,6 +128,10 @@ async function apps(){
             <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/calendar.png?raw=true">
             <p style="color:black">Calendar</p>
         </div>
+        <div id="icon" class="emailApps ${numApps}" style="margin-left: 8px;">
+            <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/outlook.png?raw=true">
+            <p style="color:black">Outlook Express</p>
+        </div>
     </div>`
     openWindow(content,"myApps","<img width=13px src=\"https://github.com/JonZavialov/portfolio2/blob/main/assets/images/appsdir.png?raw=true\">&nbsp&nbspMy Apps",[100,400],true)
     addIconProperties()

@@ -1,12 +1,39 @@
 async function initCalendar(){
+    let numApps = await getNumberOfIcons("calendarWindow")
+
+    let content = `
+        <button onclick="setCalendarBorders(${numApps}, -1)" style="outline: none">Date</button>
+        <button onclick="setCalendarBorders(${numApps}, 1)" style="outline: none">Time</button>
+        <div id="borderCover" class="borderCover${numApps}"></div>
+        <div id="borderCoverVertical" class="borderCoverVertical${numApps}"></div>
+        <div id="borderCoverVertical2" class="borderCoverVertical2${numApps}"></div>
+        <div id="calendarBody" class="calendarBody${numApps}"></div>
+    `
+
+    openWindow(content,"calendar","<img width=13px src=\"https://github.com/JonZavialov/portfolio2/blob/main/assets/images/calendar.png?raw=true\">&nbsp&nbspCalendar",[150,250],true)
+    taskbarUpdate("https://github.com/JonZavialov/portfolio2/blob/main/assets/images/calendar.png?raw=true","Calendar","calendar")
+    setCalendarToDate(numApps)
+    await sleep(10)
+    addMonthChangeListener(numApps)
+}
+
+async function setCalendarToTime(numApps){
+    let content = `
+        <div id="clockDisplay">
+        
+        </div>
+    `
+
+    document.getElementsByClassName(`calendarBody${numApps}`)[0].innerHTML = content
+}
+
+async function setCalendarToDate(numApps){
     let d = new Date()
     let currentMonth = d.getMonth()
     let currentYear = d.getFullYear()
     let currentDay = d.getDate()
     let monthData = await getMonthDays(currentYear, currentMonth)
 
-    let numApps = await getNumberOfIcons("calendarWindow")
-    
     let months = ""
     for(let i = 0; i < 12; i++){
         let selectedTag = ""
@@ -15,28 +42,37 @@ async function initCalendar(){
     }
 
     let content = `
-        <div id="calendarBody">
-            <select id="monthSelector" class="monthSelector${numApps}">
-                ${months}
-            </select>
-            <button id="yearSelector" class="yearSelector${numApps}">2021</button>
-            <button id="yearUpButton" onclick="yearUp(${numApps})">▲</button>
-            <button id="yearDownButton" onclick="yearDown(${numApps})">▼</button>
-            <div id="calendarMainDisplay">
-                <div id="calendarDisplay" class="calendarDisplay${numApps}">
-                    ${await renderCalendar(monthData[0], monthData[1], numApps, currentDay)}
-                </div>
-                <div id="dayDisplay" class="dayDisplay${numApps}">
-                    ${await renderDay(currentDay, currentMonth, currentYear)}
-                </div>
+        <select id="monthSelector" class="monthSelector${numApps}">
+            ${months}
+        </select>
+        <button id="yearSelector" class="yearSelector${numApps}">2021</button>
+        <button id="yearUpButton" onclick="yearUp(${numApps})">▲</button>
+        <button id="yearDownButton" onclick="yearDown(${numApps})">▼</button>
+        <div id="calendarMainDisplay">
+            <div id="calendarDisplay" class="calendarDisplay${numApps}">
+                ${await renderCalendar(monthData[0], monthData[1], numApps, currentDay)}
+            </div>
+            <div id="dayDisplay" class="dayDisplay${numApps}">
+                ${await renderDay(currentDay, currentMonth, currentYear)}
             </div>
         </div>
     `
 
-    openWindow(content,"calendar","<img width=13px src=\"https://github.com/JonZavialov/portfolio2/blob/main/assets/images/calendar.png?raw=true\">&nbsp&nbspCalendar",[150,250],true)
-    taskbarUpdate("https://github.com/JonZavialov/portfolio2/blob/main/assets/images/calendar.png?raw=true","Calendar","calendar")
-    await sleep(10)
-    addMonthChangeListener(numApps)
+    document.getElementsByClassName(`calendarBody${numApps}`)[0].innerHTML = content
+}
+
+async function setCalendarBorders(numApps, direction){
+    let borderCovers = [document.getElementsByClassName(`borderCover${numApps}`)[0], document.getElementsByClassName(`borderCoverVertical${numApps}`)[0], document.getElementsByClassName(`borderCoverVertical2${numApps}`)[0]]
+    for(let i = 0; i < borderCovers.length; i++){
+        let transformX = parseInt(getComputedStyle(borderCovers[i]).getPropertyValue('transform').split(' ')[4].slice(0, -1))
+        let transformY = parseInt(getComputedStyle(borderCovers[i]).getPropertyValue('transform').split(' ')[5].slice(0, -1))
+        console.log(transformX)
+        if(direction == -1 && transformX < 10) return
+        if(direction == 1 && transformX > 50) return
+        borderCovers[i].style.transform = `translate(${transformX + (77 * direction)}px, ${transformY}px)`
+        if(direction == -1) setCalendarToDate(numApps)
+        else setCalendarToTime(numApps)
+    }
 }
 
 async function renderCalendar(firstDay, daysInMonth, numApps, today=-1){

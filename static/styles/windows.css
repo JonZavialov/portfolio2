@@ -180,6 +180,8 @@
 #calendarBody{
     height: fit-content;
     width: fit-content;
+    box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px grey, inset 2px 2px #dfdfdf;
+    padding: 5px;
 }
 
 #calendarBody ul{
@@ -276,4 +278,36 @@
 
 #dayHeader p{
     margin: 0;
+}
+
+#borderCover {
+    position: absolute;
+    width: 72px;
+    height: 6px;
+    background-color: silver;
+    z-index: 101;
+    transform: translate(1px, -4px);
+}
+
+#borderCoverVertical{
+    position: absolute;
+    width: 1px;
+    height: 3px;
+    background-color: white;
+    z-index: 101;
+    transform: translate(0px, -2px);
+}
+
+#borderCoverVertical2{
+    position: absolute;
+    width: 1px;
+    height: 4px;
+    background-color: #DFDFDF;
+    z-index: 101;
+    transform: translate(1px, -2px);
+}
+
+#clockDisplay{
+    width: 444px;
+    height: 225px;
 }

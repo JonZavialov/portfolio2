@@ -6,6 +6,7 @@
     width: 20em;
     margin-left: 100px;
     margin-top: 2px;
+    background: #fff url(https://cssanimation.rocks/images/posts/clocks/ios_clock.svg) no-repeat center;
 }
   
 .clock.simple:after {

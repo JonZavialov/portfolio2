@@ -318,7 +318,7 @@ function initLocalClocks(numApps) {
 
 /*
  * Set a timeout for the first minute hand movement (less than 1 minute), then rotate it every minute after that
- */
+*/
 function setUpMinuteHands(numApps) {
     // Find out how far into the minute we are
     var container = document.getElementsByClassName(`minutes-container${numApps}`)[0]

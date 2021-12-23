@@ -1,10 +1,11 @@
 .clock {
     border-radius: 50%;
-    background-size: 88%;
     height: 8em;
     padding-bottom: 31%;
     position: relative;
     width: 20em;
+    margin-left: 100px;
+    margin-top: 2px;
 }
   
 .clock.simple:after {
@@ -75,4 +76,9 @@
 
 .seconds-container {
     transition: transform 0.2s cubic-bezier(.4,2.08,.55,.44);
+}
+
+#clockDisplay{
+    width: 444px;
+    height: 225px;
 }

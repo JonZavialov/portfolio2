@@ -20,11 +20,25 @@ async function initCalendar(){
 async function setCalendarToTime(numApps){
     let content = `
         <div id="clockDisplay">
-        
+            <article class="clock clock${numApps}">
+                <div class="hours-container hours-container${numApps}">
+                    <div class="hours hours${numApps}"></div>
+                </div>
+                <div class="minutes-container minutes-container${numApps}">
+                    <div class="minutes minutes${numApps}"></div>
+                </div>
+                <div class="seconds-container seconds-container${numApps}">
+                    <div class="seconds seconds${numApps}"></div>
+                </div>
+            </article>
         </div>
     `
 
     document.getElementsByClassName(`calendarBody${numApps}`)[0].innerHTML = content
+
+    initLocalClocks(numApps)
+    setUpMinuteHands(numApps)
+    moveSecondHands(numApps)
 }
 
 async function setCalendarToDate(numApps){
@@ -66,13 +80,12 @@ async function setCalendarBorders(numApps, direction){
     for(let i = 0; i < borderCovers.length; i++){
         let transformX = parseInt(getComputedStyle(borderCovers[i]).getPropertyValue('transform').split(' ')[4].slice(0, -1))
         let transformY = parseInt(getComputedStyle(borderCovers[i]).getPropertyValue('transform').split(' ')[5].slice(0, -1))
-        console.log(transformX)
         if(direction == -1 && transformX < 10) return
         if(direction == 1 && transformX > 50) return
         borderCovers[i].style.transform = `translate(${transformX + (77 * direction)}px, ${transformY}px)`
-        if(direction == -1) setCalendarToDate(numApps)
-        else setCalendarToTime(numApps)
     }
+    if(direction == -1) setCalendarToDate(numApps)
+    else setCalendarToTime(numApps)
 }
 
 async function renderCalendar(firstDay, daysInMonth, numApps, today=-1){
@@ -259,4 +272,98 @@ async function convertNumberToMonth(month){
         case 11:
             return "December"
     }
+}
+
+function initLocalClocks(numApps) {
+    // Get the local time using JS
+    var date = new Date
+    var seconds = date.getSeconds()
+    var minutes = date.getMinutes()
+    var hours = date.getHours()
+  
+    // Create an object with each hand and it's angle in degrees
+    var hands = [
+      {
+        hand: 'hours',
+        angle: (hours * 30) + (minutes / 2)
+      },
+      {
+        hand: 'minutes',
+        angle: (minutes * 6)
+      },
+      {
+        hand: 'seconds',
+        angle: (seconds * 6)
+      }
+    ]
+
+    var elements = [
+        document.getElementsByClassName(`hours${numApps}`)[0],
+        document.getElementsByClassName(`minutes${numApps}`)[0],
+        document.getElementsByClassName(`seconds${numApps}`)[0]
+    ]
+
+    // Loop through each of these hands to set their angle
+    for (var j = 0; j < hands.length; j++) {
+        if(j == 0 || j == 2){
+            elements[j].style.webkitTransform = 'rotateZ('+ hands[j].angle +'deg)'
+            elements[j].style.transform = 'rotateZ('+ hands[j].angle +'deg)'
+        }else{
+            elements[j].style.webkitTransform = 'rotateZ('+ hands[j].angle +'deg)'
+            elements[j].style.transform = 'rotateZ('+ hands[j].angle +'deg)'
+            elements[j].parentNode.setAttribute('data-second-angle', hands[j + 1].angle)
+        }
+    }
+}
+
+/*
+ * Set a timeout for the first minute hand movement (less than 1 minute), then rotate it every minute after that
+ */
+function setUpMinuteHands(numApps) {
+    // Find out how far into the minute we are
+    var container = document.getElementsByClassName(`minutes-container${numApps}`)[0]
+    var secondAngle = container.getAttribute("data-second-angle")
+    if (secondAngle > 0) {
+      // Set a timeout until the end of the current minute, to move the hand
+      var delay = (((360 - secondAngle) / 6) + 0.1) * 1000
+      setTimeout(function() {
+        moveMinuteHands(container)
+        console.log('moved minutes hand for first time')
+      }, delay)
+    }
+}
+  
+/*
+* Do the first minute's rotation
+*/
+function moveMinuteHands(container) {
+    container.style.webkitTransform = 'rotateZ(6deg)'
+    container.style.transform = 'rotateZ(6deg)'
+    // Then continue with a 60 second interval
+    setInterval(function() {
+        if (container.angle === undefined) {
+            container.angle = 12
+        } else {
+            container.angle += 6
+        }
+        console.log(`minute hand ticked`)
+        container.style.webkitTransform = 'rotateZ('+ container.angle +'deg)'
+        container.style.transform = 'rotateZ('+ container.angle +'deg)'
+    }, 60000)
+}
+
+/*
+ * Move the second containers
+ */
+function moveSecondHands(numApps) {
+    let container = document.getElementsByClassName(`seconds-container${numApps}`)[0]
+    setInterval(function() {
+        if (container.angle === undefined) {
+          container.angle = 6
+        } else {
+          container.angle += 6
+        }
+        container.style.webkitTransform = 'rotateZ('+ container.angle +'deg)'
+        container.style.transform = 'rotateZ('+ container.angle +'deg)'
+    }, 1000)
 }

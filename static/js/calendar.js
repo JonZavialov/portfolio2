@@ -327,8 +327,7 @@ function setUpMinuteHands(numApps) {
       // Set a timeout until the end of the current minute, to move the hand
       var delay = (((360 - secondAngle) / 6) + 0.1) * 1000
       setTimeout(function() {
-        moveMinuteHands(container)
-        console.log('moved minutes hand for first time')
+        moveMinuteHands(container, numApps)
       }, delay)
     }
 }
@@ -336,17 +335,17 @@ function setUpMinuteHands(numApps) {
 /*
 * Do the first minute's rotation
 */
-function moveMinuteHands(container) {
+function moveMinuteHands(container, numApps) {
     container.style.webkitTransform = 'rotateZ(6deg)'
     container.style.transform = 'rotateZ(6deg)'
     // Then continue with a 60 second interval
-    setInterval(function() {
+    let minutesInterval = setInterval(function() {
         if (container.angle === undefined) {
             container.angle = 12
         } else {
             container.angle += 6
         }
-        console.log(`minute hand ticked`)
+        if(!document.getElementsByClassName(`minutes-container${numApps}`)[0]) clearInterval(minutesInterval)
         container.style.webkitTransform = 'rotateZ('+ container.angle +'deg)'
         container.style.transform = 'rotateZ('+ container.angle +'deg)'
     }, 60000)
@@ -357,12 +356,13 @@ function moveMinuteHands(container) {
  */
 function moveSecondHands(numApps) {
     let container = document.getElementsByClassName(`seconds-container${numApps}`)[0]
-    setInterval(function() {
+    let secondsInterval = setInterval(function() {
         if (container.angle === undefined) {
           container.angle = 6
         } else {
           container.angle += 6
         }
+        if(!document.getElementsByClassName(`seconds-container${numApps}`)[0]) clearInterval(secondsInterval)
         container.style.webkitTransform = 'rotateZ('+ container.angle +'deg)'
         container.style.transform = 'rotateZ('+ container.angle +'deg)'
     }, 1000)

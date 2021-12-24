@@ -16,6 +16,10 @@
     user-select: none;
 }
 
+.title-bar-controls button[aria-label=Close] {
+    margin-left: 0 !important;
+}
+
 #sidenav-button{
     position: fixed;
     left: 0;

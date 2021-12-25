@@ -6,8 +6,8 @@
     width: 20em;
     margin-left: 100px;
     margin-top: 2px;
-    background: url(https://github.com/JonZavialov/portfolio2/blob/main/assets/images/clock.svg?raw=true) no-repeat center;
-    background-size: 85%;
+    background: url(https://github.com/JonZavialov/clocksvg/blob/main/clock.svg?raw=true) no-repeat center;
+    background-size: 241px;
 }
   
 .clock.simple:after {

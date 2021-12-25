@@ -10,9 +10,10 @@ async function arangeIcons(containersOnly = false){
             "txtEditor" : [92, 221],
             "calendar" : [100, 320],
             "email" : [173, 20],
-            "credits" : [182, 120],
-            "jonpng" : [189, 220],
-            "resume" : [192, 320]
+            "msdos" : [182, 120],
+            "credits" : [182, 220],
+            "jonpng" : [189, 318],
+            "resume" : [275, 20]
         },
         "myComputer" : {
             "driveC" : [0, 0],
@@ -27,7 +28,8 @@ async function arangeIcons(containersOnly = false){
             "calculatorApps" : [0, 0],
             "txtEditorApps" : [80, 0],
             "calendarApps" : [160, 0],
-            "emailApps" : [240, 0]
+            "emailApps" : [240, 0],
+            "msdosApps" : [320, 0]
         }
     }
 
@@ -67,7 +69,6 @@ async function addIconProperties(){
 async function recycleHover(icon){
     if(icon.style.opacity == 0.5) return
     objectsThatAreColliding.push(icon)
-    console.log('recycling')
     icon.style.opacity = 0.5
     border('recycle')
     icon.setAttribute("onmouseup", `iconReleased('${icon.className}')`)
@@ -124,16 +125,19 @@ async function initIcons(){
 
 async function getRecycleBinFormatted(numApps = null){
     let html = `<div id="recycleRow">`
-    let lineBreak, endDiv
+    let endDiv
+    let counter = 0
     for( i=0; i<recycledIcons.length; i++ ) {
-        lineBreak = ""
+        counter++
         endDiv = ""
-        if(i % 5 == 0 && i != 0)lineBreak = `<div id="recycleRow">`
-        else if(i % 4 == 0 && i != 0)endDiv = `</div>`
+        if(counter == 5){
+            endDiv = `</div><div id="recycleRow">`
+            counter = 0
+        }
         if(numApps == null){
             numApps = await getNumberOfIcons(recycledIcons[i].className + "Recycled")
         }
-        html += `${lineBreak}<div id="recycledIcon" class="${recycledIcons[i].className}Recycled${numApps} ${recycledIcons[i].className}Recycled">
+        html += `<div id="recycledIcon" class="${recycledIcons[i].className}Recycled${numApps} ${recycledIcons[i].className}Recycled">
             ${recycledIcons[i].innerHTML}
         </div>${endDiv}`
     }
@@ -157,7 +161,6 @@ async function refreshRecycleBin(){
     let numApps = await getNumberOfIcons(recycledIcons[0].className  + "Recycled")
     for(let i=0; i<recycleBins.length; i++ ) {
         recycleBins[i].innerHTML = await getRecycleBinFormatted(numApps)
-        console.log(`refreshing recycle bins`)
         numApps += 1
     }
     addIconProperties()

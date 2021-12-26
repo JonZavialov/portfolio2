@@ -67,7 +67,7 @@ async function createNewLine(numApps){
 }
 
 async function checkForEnter(element, numApps){
-    if(element.value.includes("\n")){
+    if(element.value.includes("\n") && element.readOnly == false){
         element.value = element.value.replace("\n","")
         element.blur()
         
@@ -95,39 +95,49 @@ async function executeCommand(commandString, numApps){
     let args = commandString.split(" ").slice(1)
     let commandOutput = ""
 
-    switch(command){
-        case "dir":
-            commandOutput = await getDirectoryContents(args[0])
+    commands = {
+        "cls": {
+            "function": `clearScreen(${numApps})`,
+            "description": "Clears the CMD window"
+        },
+        "help": {
+            "function": `help(commands)`,
+            "description": "Displays a list of available commands"
+        },
+        "exit": {
+            "function": `closeClassWindow('msdos${numApps}', "msdos")`,
+            "description": "Closes the CMD window"
+        }
+    }
+
+    let commandNames = Object.keys(commands)
+    for(let i = 0; i < commandNames.length; i++){
+        if(commandNames[i] == command){
+            commandOutput = await eval(commands[commandNames[i]].function)
             break
-        case "cd":
-            commandOutput = await changeDirectory(args[0])
-            break
-        case "cls":
-            clearScreen(numApps)
-            return
-            break
-        case "help":
-            commandOutput = await getHelp()
-            break
-        case "exit":
-            commandOutput = await closeClassWindow(`msdos${numApps}`, "msdos")
-            break
-        default:
-            commandOutput = "Command not found"
-            break
+        }
+    }
+
+    if(commandOutput == ""){
+        commandOutput = "Command not found"
     }
 
     let newLine = document.createElement("textarea")
     newLine.className = `textAreaMsdos${numApps}`
     newLine.value = commandOutput
     newLine.readOnly = true
+
+    if(newLine.value.split("\n").length - 1 != 0){
+        newLine.style.height = `${15 * (newLine.value.split("\n").length - 1)}px`
+    }
+
     workArea.appendChild(newLine)
     let elems = await generateNewInput(numApps)
     workArea.appendChild(elems[0])
     workArea.appendChild(elems[1])
 
     let input = await document.getElementsByClassName(`textAreaMsdos${numApps}`)
-    input[input.length-1].focus()
+    if(input.length != 0) input[input.length-1].focus()
 }
 
 async function clearScreen(numApps){
@@ -140,6 +150,15 @@ async function clearScreen(numApps){
 
     let input = await document.getElementsByClassName(`textAreaMsdos${numApps}`)[0]
     input.focus()
+}
+
+async function help(){
+    let commandNames = Object.keys(commands)
+    let commandOutput = ""
+    for(let i = 0; i < commandNames.length; i++){
+        commandOutput += `${commandNames[i]} - ${commands[commandNames[i]].description}\n`
+    }
+    return commandOutput
 }
 
 async function generateNewInput(numApps){

@@ -246,6 +246,7 @@ a{
     padding: 0;
     display: flex;
     padding-right: 5px;
+    min-width: 0;
 }
 
 #taskbarItem img{

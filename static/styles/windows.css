@@ -28,8 +28,6 @@
 
 #aboutme{
     position: absolute;
-    top: 45% !important;
-    left: 40% !important;
     margin-right: -50% !important;
     transform: translate(-50%, -50%);
     z-index: 99;
@@ -323,6 +321,7 @@
     padding-left: 2px;
     width: 500px;
     height: 300px;
+    overflow-y: scroll;
 }
 
 #msdos p{

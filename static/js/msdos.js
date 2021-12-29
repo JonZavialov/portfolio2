@@ -8,7 +8,7 @@ async function initMsdos(){
         </p>
         <br>
         <div id="workAreaInitial" class="workAreaInitial${numApps}">
-            <p>C:\\></p><textarea class="msdosInitialInput${numApps} iabsfiasgfui" maxlength="62" oninput="processMsdosInputInitial('${numApps}')"></textarea>
+            <p>C:\\></p><textarea class="msdosInitialInput${numApps} iabsfiasgfui" maxlength="60" oninput="processMsdosInputInitial('${numApps}')"></textarea>
         </div>
         <div class="workArea${numApps}"></div>
     `
@@ -19,7 +19,7 @@ async function initMsdos(){
 
 async function processMsdosInputInitial(numApps){
     let initialInput = document.getElementsByClassName(`msdosInitialInput${numApps}`)[0]
-    if(initialInput.value.length == 62){
+    if(initialInput.value.length == 60){
         createNewLine(numApps)
     }
     checkForEnter(initialInput, numApps)
@@ -40,7 +40,7 @@ async function processMsdosInput(numApps, initial=false){
     let textAreasLength = textAreas.length
     let lastTextArea = textAreas[textAreasLength-1]
     if(!lastTextArea) return
-    if(lastTextArea.value.length == 66 || (initial && lastTextArea.value.length == 62)){
+    if(lastTextArea.value.length == 64 || (initial && lastTextArea.value.length == 60)){
         createNewLine(numApps)
     }
     else if(lastTextArea.value.length == 0){
@@ -60,7 +60,7 @@ async function createNewLine(numApps){
     let workArea = document.getElementsByClassName(`workArea${numApps}`)[0]
     let newLine = document.createElement("textarea")
     newLine.className = `textAreaMsdos${numApps}`
-    newLine.maxLength = 66
+    newLine.maxLength = 64
     newLine.oninput = function(){processMsdosInput(numApps)}
     workArea.appendChild(newLine)
     newLine.focus()
@@ -107,6 +107,10 @@ async function executeCommand(commandString, numApps){
         "exit": {
             "function": `closeClassWindow('msdos${numApps}', "msdos")`,
             "description": "Closes the CMD window"
+        },
+        "cd":{
+            "function": `changeDirectory(${numApps}, args)`,
+            "description": "Changes the current directory"
         }
     }
 
@@ -120,6 +124,10 @@ async function executeCommand(commandString, numApps){
 
     if(commandOutput == ""){
         commandOutput = "Command not found"
+    }
+
+    if(command == ""){
+        commandOutput = ""
     }
 
     let newLine = document.createElement("textarea")
@@ -172,7 +180,7 @@ async function generateNewInput(numApps){
 
     let input = document.createElement("textarea")
     input.className = `textAreaMsdos${numApps}`
-    input.maxLength = 62
+    input.maxLength = 60
     input.oninput = function(){processMsdosInput(numApps, true)}
     initialWorkArea.appendChild(input)
 
@@ -180,4 +188,17 @@ async function generateNewInput(numApps){
     workArea.className = `workArea${numApps}`
 
     return [initialWorkArea, workArea]
+}
+
+async function changeDirectory(numApps, args){
+    let directoryTree = {
+        "C:": {
+            "Desktop": [],
+            "Documents": [],
+            "Apps": []
+        },
+        "A:": {
+            "FloppyStorage": []
+        }
+    }
 }

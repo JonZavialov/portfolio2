@@ -279,13 +279,19 @@ async function openIntroWindow(){
         calculus, and personal finance.
     </p>
     `
-    openWindow(content,"aboutme","Welcome to my website",[200,200],false,`okButton`)
+
+    let width = document.documentElement.clientWidth
+    let height = document.documentElement.clientHeight
+
+    openWindow(content,"aboutme","Welcome to my website",[width * .40, height * .45],false,`okButton`, false, false, 32)
 }
 
 async function taskbarUpdate(img,name,codeName){
     var taskbarItems = document.getElementsByClassName(`${codeName}taskbarItem`)
     if(taskbarItems.length != 0) return 
     
+    let totalTaskbarItems = document.querySelectorAll( `[id^=taskbarItem]` )
+
     let taskbar = document.getElementById("taskbarBody")
     let element = document.createElement("button")
     element.id = "taskbarItem"
@@ -295,6 +301,16 @@ async function taskbarUpdate(img,name,codeName){
     <p>${name}</p>
     `
     taskbar.appendChild(element)
+    if(totalTaskbarItems.length >= 8) minimizeTaskbar()
+}
+
+async function minimizeTaskbar(){
+    let totalTaskbarItems = document.querySelectorAll( `[id^=taskbarItem]` )
+    for(let i = 0; i < totalTaskbarItems.length; i++){
+        let item = totalTaskbarItems[i]
+        if(item.getElementsByTagName("p").length == 0) continue
+        item.getElementsByTagName("p")[0].remove()
+    }
 }
 
 async function taskbarClose(name){
@@ -306,7 +322,7 @@ async function taskbarClose(name){
     })
 }
 
-async function openWindow(content,name,title,coords,taskbar = false, footer = "", closeFunc = false, error = false){
+async function openWindow(content,name,title,coords,taskbar = false, footer = "", closeFunc = false, error = false, offset = 0){
     let numOfWindows = document.getElementsByClassName(`${name}Window`).length
     let taskbarName = ""
     if(taskbar) taskbarName = `,'${name}'`
@@ -344,7 +360,7 @@ async function openWindow(content,name,title,coords,taskbar = false, footer = ""
     element.style.top = coords[1] + "px"
     element.innerHTML = html
     await main.appendChild(element)
-    dragElement(document.getElementsByClassName(`${name}${numOfWindows}`)[0],0,true)
+    dragElement(document.getElementsByClassName(`${name}${numOfWindows}`)[0],offset,true)
 }
 
 async function date(){

@@ -69,7 +69,7 @@
 
 ✔️ 35. add nft viewer
 
-36. taskbar overflows when too many apps are opened
+✔️ 36. taskbar overflows when too many apps are opened
 
 37. make text viewer and editor the same thing
 
@@ -101,7 +101,7 @@
 
 ✔️ 51. add calender
 
-52. make aboutme window work with open window method
+✔️ 52. make aboutme window work with open window method
 
 ✔️ 53. make url params open apps
 

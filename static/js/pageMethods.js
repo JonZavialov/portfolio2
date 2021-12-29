@@ -308,8 +308,17 @@ async function minimizeTaskbar(){
     let totalTaskbarItems = document.querySelectorAll( `[id^=taskbarItem]` )
     for(let i = 0; i < totalTaskbarItems.length; i++){
         let item = totalTaskbarItems[i]
-        if(item.getElementsByTagName("p").length == 0) continue
-        item.getElementsByTagName("p")[0].remove()
+        item.getElementsByTagName("p")[0].style.display = "none"
+        item.style.paddingRight = "0px"
+    }
+}
+
+async function maximizeTaskbar(){
+    let totalTaskbarItems = document.querySelectorAll( `[id^=taskbarItem]` )
+    for(let i = 0; i < totalTaskbarItems.length; i++){
+        let item = totalTaskbarItems[i]
+        item.getElementsByTagName("p")[0].style.display = "block"
+        item.style.paddingRight = "5px"
     }
 }
 
@@ -320,6 +329,8 @@ async function taskbarClose(name){
     Array.prototype.forEach.call(taskbarItems, function(taskbarItem){
         taskbarItem.remove()
     })
+    let totalTaskbarItems = document.querySelectorAll( `[id^=taskbarItem]` )
+    if(totalTaskbarItems.length <= 8) maximizeTaskbar()
 }
 
 async function openWindow(content,name,title,coords,taskbar = false, footer = "", closeFunc = false, error = false, offset = 0){

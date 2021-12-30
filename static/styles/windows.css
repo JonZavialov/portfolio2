@@ -354,7 +354,7 @@
     margin: 2px
 }
 
-#outlookHeaderButton{
+#outlookHeaderButton, #outlookHeaderLogo{
     width: fit-content;
     display: inline-block;
     text-align: center;
@@ -371,7 +371,7 @@
     width: 35px
 }
 
-#outlookHr1, #outlookHr2{
+#outlookHr1, #outlookHr2, #outlookHr3, #outlookHr4{
     height: 60px;
     position: fixed;
 }
@@ -382,4 +382,35 @@
 
 #outlookHr2{
     transform: translate(128px, -72px);
+}
+
+#outlookHr3{
+    transform: translate(192px, -72px);
+}
+
+#outlookHr4{
+    transform: translate(420px, -72px);
+}
+
+#outlookHeaderLogo img{
+    width: 60px
+}
+
+#outlookHeaderLogo{
+    background-color: black;
+}
+
+#inboxTree{
+    background-color: #e7e7e7;
+    padding: 5px;
+    margin: 0;
+    box-shadow: inset -1px -1px #ffffff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px #808080;
+    height: 250px;
+    width: 120px;
+    margin-top: 3px;
+    margin-bottom: 1px;
+}
+
+#inboxTree ul>li:last-child:after{
+    background: #e7e7e7;
 }

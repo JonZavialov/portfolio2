@@ -12,6 +12,10 @@ async function initEmail(documentId = null){
                     <p>Send And Receive</p>
                 </div>
                 <hr id="outlookHr2">
+                <div id="outlookHeaderButton" style="margin-left: 10px">
+                    <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/address.png?raw=true">
+                    <p>Address Book</p>
+                </div>
             </div>
         </div>
     `

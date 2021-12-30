@@ -190,7 +190,7 @@ a{
 
 #startMenu{
     position: absolute;
-    height: 325px;
+    height: 348px;
     width: 200px;
     bottom:0 ;
     left: 0;
@@ -199,8 +199,8 @@ a{
 }
 
 #startMenu .title-bar {
-    transform: rotate(-90deg) translate(-153px, -153px);
-    width: 319px;
+    transform: rotate(-90deg) translate(-165px, -165px);
+    width: 343px;
 }
 
 #startMenu hr{
@@ -209,7 +209,7 @@ a{
 
 #startMenuBody{
     margin-left: 25px;
-    transform: translate(0px, -20px);
+    transform: translate(0px, -23px);
 }
 
 #startMenuPair{

@@ -39,6 +39,10 @@ async function startMenu(){
             <p id="startMenuPairText">Credits</p>
         </div>
         <hr>
+        <div class="hoverHighlight" id="startMenuPair" onclick="startMenuButton('console')" style="padding-right: 38px;">
+            <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/console.png?raw=true">
+            <p id="startMenuPairText">MS-DOS Prompt</p>
+        </div>
         <div class="hoverHighlight" id="startMenuPair" onclick="startMenuButton('restart')">
             <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/shutdown.png?raw=true">
             <p id="startMenuPairText">Restart...</p>
@@ -77,6 +81,9 @@ async function startMenuButton(button){
         },
         "credits": function() {
             credits()
+        },
+        "console": function() {
+            initMsdos()
         },
         "restart": function() {
             window.location.replace('/')

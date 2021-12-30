@@ -61,7 +61,7 @@ async function initEmail(documentId = null){
                     </ul>
                 </ul>
 
-                <div id="emailDisplay">
+                <div id="emailDisplay" class="emailDisplay${numApps}">
                     <h4 style="font-weight:100">Microsoft</h4>
                     <h4 style="margin-left: 40px">Outlook Express</h4>
                     <p style="margin: 0; transform: translate(110px,-53px); font-size: 6px;">®</p>
@@ -83,6 +83,7 @@ async function clickInboxTreeItem(numApps){
         //inbox list is showing
         element.style.borderColor = "rgb(0, 0, 0)"
         insertInboxTree(element)
+        displayIntroEmail(numApps)
     }else{
         //inbox list is not showing
         element.style.borderColor = "rgb(231, 231, 231)"
@@ -101,4 +102,35 @@ async function insertInboxTree(element){
 async function removeInboxTree(element){
     let inboxTree = element.getElementsByTagName("ul")[0]
     inboxTree.remove()
+}
+
+async function displayIntroEmail(numApps){
+    let display = document.getElementsByClassName(`emailDisplay${numApps}`)[0]
+    display.innerHTML = `
+        <div style="display: flex;">
+            <p style="font-weight:bold; margin: 0">From:</p><p style="margin:0; margin-left:40px">Jonathan D. Zavialov &#60;introduction@jonzav.me&#62;</p>
+        </div>
+        <div style="display: flex;">
+            <p style="font-weight:bold; margin:0">Sent:</p><p style="margin: 0; margin-left:43px">Thursday, December 30, 2021 4:25 PM</p>
+        </div>
+        <div style="display: flex;">
+            <p style="font-weight:bold; margin:0">Subject:</p><p style="margin: 0; margin-left:25px">Introduction</p>
+        </div>
+
+        <p style="margin:0; margin-top:20px">
+            &nbsp&nbsp&nbsp&nbspThis culmination of a couple of months of work serves as a hub for all of 
+            my coding projects. It will continuously evolve along with my coding skill, as well as my 
+            changing passions. This page is my form of creatively expressing my interests, and progress as 
+            a full-stack developer in a medium that excites me.
+        </p>
+        <p style="margin:0; margin-top:4px">
+            &nbsp&nbsp&nbsp&nbspI am experienced in Python, Javascript, Java, Solidity, and many Javascript 
+            frameworks. Currently my interests include cryptography, cryptocurrencies, trading stocks, and 
+            NFTs. I also enjoy playing Valorant and Rust with my friends in my free time.
+        </p>
+        <p style="margin:0; margin-top:4px">
+            &nbsp&nbsp&nbsp&nbspI hope you find this website as fun as is had making it. Hopefully it will 
+            provide you a glimpse into my life.
+        </p>
+    `
 }

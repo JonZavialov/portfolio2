@@ -26,15 +26,6 @@
     width: 500px;
 }
 
-#aboutme{
-    position: absolute;
-    margin-right: -50% !important;
-    transform: translate(-50%, -50%);
-    z-index: 99;
-    margin: 32px; 
-    width: 500px !important;
-}
-
 #txtEditor textarea{
     font-size: 14px;
     background-color: #e7e7e7;

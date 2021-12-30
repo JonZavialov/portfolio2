@@ -39,8 +39,22 @@ async function initEmail(documentId = null){
                         <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/inbox.png?raw=true">
                         Inbox
                     </li>
-                    <li>Specificity</li>
-                    <li>Properties</li>
+                    <li>
+                        <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/outbox.png?raw=true">
+                        Outbox
+                    </li>
+                    <li>
+                        <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/sentitems.png?raw=true">
+                        Sent Items
+                    </li>
+                    <li>
+                        <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/deletedmail.png?raw=true">
+                        Deleted Items
+                    </li>
+                    <li>
+                        <img src="">
+                        Drafts
+                    </li>
                 </ul>
             </ul>
         </div>

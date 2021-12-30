@@ -7,10 +7,11 @@ async function initEmail(documentId = null){
                     <p>Compose Message</p>
                 </div>
                 <hr id="outlookHr1">
-                <div id="outlookHeaderButton">
+                <div id="outlookHeaderButton" style="margin-left: 10px">
                     <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/mailbox.png?raw=true">
                     <p>Send And Receive</p>
                 </div>
+                <hr id="outlookHr2">
             </div>
         </div>
     `

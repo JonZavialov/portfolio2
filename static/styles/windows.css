@@ -371,8 +371,15 @@
     width: 35px
 }
 
-#outlookHr1{
+#outlookHr1, #outlookHr2{
     height: 60px;
     position: fixed;
+}
+
+#outlookHr1{
     transform: translate(64px, -72px);
+}
+
+#outlookHr2{
+    transform: translate(128px, -72px);
 }

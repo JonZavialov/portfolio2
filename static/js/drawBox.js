@@ -33,7 +33,6 @@ function initDraw() {
     canvas.onmousedown = function (e) {
         let noSelect = [
             "#icon",
-            "#aboutme",
             "#taskbar",
             "#jonpng",
             "#errorWindow",

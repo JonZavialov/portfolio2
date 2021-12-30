@@ -64,6 +64,9 @@ async function loadDesktopNav(){
                 <ul>
                     <li style="cursor: pointer;" onmouseup="openCalculator()">Calculator</li>
                     <li style="cursor: pointer;" onmouseup="txtEditor()">Text Editor</li>
+                    <li style="cursor: pointer;" onmouseup="initCalendar()">Calendar</li>
+                    <li style="cursor: pointer;" onmouseup="initEmail()">Outlook Express</li>
+                    <li style="cursor: pointer;" onmouseup="initMsdos()">MS-DOS Prompt</li>
                 </ul>
                 <li style="cursor: pointer;" onmouseup="nft()">My NFTs</li>
             </ul>

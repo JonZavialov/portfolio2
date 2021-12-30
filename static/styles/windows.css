@@ -409,6 +409,7 @@
     width: 120px;
     margin-top: 3px;
     margin-bottom: 1px;
+    overflow-x: scroll;
 }
 
 #inboxTree img{
@@ -425,4 +426,8 @@
     width: 357px;
     margin-left: 3px;
     margin-top: 3px;
+}
+
+#inboxTreeElem{
+    border: 1px dotted #e7e7e7;
 }

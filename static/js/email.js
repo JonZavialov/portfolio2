@@ -1,5 +1,7 @@
 async function initEmail(documentId = null){
-    let content = `
+    let numApps = await getNumberOfIcons("emailWindow")
+    
+    content = `
         <div id="emailBody">
             <div id="buttonsHeader">
                 <div id="outlookHeaderButton">
@@ -36,23 +38,23 @@ async function initEmail(documentId = null){
                     <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/inboxicon.png?raw=true">
                     Outlook Express
                     <ul>
-                        <li>
+                        <li id="inboxTreeElem" onclick="clickInboxTreeItem(${numApps})" class="inboxTree${numApps}", style="width: fit-content">
                             <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/inbox.png?raw=true">
                             Inbox
                         </li>
-                        <li>
+                        <li id="inboxTreeElem">
                             <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/outbox.png?raw=true">
                             Outbox
                         </li>
-                        <li>
+                        <li id="inboxTreeElem">
                             <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/sentitems.png?raw=true">
                             Sent Items
                         </li>
-                        <li>
+                        <li id="inboxTreeElem">
                             <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/deletedmail.png?raw=true">
                             Deleted Items
                         </li>
-                        <li>
+                        <li id="inboxTreeElem">
                             <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/drafts.png?raw=true">
                             Drafts
                         </li>
@@ -66,4 +68,31 @@ async function initEmail(documentId = null){
     `
     openWindow(content,"email","<img width=13px src=\"https://github.com/JonZavialov/portfolio2/blob/main/assets/images/outlook.png?raw=true\">&nbsp&nbspOutlook Express",[50,250],true)
     taskbarUpdate("https://github.com/JonZavialov/portfolio2/blob/main/assets/images/outlook.png?raw=true","Outlook Express","email")
+}
+
+async function clickInboxTreeItem(numApps){
+    let element = document.getElementsByClassName(`inboxTree${numApps}`)[0]
+
+    if(element.style.borderColor == "" || element.style.borderColor == "rgb(231, 231, 231)"){
+        //inbox list is showing
+        element.style.borderColor = "rgb(0, 0, 0)"
+        insertInboxTree(element)
+    }else{
+        //inbox list is not showing
+        element.style.borderColor = "rgb(231, 231, 231)"
+        removeInboxTree(element)
+    }
+}
+
+
+async function insertInboxTree(element){
+    let inboxTree = document.createElement("ul")
+    inboxTree.innerHTML = `<li>introduction@jonzav.me</li>`
+
+    element.appendChild(inboxTree)
+}
+
+async function removeInboxTree(element){
+    let inboxTree = element.getElementsByTagName("ul")[0]
+    inboxTree.remove()
 }

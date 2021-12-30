@@ -35,7 +35,10 @@ async function initEmail(documentId = null){
                 <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/inboxicon.png?raw=true">
                 Outlook Express
                 <ul>
-                    <li>Selectors</li>
+                    <li>
+                        <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/inbox.png?raw=true">
+                        Inbox
+                    </li>
                     <li>Specificity</li>
                     <li>Properties</li>
                 </ul>

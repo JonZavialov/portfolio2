@@ -62,6 +62,12 @@ async function initEmail(documentId = null){
                 </ul>
 
                 <div id="emailDisplay">
+                    <h4 style="font-weight:100">Microsoft</h4>
+                    <h4 style="margin-left: 40px">Outlook Express</h4>
+                    <p style="margin: 0; transform: translate(110px,-53px); font-size: 6px;">®</p>
+                    <p style="font-size: 12px">Welcome! <br>
+                    You have one new message. <br>
+                    Press Inbox to view it.</p>
                 </div>
             </div>
         </div>

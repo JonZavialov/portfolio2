@@ -426,6 +426,13 @@
     width: 357px;
     margin-left: 3px;
     margin-top: 3px;
+    font-family: Verdana, sans-serif;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+#emailDisplay h4{
+    margin: 0;
 }
 
 #inboxTreeElem{

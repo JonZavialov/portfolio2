@@ -32,7 +32,8 @@ async function initEmail(documentId = null){
             </div>
 
             <ul class="tree-view" id="inboxTree">
-                CSS
+                <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/inboxicon.png?raw=true">
+                Outlook Express
                 <ul>
                     <li>Selectors</li>
                     <li>Specificity</li>

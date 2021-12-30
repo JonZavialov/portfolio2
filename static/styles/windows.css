@@ -411,6 +411,10 @@
     margin-bottom: 1px;
 }
 
+#inboxTree img{
+    width: 14px
+}
+
 #inboxTree ul>li:last-child:after{
     background: #e7e7e7;
 }

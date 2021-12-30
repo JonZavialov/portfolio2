@@ -113,18 +113,18 @@ async function displayIntroEmail(numApps){
             <p style="font-weight:bold; margin:0">Subject:</p><p style="margin: 0; margin-left:41px">Introduction</p>
         </div>
 
-        <p style="margin:0; margin-top:25px; font-size:12px">
+        <p style="margin:0; margin-top:25px; font-size:12px; margin-right:3px">
             &nbsp&nbsp&nbsp&nbspThis culmination of a couple of months of work serves as a hub for all of 
             my coding projects. It will continuously evolve along with my coding skill, as well as my 
             changing passions. This page is my form of creatively expressing my interests, and progress as 
             a full-stack developer in a medium that excites me.
         </p>
-        <p style="margin:0; margin-top:4px; font-size:12px">
+        <p style="margin:0; margin-top:4px; font-size:12px; margin-right:3px">
             &nbsp&nbsp&nbsp&nbspI am experienced in Python, Javascript, Java, Solidity, and many Javascript 
             frameworks. Currently my interests include cryptography, cryptocurrencies, trading stocks, and 
             NFTs. I also enjoy playing Valorant and Rust with my friends in my free time.
         </p>
-        <p style="margin:0; margin-top:4px; font-size:12px">
+        <p style="margin:0; margin-top:4px; font-size:12px; margin-right:3px">
             &nbsp&nbsp&nbsp&nbspI hope you find this website as fun as is had making it. Hopefully it will 
             provide you a glimpse into my life.
         </p>

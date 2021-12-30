@@ -423,12 +423,15 @@
 #emailDisplay{
     background-color: #e7e7e7;
     box-shadow: inset -1px -1px #ffffff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px #808080;
-    width: 357px;
+    width: 347px;
+    height: 250px;
     margin-left: 3px;
     margin-top: 3px;
     font-family: Verdana, sans-serif;
     padding-left: 10px;
     padding-top: 10px;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 #emailDisplay h4{

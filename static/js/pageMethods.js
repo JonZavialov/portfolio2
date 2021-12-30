@@ -73,7 +73,6 @@ async function border(name){
 }
 
 async function openAppOnStart(appName){
-    closeWindow("aboutme")
     if(appName == "jonpng") jonpng()
     else if(appName == "credits") credits()
     else if(appName == "txtEditor") txtEditor()
@@ -88,6 +87,8 @@ async function openAppOnStart(appName){
     else if(appName == "email") initEmail()
     else if(appName == "msdos") initMsdos()
     else window.location.replace("/404")
+    await sleep(10)
+    if(document.getElementById("email")) closeWindow("email", "email")
 }
 
 async function nft(){
@@ -266,24 +267,11 @@ async function openCalculator() {
 }
 
 async function openIntroWindow(){
-    let content = `
-    <p style="font-size: 16px;">    
-        I am a Full Stack Developer with a passion for Computer Science. 
-        I began learning how to code at a young age, when I was in 9th grade.
-        Since then I've learned a variety of skills within anything that
-        interests me including Python, Javascript, Java, TypeScript, ReactJS,
-        Flask, and more recently creating websites such as this one. I code almost
-        every day, jumping from project to project so I can learn something new 
-        every day. In my free time I enjoy playing games such as Valorant with 
-        my friends. My interests also include cryptography, cryptocurrency,
-        calculus, and personal finance.
-    </p>
-    `
+    let width = document.documentElement.clientWidth * .25
+    let height = document.documentElement.clientHeight * .1
 
-    let width = document.documentElement.clientWidth
-    let height = document.documentElement.clientHeight
-
-    openWindow(content,"aboutme","Welcome to my website",[width * .40, height * .45],false,`okButton`, false, false, 32)
+    await initEmail(width, height)
+    displayIntroEmail(0)
 }
 
 async function taskbarUpdate(img,name,codeName){

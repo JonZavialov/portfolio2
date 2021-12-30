@@ -31,32 +31,37 @@ async function initEmail(documentId = null){
                 </div>
             </div>
 
-            <ul class="tree-view" id="inboxTree">
-                <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/inboxicon.png?raw=true">
-                Outlook Express
-                <ul>
-                    <li>
-                        <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/inbox.png?raw=true">
-                        Inbox
-                    </li>
-                    <li>
-                        <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/outbox.png?raw=true">
-                        Outbox
-                    </li>
-                    <li>
-                        <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/sentitems.png?raw=true">
-                        Sent Items
-                    </li>
-                    <li>
-                        <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/deletedmail.png?raw=true">
-                        Deleted Items
-                    </li>
-                    <li>
-                        <img src="">
-                        Drafts
-                    </li>
+            <div style="display: flex">
+                <ul class="tree-view" id="inboxTree">
+                    <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/inboxicon.png?raw=true">
+                    Outlook Express
+                    <ul>
+                        <li>
+                            <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/inbox.png?raw=true">
+                            Inbox
+                        </li>
+                        <li>
+                            <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/outbox.png?raw=true">
+                            Outbox
+                        </li>
+                        <li>
+                            <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/sentitems.png?raw=true">
+                            Sent Items
+                        </li>
+                        <li>
+                            <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/deletedmail.png?raw=true">
+                            Deleted Items
+                        </li>
+                        <li>
+                            <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/drafts.png?raw=true">
+                            Drafts
+                        </li>
+                    </ul>
                 </ul>
-            </ul>
+
+                <div id="emailDisplay">
+                </div>
+            </div>
         </div>
     `
     openWindow(content,"email","<img width=13px src=\"https://github.com/JonZavialov/portfolio2/blob/main/assets/images/outlook.png?raw=true\">&nbsp&nbspOutlook Express",[50,250],true)

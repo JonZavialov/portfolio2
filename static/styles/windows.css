@@ -418,3 +418,11 @@
 #inboxTree ul>li:last-child:after{
     background: #e7e7e7;
 }
+
+#emailDisplay{
+    background-color: #e7e7e7;
+    box-shadow: inset -1px -1px #ffffff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px #808080;
+    width: 357px;
+    margin-left: 3px;
+    margin-top: 3px;
+}

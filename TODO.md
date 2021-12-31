@@ -14,7 +14,7 @@
 
 ✔️ 8. make the website look good on mobile 
  
-9. cmd emulator
+✔️ 9. cmd emulator
        https://js-dos.com/v7/build/docs/iframe
  
 ✔️ 10. make 404 page look like a windows error popup

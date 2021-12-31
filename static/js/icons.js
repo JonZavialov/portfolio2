@@ -11,9 +11,10 @@ async function arangeIcons(containersOnly = false){
             "calendar" : [100, 320],
             "email" : [173, 20],
             "msdos" : [182, 120],
-            "credits" : [182, 220],
-            "jonpng" : [189, 318],
-            "resume" : [275, 20]
+            "projects" : [190, 220],
+            "credits" : [182, 320],
+            "jonpng" : [280, 20],
+            "resume" : [275, 120]
         },
         "myComputer" : {
             "driveC" : [0, 0],
@@ -29,7 +30,8 @@ async function arangeIcons(containersOnly = false){
             "txtEditorApps" : [80, 0],
             "calendarApps" : [160, 0],
             "emailApps" : [240, 0],
-            "msdosApps" : [320, 0]
+            "msdosApps" : [320, 0],
+            "projectsApps" : [400, 0]
         }
     }
 

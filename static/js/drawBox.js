@@ -49,7 +49,8 @@ function initDraw() {
             "#nfts",
             "#calendar",
             "#email",
-            "#msdos"
+            "#msdos",
+            "#projects"
         ]
         if(e.button != 0) return
         for(let i = 0; i < noSelect.length; i++){

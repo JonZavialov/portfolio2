@@ -29,7 +29,7 @@ async function setProjectWindows(numApps){
     console.log(topProjects)
     for(let i = 0; i < projectWindows.length; i++){
         projectWindows[i].innerHTML = `
-            <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/projecticon.png?raw=true"><p>${topProjects[i].full_name}</p>
+            <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/projecticon2.png?raw=true"><p>${topProjects[i].full_name}</p>
         `
     }
 }

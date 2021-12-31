@@ -29,7 +29,14 @@ async function setProjectWindows(numApps){
     console.log(topProjects)
     for(let i = 0; i < projectWindows.length; i++){
         projectWindows[i].innerHTML = `
-            <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/projecticon2.png?raw=true"><p>${topProjects[i].full_name}</p>
+            <div style="display: flex">
+                <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/projectsicon3.png?raw=true">
+                <div class="projectTitle" onclick="window.open('${topProjects[i].html_url}', '_blank')"><p style="font-weight: bold">${topProjects[i].full_name}</p></div>
+            </div>
+            <br>
+            <p>${topProjects[i].description}</p>
+            <br>
+            <p style="color: #818181">${topProjects[i].language}</p>
         `
     }
 }
@@ -41,12 +48,5 @@ async function getTopProjects(){
     for(let i = 0; i < 4; i++){
         topProjects.push(starredJSON[i])
     }
-
-    for(let i = 0; i < topProjects.length; i++){
-        let commits = await fetch(topProjects[i].commits_url.substring(0,topProjects[i].commits_url.length - 6))
-        let commitsJSON = await commits.json()
-        topProjects[i].commits = commitsJSON.length
-    }
-
     return topProjects
 }

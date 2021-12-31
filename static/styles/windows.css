@@ -432,3 +432,29 @@
 #inboxTreeElem{
     border: 1px dotted #e7e7e7;
 }
+
+#projectsWindowContainer{
+    display: flex;
+}
+
+#projects{
+    width: 516px !important;
+}
+
+#projectsWindowContainer p{
+    margin: 0
+}
+
+#projectWindow2, #projectWindow4{
+    right: 0;
+    position: absolute;
+}
+
+#projectWindow1, #projectWindow2,#projectWindow3, #projectWindow4{
+    width: 250px;
+    display: flex;
+}
+
+#projectsWindowContainer img{
+    width: 20px;
+}

@@ -105,7 +105,7 @@
 
 ✔️ 53. make url params open apps
 
-54. add feed for current projects on github
+✔️ 54. add feed for current projects on github
 
 55. introduction email
 

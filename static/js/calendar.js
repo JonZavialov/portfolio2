@@ -59,7 +59,7 @@ async function setCalendarToDate(numApps){
         <select id="monthSelector" class="monthSelector${numApps}">
             ${months}
         </select>
-        <button id="yearSelector" class="yearSelector${numApps}">2021</button>
+        <button id="yearSelector" class="yearSelector${numApps}">${currentYear}</button>
         <button id="yearUpButton" onclick="yearUp(${numApps})">▲</button>
         <button id="yearDownButton" onclick="yearDown(${numApps})">▼</button>
         <div id="calendarMainDisplay">

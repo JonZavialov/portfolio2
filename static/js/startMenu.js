@@ -65,7 +65,7 @@ async function closeButton(){
 async function startMenuButton(button){
     let methods = {
         "email": function() {
-            window.location.assign('mailto: jonzavialov@gmail.com">')
+            window.location.assign('mailto: jonzavialov@gmail.com')
         },
         "linkedin": function() {
             window.open('https://www.linkedin.com/in/jonathan-zavialov-6404b61bb/', '_blank').focus()

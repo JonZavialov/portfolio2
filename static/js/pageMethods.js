@@ -65,6 +65,7 @@ async function border(name){
         else if(icon.className == "email" || icon.className.indexOf("emailApps") != -1) initEmail()
         else if(icon.className == "msdos" || icon.className.indexOf("msdosApps") != -1) initMsdos()
         else if(icon.className == "projects" || icon.className.indexOf("projectsApps") != -1) initProjects()
+        else if(icon.className == "snake" || icon.className.indexOf("snakeApps") != -1) initSnakeGame()
         else if (icon.className == "apps") apps()
         else if (icon.className == "recycle") recycleBin()
         else if (icon.className == "computer") myComputer()
@@ -88,6 +89,7 @@ async function openAppOnStart(appName){
     else if(appName == "email") initEmail()
     else if(appName == "msdos") initMsdos()
     else if(appName == "projects") initProjects()
+    else if(appName == "snake") initSnakeGame()
     else if(appName != "none") window.location.replace("/404")
     await sleep(10)
     if(document.getElementById("email")) closeWindow("email", "email")
@@ -120,7 +122,8 @@ async function txtEditor(){
 
 async function apps(){
     let numApps = await getNumberOfIcons("calculatorApps")
-    let content = `<div id="myAppsBody">
+    let content = `
+    <div id="myAppsBody">
         <div id="icon" class="calculatorApps ${numApps}" style="margin-left: 8px;">
             <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/calculator.png?raw=true">
             <p style="color:black">Calculator</p>
@@ -144,6 +147,10 @@ async function apps(){
         <div id="icon" class="projectsApps ${numApps}" style="margin-left: 1px;">
             <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/myprojects.png?raw=true">
             <p style="color:black">My Projects</p>
+        </div>
+        <div id="icon" class="snakeApps ${numApps}" style="margin-left: -2px;">
+            <img src="https://github.com/JonZavialov/portfolio2/blob/main/assets/images/snake.png?raw=true">
+            <p style="color:black">Snake</p>
         </div>
     </div>`
     openWindow(content,"myApps","<img width=13px src=\"https://github.com/JonZavialov/portfolio2/blob/main/assets/images/appsdir.png?raw=true\">&nbsp&nbspMy Apps",[100,400],true)

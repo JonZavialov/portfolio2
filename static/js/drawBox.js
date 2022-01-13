@@ -50,7 +50,8 @@ function initDraw() {
             "#calendar",
             "#email",
             "#msdos",
-            "#projects"
+            "#projects",
+            "#snake"
         ]
         if(e.button != 0) return
         for(let i = 0; i < noSelect.length; i++){

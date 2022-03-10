@@ -11,4 +11,4 @@
 
 ## 👨‍💻 Developlment
 
-This project is a currently in progress by Jonathan.
+This project is no longer under development. I have moved on to making a better version, which looks almost identical but is much more object oriented. The repository can be seen [here](https://github.com/JonZavialov/portfolio4)

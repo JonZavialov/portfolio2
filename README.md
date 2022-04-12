@@ -11,4 +11,4 @@
 
 ## 👨‍💻 Developlment
 
-This project is no longer under development. I have moved on to making a better version, which looks almost identical but is much more object oriented. The repository can be seen [here](https://github.com/JonZavialov/portfolio4)
+This project is no longer under development and has been archived. I have moved on to making a better version, which looks almost identical but is much more object oriented. The repository can be seen [here](https://github.com/JonZavialov/portfolio4)
